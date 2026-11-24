@@ -1,0 +1,448 @@
+@import "tailwindcss";
+
+@theme {
+  /* FAMILIAS TIPOGRÁFICAS */
+  --font-display: "Cinzel", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* PALETA DE COLORES Y VARIANTES */
+  --color-chalk-paper: #f8f9fa;
+  --color-obsidian-ink: #1a1a1a;
+
+  /* Mashle Red */
+  --color-mashle-red-100: #fcedee;
+  --color-mashle-red-200: #f8d3d5;
+  --color-mashle-red-300: #faaeb1;
+  --color-mashle-red-500: #c51e25;
+  --color-mashle-red-600: #d7333f;
+  --color-mashle-red-700: #780000;
+
+  /* Dark Blue */
+  --color-dark-blue-100: #e7eef8;
+  --color-dark-blue-200: #cfdcf2;
+  --color-dark-blue-300: #9fbae5;
+  --color-dark-blue-500: #0f1e36;
+  --color-dark-blue-600: #1c3d7a;
+  --color-dark-blue-700: #1f3a60;
+
+  /* Warm Brown */
+  --color-warm-brown-100: #f7ede7;
+  --color-warm-brown-200: #ebd4c6;
+  --color-warm-brown-300: #ddb49c;
+  --color-warm-brown-500: #8c5230;
+  --color-warm-brown-600: #af5c2c;
+  --color-warm-brown-700: #6f3506;
+
+  /* Lunar Yellow */
+  --color-lunar-yellow-100: #fff7db;
+  --color-lunar-yellow-200: #fff4bd;
+  --color-lunar-yellow-300: #ffec8f;
+  --color-lunar-yellow-500: #fbde74;
+  --color-lunar-yellow-600: #f9e69f;
+  --color-lunar-yellow-700: #ecc022;
+}
+
+@layer base {
+
+  /* CINZEL - Titulares*/
+  @font-face {
+    font-family: "Cinzel";
+    src: url("../assets/fonts/cinzel/Cinzel-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Cinzel";
+    src: url("../assets/fonts/cinzel/Cinzel-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Cinzel";
+    src: url("../assets/fonts/cinzel/Cinzel-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* PLUS JAKARTA SANS - Cuerpos */
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/plus-jakarta-sans/PlusJakartaSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/plus-jakarta-sans/PlusJakartaSans-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/plus-jakarta-sans/PlusJakartaSans-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/plus-jakarta-sans/PlusJakartaSans-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/plus-jakarta-sans/PlusJakartaSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/plus-jakarta-sans/PlusJakartaSans-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/plus-jakarta-sans/PlusJakartaSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/plus-jakarta-sans/PlusJakartaSans-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* JETBRAINS MONO - Códigos y badges */
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../assets/fonts/jet-brains-mono/JetBrainsMono-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../assets/fonts/jet-brains-mono/JetBrainsMono-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../assets/fonts/jet-brains-mono/JetBrainsMono-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../assets/fonts/jet-brains-mono/JetBrainsMono-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../assets/fonts/jet-brains-mono/JetBrainsMono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../assets/fonts/jet-brains-mono/JetBrainsMono-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../assets/fonts/jet-brains-mono/JetBrainsMono-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("../assets/fonts/jet-brains-mono/JetBrainsMono-ExtraBoldItalic.ttf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* ESTILOS BASE - DESIGN SYSTEM */
+  html {
+    font-size: 16px; /* 1rem = 16px */
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: var(--color-chalk-paper);
+    color: var(--color-dark-blue-500);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  code,
+  pre,
+  kbd,
+  samp {
+    font-family: var(--font-mono);
+  }
+
+  /* H1: Mobile 2.25rem (36px) -> Desktop 3.375rem (54px) | Weight 900 | LH 1.2 */
+  h1 {
+    font-weight: 900;
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  /* H2: Mobile 2rem (32px) -> Desktop 3rem (48px) | Weight 900 | LH 1.2[cite: 9] */
+  h2 {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  /* H3: Mobile 1.75rem (28px) -> Desktop 2.375rem (38px) | Weight 700 | LH 1.3[cite: 9] */
+  h3 {
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.3;
+  }
+
+  /* H4: Mobile 1.5rem (24px) -> Desktop 1.75rem (28px) | Weight 700 | LH 1.3[cite: 9] */
+  h4 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  /* H5: Mobile 1.125rem (18px) -> Desktop 1.25rem (20px) | Weight 700 | LH 1.3[cite: 9] */
+  h5 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+
+  /* H6: Mobile 1rem (16px) -> Desktop 1.125rem (18px) | Weight 400 | LH 1.3[cite: 9] */
+  h6 {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  @media (min-width: 768px) {
+    h1 { font-size: 3.375rem; }
+    h2 { font-size: 3rem; }
+    h3 { font-size: 2.375rem; }
+    h4 { font-size: 1.75rem; }
+    h5 { font-size: 1.25rem; }
+    h6 { font-size: 1.125rem; }
+  }
+}
+@utility subtitle-1 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.875rem; /* 14px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 1rem; /* 16px desktop */
+  }
+}
+
+@utility subtitle-2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 1rem; /* 16px desktop */
+  }
+}
+
+@utility subtitle-3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.75rem; /* 12px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 0.875rem; /* 14px desktop */
+  }
+}
+
+@utility body-1 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.875rem; /* 14px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 1rem; /* 16px desktop */
+  }
+}
+
+@utility body-2 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.75rem; /* 12px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 0.875rem; /* 14px desktop */
+  }
+}
+
+@utility text-button {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 1rem; /* 16px desktop */
+  }
+}
+
+@utility caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.625rem; /* 10px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 0.75rem; /* 12px desktop */
+  }
+}
+
+@utility overline {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.625rem; /* 10px mobile & desktop */
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@utility mono-subtitle-1 {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.875rem; /* 14px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 1rem; /* 16px desktop */
+  }
+}
+
+@utility mono-subtitle-2 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 1rem; /* 16px desktop */
+  }
+}
+
+@utility mono-subtitle-3 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.75rem; /* 12px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 0.875rem; /* 14px desktop */
+  }
+}
+
+@utility mono-body-1 {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.875rem; /* 14px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 1rem; /* 16px desktop */
+  }
+}
+
+@utility mono-body-2 {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.75rem; /* 12px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 0.875rem; /* 14px desktop */
+  }
+}
+
+@utility mono-text-button {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 1rem; /* 16px desktop */
+  }
+}
+
+@utility mono-caption {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.625rem; /* 10px mobile */
+  line-height: 1.5;
+
+  @media (width >= 48rem) {
+    font-size: 0.75rem; /* 12px desktop */
+  }
+}
+
+@utility mono-overline {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.625rem; /* 10px mobile & desktop */
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

@@ -1,218 +1,1001 @@
----
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
----
-
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build">
-				<img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" />
-			</a>
-			<h1>
-				To get started, open the{' '}
-				<code>
-					<pre>src/pages</pre>
-				</code>{' '}
-				directory in your project.
+<div class="mx-auto max-w-5xl space-y-12 my-10 border-b border-dark-blue-200 pb-6">
+	<!-- ENCABEZADOS H1 - H6 -->
+	<section class="space-y-6">
+		<header class="mb-10">
+			<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-dark-blue-500">
+				Headers · Cinzel
+			</span>
+			<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+				Muestrario de Encabezados
 			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">
-					Read our docs
-				</a>
-				<a href="https://astro.build/chat">
-					Join our Discord{' '}
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36">
-						<path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path>
-					</svg>
-				</a>
-			</section>
-		</section>
-	</main>
+		</header>
 
-	<a href="https://astro.build/blog/astro-7/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"
-			></path>
-		</svg>
-		<h2>What's New in Astro 7.0?</h2>
-		<p>
-			Rust-powered compiler, advanced routing, AI agent support, and more! Click to explore Astro
-			7.0's new features.
-		</p>
-	</a>
+		<div class="space-y-6 rounded-2xl border border-dark-blue-200 bg-bright-white p-6">
+			<div class="border-b border-dark-blue-100 pb-5">
+				<span class="caption text-warm-brown-500">
+					H1 · 900 · Mobile 36px / Desktop 54px · LH 1.2
+				</span>
+				<h1 class="mt-1 text-dark-blue-500">Encabezado H1 Principal</h1>
+			</div>
+
+			<div class="border-b border-dark-blue-100 pb-5">
+				<span class="caption text-warm-brown-500">
+					H2 · 900 · Mobile 32px / Desktop 48px · LH 1.2
+				</span>
+				<h2 class="mt-1 text-dark-blue-500">Encabezado H2 de Sección</h2>
+			</div>
+
+			<div class="border-b border-dark-blue-100 pb-5">
+				<span class="caption text-warm-brown-500">
+					H3 · 700 · Mobile 28px / Desktop 38px · LH 1.3
+				</span>
+				<h3 class="mt-1 text-dark-blue-500">Encabezado H3 Subtítulo</h3>
+			</div>
+
+			<div class="border-b border-dark-blue-100 pb-5">
+				<span class="caption text-warm-brown-500">
+					H4 · 700 · Mobile 24px / Desktop 28px · LH 1.3
+				</span>
+				<h4 class="mt-1 text-dark-blue-500">Encabezado H4 Tarjeta</h4>
+			</div>
+
+			<div class="border-b border-dark-blue-100 pb-5">
+				<span class="caption text-warm-brown-500">
+					H5 · 700 · Mobile 18px / Desktop 20px · LH 1.3
+				</span>
+				<h5 class="mt-1 text-dark-blue-500">Encabezado H5 Menor</h5>
+			</div>
+
+			<div>
+				<span class="caption text-warm-brown-500">
+					H6 · 400 · Mobile 16px / Desktop 18px · LH 1.3
+				</span>
+				<h6 class="mt-1 text-dark-blue-500">Encabezado H6 Etiqueta</h6>
+			</div>
+		</div>
+	</section>
+
+	<!-- SUBTÍTULOS Y TEXTO -->
+	<section class="space-y-6">
+		<header class="mb-10">
+			<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-dark-blue-500">
+				Typography Utilities · Plus Jakarta Sans
+			</span>
+			<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+				Muestrario de Subtítulos y Texto
+			</h1>
+		</header>
+
+		<div class="grid gap-6 rounded-2xl border border-dark-blue-200 bg-bright-white p-6 md:grid-cols-2">
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="caption text-warm-brown-500">
+					.subtitle-1 · 700 · Mobile 14px (0.875rem) / Desktop 16px (1rem) · LH
+					1.5
+				</span>
+				<p class="subtitle-1 text-dark-blue-500">
+					Texto de subtítulo principal para destacar bloques o resúmenes.
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="caption text-warm-brown-500">
+					.subtitle-2 · 600 · Mobile 14px (0.875rem) / Desktop 16px (1rem) · LH
+					1.5
+				</span>
+				<p class="subtitle-2 text-dark-blue-500">
+					Texto de subtítulo secundario para destacar bloques o resúmenes.
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="caption text-warm-brown-500">
+					.subtitle-3 · 600 · Mobile 12px (0.75rem) / Desktop 14px (0.875rem) ·
+					LH 1.5
+				</span>
+				<p class="subtitle-3 text-dark-blue-500">
+					Texto de subtítulo terciario para encabezados de apoyo o metadatos.
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="caption text-warm-brown-500">
+					.body-1 · 400 · Mobile 14px (0.875rem) / Desktop 16px (1rem) · LH 1.5
+				</span>
+				<p class="body-1 text-obsidian-ink">
+					Párrafo principal de lectura cómoda con interlineado 1.5 y buen
+					contraste sobre fondo claro.
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="caption text-warm-brown-500">
+					.body-2 · 400 · Mobile 12px (0.75rem) / Desktop 14px (0.875rem) · LH
+					1.5
+				</span>
+				<p class="body-2 text-obsidian-ink">
+					Texto secundario para descripciones compactas, tarjetas o notas
+					complementarias.
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="caption text-warm-brown-500">
+					.text-button · 600 · Mobile 14px (0.875rem) / Desktop 16px (1rem) · LH
+					1.5
+				</span>
+				<p class="text-button text-mashle-red-500">
+					Etiqueta tipográfica para acciones y botones
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="caption text-warm-brown-500">
+					.caption · 400 · Mobile 10px (0.625rem) / Desktop 12px (0.75rem) · LH
+					1.5
+				</span>
+				<p class="caption text-warm-brown-500">
+					Nota al pie, aclaración o dato auxiliar de tamaño reducido.
+				</p>
+			</div>
+
+			<div class="space-y-1 md:col-span-2">
+				<span class="caption text-warm-brown-500">
+					.overline · 500 · 10px (0.625rem) · LH 1.5
+				</span>
+				<p class="overline text-dark-blue-500">
+					Antetítulo o categoría superior en mayúsculas
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- SUBTÍTULOS Y TEXTO · JETBRAINS MONO -->
+	<section class="space-y-6">
+		<header class="mb-10">
+			<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-dark-blue-500">
+				Typography Utilities · JetBrains Mono
+			</span>
+			<h2 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+				Muestrario de Subtítulos y Texto (Mono)
+			</h2>
+		</header>
+
+		<div class="grid gap-6 rounded-2xl border border-dark-blue-200 bg-chalk-paper p-6 md:grid-cols-2">
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="mono-caption text-warm-brown-500">
+					.mono-subtitle-1 · 700 · Mobile 14px (0.875rem) / Desktop 16px (1rem)
+					· LH 1.5
+				</span>
+				<p class="mono-subtitle-1 text-dark-blue-500">
+					const moduleName = "HexagonalArchitecture";
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="mono-caption text-warm-brown-500">
+					.mono-subtitle-2 · 600 · Mobile 14px (0.875rem) / Desktop 16px (1rem)
+					· LH 1.5
+				</span>
+				<p class="mono-subtitle-2 text-dark-blue-500">
+					GET /api/v1/products · 200 OK
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="mono-caption text-warm-brown-500">
+					.mono-subtitle-3 · 600 · Mobile 12px (0.75rem) / Desktop 14px
+					(0.875rem) · LH 1.5
+				</span>
+				<p class="mono-subtitle-3 text-dark-blue-500">
+					spring.profiles.active=dev
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="mono-caption text-warm-brown-500">
+					.mono-body-1 · 400 · Mobile 14px (0.875rem) / Desktop 16px (1rem) · LH
+					1.5
+				</span>
+				<p class="mono-body-1 text-obsidian-ink">
+					// Bloque de código o salida técnica con interlineado 1.5
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="mono-caption text-warm-brown-500">
+					.mono-body-2 · 400 · Mobile 12px (0.75rem) / Desktop 14px (0.875rem) ·
+					LH 1.5
+				</span>
+				<p class="mono-body-2 text-obsidian-ink">
+					docker compose up -d --build
+				</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="mono-caption text-warm-brown-500">
+					.mono-text-button · 600 · Mobile 14px (0.875rem) / Desktop 16px (1rem)
+					· LH 1.5
+				</span>
+				<p class="mono-text-button text-mashle-red-500">[ RUN_TESTS ]</p>
+			</div>
+
+			<div class="space-y-1 border-b border-dark-blue-100 pb-4">
+				<span class="mono-caption text-warm-brown-500">
+					.mono-caption · 400 · Mobile 10px (0.625rem) / Desktop 12px (0.75rem)
+					· LH 1.5
+				</span>
+				<p class="mono-caption text-warm-brown-500">v2.4.0 · build #1084</p>
+			</div>
+
+			<div class="space-y-1 md:col-span-2">
+				<span class="mono-caption text-warm-brown-500">
+					.mono-overline · 500 · 10px (0.625rem) · LH 1.5
+				</span>
+				<p class="mono-overline text-dark-blue-500">
+					SYSTEM TELEMETRY · TERMINAL OUTPUT
+				</p>
+			</div>
+		</div>
+	</section>
 </div>
 
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+<div class="mx-auto max-w-5xl space-y-4 my-10 border-b border-dark-blue-200 pb-6">
+	<header class="mb-10">
+		<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-dark-blue-500">
+			CHIPS
+		</span>
+		<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+			Muestrario de Chips
+		</h1>
+		<p class="mt-2 font-sans text-base text-dark-blue-500">
+			Pasa el cursor (<span class="font-mono text-sm">hover:200</span>) y mantén
+			presionado (<span class="font-mono text-sm">active:300</span>) en cada
+			chip.
+		</p>
+	</header>
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+	<div class="space-y-4">
+		<div class="mb-2">
+			<span class="mono-overline text-warm-brown-500">
+				Variante 1 · .mono-body-2
+			</span>
+		</div>
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+		<div class="flex flex-wrap items-center gap-3">
+			<!-- Mashle Red -->
+			<button
+				type="button"
+				class="mono-body-2 cursor-pointer rounded-md border border-mashle-red-300 bg-mashle-red-100 px-3 py-1.5 uppercase tracking-wider text-mashle-red-500 transition-colors duration-150 hover:bg-mashle-red-200 active:bg-mashle-red-300"
+			>
+				Java
+			</button>
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+			<!-- Dark Blue -->
+			<button
+				type="button"
+				class="mono-body-2 cursor-pointer rounded-md border border-dark-blue-300 bg-dark-blue-100 px-3 py-1.5 uppercase tracking-wider text-dark-blue-500 transition-colors duration-150 hover:bg-dark-blue-200 active:bg-dark-blue-300"
+			>
+				React
+			</button>
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+			<!-- Warm Brown -->
+			<button
+				type="button"
+				class="mono-body-2 cursor-pointer rounded-md border border-warm-brown-300 bg-warm-brown-100 px-3 py-1.5 uppercase tracking-wider text-warm-brown-500 transition-colors duration-150 hover:bg-warm-brown-200 active:bg-warm-brown-300"
+			>
+				MySQL
+			</button>
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+			<!-- Lunar Yellow -->
+			<button
+				type="button"
+				class="mono-body-2 cursor-pointer rounded-md border border-lunar-yellow-300 bg-lunar-yellow-100 px-3 py-1.5 uppercase tracking-wider text-dark-blue-500 transition-colors duration-150 hover:bg-lunar-yellow-200 active:bg-lunar-yellow-300"
+			>
+				TypeScript
+			</button>
+		</div>
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+		<div class="flex flex-wrap items-center gap-3">
+			<!-- Mashle Red -->
+			<button
+				type="button"
+				class="mono-body-2 cursor-pointer rounded-md border border-mashle-red-600 bg-mashle-red-500 px-3 py-1.5 uppercase tracking-wider text-chalk-paper transition-colors duration-150 hover:bg-mashle-red-600 active:bg-mashle-red-700"
+			>
+				Java
+			</button>
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+			<!-- Dark Blue -->
+			<button
+				type="button"
+				class="mono-body-2 cursor-pointer rounded-md border border-dark-blue-600 bg-dark-blue-500 px-3 py-1.5 uppercase tracking-wider text-chalk-paper transition-colors duration-150 hover:bg-dark-blue-600 active:bg-dark-blue-700"
+			>
+				React
+			</button>
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
+			<!-- Warm Brown -->
+			<button
+				type="button"
+				class="mono-body-2 cursor-pointer rounded-md border border-warm-brown-600 bg-warm-brown-500 px-3 py-1.5 uppercase tracking-wider text-chalk-paper transition-colors duration-150 hover:bg-warm-brown-600 active:bg-warm-brown-700"
+			>
+				MySQL
+			</button>
 
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
+			<!-- Lunar Yellow -->
+			<button
+				type="button"
+				class="mono-body-2 cursor-pointer rounded-md border border-lunar-yellow-600 bg-lunar-yellow-500 px-3 py-1.5 uppercase tracking-wider text-dark-blue-500 transition-colors duration-150 hover:bg-lunar-yellow-600 active:bg-lunar-yellow-700"
+			>
+				TypeScript
+			</button>
+		</div>
+	</div>
 
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
+	<div class="mt-8 space-y-4">
+		<div class="mb-2">
+			<span class="mono-overline text-warm-brown-500">
+				Variante 2 · .mono-caption
+			</span>
+		</div>
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+		<div class="flex flex-wrap items-center gap-3">
+			<!-- Mashle Red -->
+			<button
+				type="button"
+				class="mono-caption cursor-pointer rounded-md border border-mashle-red-300 bg-mashle-red-100 px-2.5 py-1 uppercase tracking-wider text-mashle-red-500 transition-colors duration-150 hover:bg-mashle-red-200 active:bg-mashle-red-300"
+			>
+				Java
+			</button>
 
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
+			<!-- Dark Blue -->
+			<button
+				type="button"
+				class="mono-caption cursor-pointer rounded-md border border-dark-blue-300 bg-dark-blue-100 px-2.5 py-1 uppercase tracking-wider text-dark-blue-500 transition-colors duration-150 hover:bg-dark-blue-200 active:bg-dark-blue-300"
+			>
+				React
+			</button>
 
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
+			<!-- Warm Brown -->
+			<button
+				type="button"
+				class="mono-caption cursor-pointer rounded-md border border-warm-brown-300 bg-warm-brown-100 px-2.5 py-1 uppercase tracking-wider text-warm-brown-500 transition-colors duration-150 hover:bg-warm-brown-200 active:bg-warm-brown-300"
+			>
+				MySQL
+			</button>
 
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
+			<!-- Lunar Yellow -->
+			<button
+				type="button"
+				class="mono-caption cursor-pointer rounded-md border border-lunar-yellow-300 bg-lunar-yellow-100 px-2.5 py-1 uppercase tracking-wider text-dark-blue-500 transition-colors duration-150 hover:bg-lunar-yellow-200 active:bg-lunar-yellow-300"
+			>
+				TypeScript
+			</button>
+		</div>
 
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
+		<div class="flex flex-wrap items-center gap-3">
+			<!-- Mashle Red -->
+			<button
+				type="button"
+				class="mono-caption cursor-pointer rounded-md border border-mashle-red-600 bg-mashle-red-500 px-2.5 py-1 uppercase tracking-wider text-chalk-paper transition-colors duration-150 hover:bg-mashle-red-600 active:bg-mashle-red-700"
+			>
+				Java
+			</button>
 
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
+			<!-- Dark Blue -->
+			<button
+				type="button"
+				class="mono-caption cursor-pointer rounded-md border border-dark-blue-600 bg-dark-blue-500 px-2.5 py-1 uppercase tracking-wider text-chalk-paper transition-colors duration-150 hover:bg-dark-blue-600 active:bg-dark-blue-700"
+			>
+				React
+			</button>
 
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
+			<!-- Warm Brown -->
+			<button
+				type="button"
+				class="mono-caption cursor-pointer rounded-md border border-warm-brown-600 bg-warm-brown-500 px-2.5 py-1 uppercase tracking-wider text-chalk-paper transition-colors duration-150 hover:bg-warm-brown-600 active:bg-warm-brown-700"
+			>
+				MySQL
+			</button>
 
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
+			<!-- Lunar Yellow -->
+			<button
+				type="button"
+				class="mono-caption cursor-pointer rounded-md border border-lunar-yellow-600 bg-lunar-yellow-500 px-2.5 py-1 uppercase tracking-wider text-dark-blue-500 transition-colors duration-150 hover:bg-lunar-yellow-600 active:bg-lunar-yellow-700"
+			>
+				TypeScript
+			</button>
+		</div>
+	</div>
+</div>
 
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
+<div class="mx-auto max-w-5xl space-y-4 my-10 border-b border-dark-blue-200 pb-6">
+	<header class="mb-10">
+		<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-dark-blue-500">
+			BUTTON STATES · 500 / 600 / 700
+		</span>
+		<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+			Muestrario de Botones
+		</h1>
+		<p class="mt-2 font-sans text-base text-dark-blue-500">
+			Pasa el cursor (<span class="font-mono text-sm">hover:600</span>) y haz
+			clic mantenido (<span class="font-mono text-sm">active:700</span>) en cada
+			botón.
+		</p>
+	</header>
 
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
+	<!-- BOTONES FILLED -->
+	<div>
+		<div class="mb-2">
+			<span class="mono-overline text-warm-brown-500">Variante 1 · Filled</span>
+		</div>
+		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			<!-- 1. MASHLE RED -->
+			<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+				<div class="space-y-4">
+					<div class="flex items-center justify-between gap-2">
+						<h2 class="font-display text-lg font-bold text-dark-blue-500">
+							Mashle Red
+						</h2>
+						<span class="font-mono text-xs text-warm-brown-500">500</span>
+					</div>
 
-		#links {
-			flex-wrap: wrap;
-		}
+					<!-- Botón interactivo -->
+					<button
+						type="button"
+						class="text-button w-full cursor-pointer whitespace-nowrap rounded-full bg-mashle-red-500 px-4 py-2.5 text-chalk-paper transition-colors duration-150 hover:bg-mashle-red-600 active:bg-mashle-red-700"
+					>
+						Acción Mashle Red
+					</button>
 
-		#links a.button {
-			padding: 14px 18px;
-		}
+					<!-- Referencia visual de estados -->
+					<div class="space-y-2 border-t border-dark-blue-100 pt-4 font-mono text-xs">
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Normal (500)</span>
+							<span class="shrink-0 rounded bg-mashle-red-500 px-2 py-0.5 text-chalk-paper">
+								#C51E25
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Hover (600)</span>
+							<span class="shrink-0 rounded bg-mashle-red-600 px-2 py-0.5 text-chalk-paper">
+								#D7333F
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Active (700)</span>
+							<span class="shrink-0 rounded bg-mashle-red-700 px-2 py-0.5 text-chalk-paper">
+								#780000
+							</span>
+						</div>
+					</div>
+				</div>
 
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
+				<p class="mt-5 break-words font-mono text-[11px] text-dark-blue-600">
+					bg-mashle-red-500 hover:bg-mashle-red-600 active:bg-mashle-red-700
+				</p>
+			</article>
 
-		h1 {
-			line-height: 1.5;
-		}
-	}
-</style>
+			<!-- 2. DARK BLUE -->
+			<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+				<div class="space-y-4">
+					<div class="flex items-center justify-between gap-2">
+						<h2 class="font-display text-lg font-bold text-dark-blue-500">
+							Dark Blue
+						</h2>
+						<span class="font-mono text-xs text-warm-brown-500">500</span>
+					</div>
+
+					<!-- Botón interactivo -->
+					<button
+						type="button"
+						class="text-button w-full cursor-pointer whitespace-nowrap rounded-full bg-dark-blue-500 px-4 py-2.5 text-chalk-paper transition-colors duration-150 hover:bg-dark-blue-600 active:bg-dark-blue-700"
+					>
+						Acción Dark Blue
+					</button>
+
+					<!-- Referencia visual de estados -->
+					<div class="space-y-2 border-t border-dark-blue-100 pt-4 font-mono text-xs">
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Normal (500)</span>
+							<span class="shrink-0 rounded bg-dark-blue-500 px-2 py-0.5 text-chalk-paper">
+								#0F1E36
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Hover (600)</span>
+							<span class="shrink-0 rounded bg-dark-blue-600 px-2 py-0.5 text-chalk-paper">
+								#1C3D7A
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Active (700)</span>
+							<span class="shrink-0 rounded bg-dark-blue-700 px-2 py-0.5 text-chalk-paper">
+								#1F3A60
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-5 break-words font-mono text-[11px] text-dark-blue-600">
+					bg-dark-blue-500 hover:bg-dark-blue-600 active:bg-dark-blue-700
+				</p>
+			</article>
+
+			<!-- 3. WARM BROWN -->
+			<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+				<div class="space-y-4">
+					<div class="flex items-center justify-between gap-2">
+						<h2 class="font-display text-lg font-bold text-dark-blue-500">
+							Warm Brown
+						</h2>
+						<span class="font-mono text-xs text-warm-brown-500">500</span>
+					</div>
+
+					<!-- Botón interactivo -->
+					<button
+						type="button"
+						class="text-button w-full cursor-pointer whitespace-nowrap rounded-full bg-warm-brown-500 px-4 py-2.5 text-chalk-paper transition-colors duration-150 hover:bg-warm-brown-600 active:bg-warm-brown-700"
+					>
+						Acción Warm Brown
+					</button>
+
+					<!-- Referencia visual de estados -->
+					<div class="space-y-2 border-t border-dark-blue-100 pt-4 font-mono text-xs">
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Normal (500)</span>
+							<span class="shrink-0 rounded bg-warm-brown-500 px-2 py-0.5 text-chalk-paper">
+								#8C5230
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Hover (600)</span>
+							<span class="shrink-0 rounded bg-warm-brown-600 px-2 py-0.5 text-chalk-paper">
+								#AF5C2C
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Active (700)</span>
+							<span class="shrink-0 rounded bg-warm-brown-700 px-2 py-0.5 text-chalk-paper">
+								#6F3506
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-5 break-words font-mono text-[11px] text-dark-blue-600">
+					bg-warm-brown-500 hover:bg-warm-brown-600 active:bg-warm-brown-700
+				</p>
+			</article>
+
+			<!-- 4. LUNAR YELLOW -->
+			<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+				<div class="space-y-4">
+					<div class="flex items-center justify-between gap-2">
+						<h2 class="font-display text-lg font-bold text-dark-blue-500">
+							Lunar Yellow
+						</h2>
+						<span class="font-mono text-xs text-warm-brown-500">500</span>
+					</div>
+
+					<!-- Botón interactivo -->
+					<button
+						type="button"
+						class="text-button w-full cursor-pointer whitespace-nowrap rounded-full bg-lunar-yellow-500 px-4 py-2.5 text-dark-blue-500 transition-colors duration-150 hover:bg-lunar-yellow-600 active:bg-lunar-yellow-700"
+					>
+						Acción Lunar Yellow
+					</button>
+
+					<!-- Referencia visual de estados -->
+					<div class="space-y-2 border-t border-dark-blue-100 pt-4 font-mono text-xs">
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Normal (500)</span>
+							<span class="shrink-0 rounded bg-lunar-yellow-500 px-2 py-0.5 text-dark-blue-500">
+								#FBDE74
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Hover (600)</span>
+							<span class="shrink-0 rounded bg-lunar-yellow-600 px-2 py-0.5 text-dark-blue-500">
+								#F9E69F
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Active (700)</span>
+							<span class="shrink-0 rounded bg-lunar-yellow-700 px-2 py-0.5 text-dark-blue-500">
+								#ECC022
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-5 break-words font-mono text-[11px] text-dark-blue-600">
+					bg-lunar-yellow-500 hover:bg-lunar-yellow-600
+					active:bg-lunar-yellow-700
+				</p>
+			</article>
+		</div>
+	</div>
+
+	<!-- BOTONES OUTLINED -->
+	<div>
+		<div class="mb-2">
+			<span class="mono-overline text-warm-brown-500">
+				Variante 2 · Outlined
+			</span>
+		</div>
+		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			<!-- 1. MASHLE RED -->
+			<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+				<div class="space-y-4">
+					<div class="flex items-center justify-between gap-2">
+						<h2 class="font-display text-lg font-bold text-dark-blue-500">
+							Mashle Red
+						</h2>
+						<span class="font-mono text-xs text-warm-brown-500">500</span>
+					</div>
+
+					<!-- Botón interactivo Outline -->
+					<button
+						type="button"
+						class="text-button w-full cursor-pointer whitespace-nowrap rounded-full border border-mashle-red-500 bg-transparent px-4 py-2.5 text-mashle-red-500 transition-colors duration-150 hover:border-mashle-red-600 hover:bg-mashle-red-100 hover:text-mashle-red-600 active:border-mashle-red-700 active:bg-mashle-red-200 active:text-mashle-red-700"
+					>
+						Acción Mashle Red
+					</button>
+
+					<!-- Referencia visual de estados -->
+					<div class="space-y-2 border-t border-dark-blue-100 pt-4 font-mono text-xs">
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Border / Text</span>
+							<span class="shrink-0 rounded bg-mashle-red-500 px-2 py-0.5 text-chalk-paper">
+								#C51E25
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Hover</span>
+							<span class="shrink-0 rounded bg-mashle-red-600 px-2 py-0.5 text-chalk-paper">
+								#D7333F
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Active</span>
+							<span class="shrink-0 rounded bg-mashle-red-700 px-2 py-0.5 text-chalk-paper">
+								#780000
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-5 break-words font-mono text-[11px] text-dark-blue-600">
+					border border-mashle-red-500 text-mashle-red-500
+					hover:bg-mashle-red-100 active:bg-mashle-red-200
+				</p>
+			</article>
+
+			<!-- 2. DARK BLUE -->
+			<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+				<div class="space-y-4">
+					<div class="flex items-center justify-between gap-2">
+						<h2 class="font-display text-lg font-bold text-dark-blue-500">
+							Dark Blue
+						</h2>
+						<span class="font-mono text-xs text-warm-brown-500">500</span>
+					</div>
+
+					<!-- Botón interactivo Outline -->
+					<button
+						type="button"
+						class="text-button w-full cursor-pointer whitespace-nowrap rounded-full border border-dark-blue-500 bg-transparent px-4 py-2.5 text-dark-blue-500 transition-colors duration-150 hover:border-dark-blue-600 hover:bg-dark-blue-100 hover:text-dark-blue-600 active:border-dark-blue-700 active:bg-dark-blue-200 active:text-dark-blue-700"
+					>
+						Acción Dark Blue
+					</button>
+
+					<!-- Referencia visual de estados -->
+					<div class="space-y-2 border-t border-dark-blue-100 pt-4 font-mono text-xs">
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Border / Text</span>
+							<span class="shrink-0 rounded bg-dark-blue-500 px-2 py-0.5 text-chalk-paper">
+								#0F1E36
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Hover</span>
+							<span class="shrink-0 rounded bg-dark-blue-600 px-2 py-0.5 text-chalk-paper">
+								#1C3D7A
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Active</span>
+							<span class="shrink-0 rounded bg-dark-blue-700 px-2 py-0.5 text-chalk-paper">
+								#1F3A60
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-5 break-words font-mono text-[11px] text-dark-blue-600">
+					border border-dark-blue-500 text-dark-blue-500 hover:bg-dark-blue-100
+					active:bg-dark-blue-200
+				</p>
+			</article>
+
+			<!-- 3. WARM BROWN -->
+			<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+				<div class="space-y-4">
+					<div class="flex items-center justify-between gap-2">
+						<h2 class="font-display text-lg font-bold text-dark-blue-500">
+							Warm Brown
+						</h2>
+						<span class="font-mono text-xs text-warm-brown-500">500</span>
+					</div>
+
+					<!-- Botón interactivo Outline -->
+					<button
+						type="button"
+						class="text-button w-full cursor-pointer whitespace-nowrap rounded-full border border-warm-brown-500 bg-transparent px-4 py-2.5 text-warm-brown-500 transition-colors duration-150 hover:border-warm-brown-600 hover:bg-warm-brown-100 hover:text-warm-brown-600 active:border-warm-brown-700 active:bg-warm-brown-200 active:text-warm-brown-700"
+					>
+						Acción Warm Brown
+					</button>
+
+					<!-- Referencia visual de estados -->
+					<div class="space-y-2 border-t border-dark-blue-100 pt-4 font-mono text-xs">
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Border / Text</span>
+							<span class="shrink-0 rounded bg-warm-brown-500 px-2 py-0.5 text-chalk-paper">
+								#8C5230
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Hover</span>
+							<span class="shrink-0 rounded bg-warm-brown-600 px-2 py-0.5 text-chalk-paper">
+								#AF5C2C
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Active</span>
+							<span class="shrink-0 rounded bg-warm-brown-700 px-2 py-0.5 text-chalk-paper">
+								#6F3506
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-5 break-words font-mono text-[11px] text-dark-blue-600">
+					border border-warm-brown-500 text-warm-brown-500
+					hover:bg-warm-brown-100 active:bg-warm-brown-200
+				</p>
+			</article>
+
+			<!-- 4. LUNAR YELLOW -->
+			<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+				<div class="space-y-4">
+					<div class="flex items-center justify-between gap-2">
+						<h2 class="font-display text-lg font-bold text-dark-blue-500">
+							Lunar Yellow
+						</h2>
+						<span class="font-mono text-xs text-warm-brown-500">500</span>
+					</div>
+
+					<!-- Botón interactivo Outline -->
+					<button
+						type="button"
+						class="text-button w-full cursor-pointer whitespace-nowrap rounded-full border border-lunar-yellow-500 bg-transparent px-4 py-2.5 text-dark-blue-500 transition-colors duration-150 hover:border-lunar-yellow-700 hover:bg-lunar-yellow-100 active:border-lunar-yellow-700 active:bg-lunar-yellow-200"
+					>
+						Acción Lunar Yellow
+					</button>
+
+					<!-- Referencia visual de estados -->
+					<div class="space-y-2 border-t border-dark-blue-100 pt-4 font-mono text-xs">
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Border / Bg</span>
+							<span class="shrink-0 rounded bg-lunar-yellow-500 px-2 py-0.5 text-dark-blue-500">
+								#FBDE74
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Hover</span>
+							<span class="shrink-0 rounded bg-lunar-yellow-100 px-2 py-0.5 text-dark-blue-500">
+								#FFF7DB
+							</span>
+						</div>
+						<div class="flex items-center justify-between gap-3">
+							<span class="text-warm-brown-500">Active</span>
+							<span class="shrink-0 rounded bg-lunar-yellow-200 px-2 py-0.5 text-dark-blue-500">
+								#FFF4BD
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<p class="mt-5 break-words font-mono text-[11px] text-dark-blue-600">
+					border border-lunar-yellow-500 text-dark-blue-500
+					hover:bg-lunar-yellow-100 active:bg-lunar-yellow-200
+				</p>
+			</article>
+		</div>
+	</div>
+</div>
+
+<div class="mx-auto max-w-5xl space-y-4 my-10 border-b border-dark-blue-200 pb-6">
+	<!-- Encabezado de la guía -->
+	<header class="mb-10">
+		<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-bold text-dark-blue-500">
+			DESIGN SYSTEM · TYPOGRAPHY CHECK
+		</span>
+		<h1 class="mt-3 font-display text-3xl font-bold tracking-wide text-mashle-red-500">
+			Muestrario de Tipografías
+		</h1>
+		<p class="mt-2 font-sans text-base text-dark-blue-500">
+			Verificación visual de pesos e itálicas locales en Astro + Tailwind v4.
+		</p>
+	</header>
+
+	<!-- Grid de Cards por familia -->
+	<div class="grid gap-8 md:grid-cols-3">
+		<!-- CARD 1: CINZEL -->
+		<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+			<div>
+				<div class="flex items-center justify-between">
+					<span class="rounded-full bg-mashle-red-100 px-3 py-1 font-mono text-xs font-medium text-mashle-red-500">
+						font-display
+					</span>
+					<span class="font-mono text-xs text-warm-brown-500">Titulares</span>
+				</div>
+
+				<h2 class="mt-4 font-display text-2xl font-bold text-dark-blue-500">
+					Cinzel
+				</h2>
+
+				<div class="mt-6 space-y-5 border-t border-dark-blue-100 pt-5">
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">400 · Regular</p>
+						<p class="mt-1 font-display text-lg font-normal text-dark-blue-500">
+							Arquitectura & Código
+						</p>
+					</div>
+
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">700 · Bold</p>
+						<p class="mt-1 font-display text-lg font-bold text-dark-blue-500">
+							Arquitectura & Código
+						</p>
+					</div>
+
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">900 · Black</p>
+						<p class="mt-1 font-display text-lg font-black text-dark-blue-500">
+							Arquitectura & Código
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="mt-6 rounded-lg bg-dark-blue-100/60 p-3 font-mono text-xs text-dark-blue-600">
+				Nota: Cinzel es una fuente romana de versalitas (sin variante itálica).
+			</div>
+		</article>
+
+		<!-- CARD 2: PLUS JAKARTA SANS -->
+		<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+			<div>
+				<div class="flex items-center justify-between">
+					<span class="rounded-full bg-dark-blue-100 px-3 py-1 font-mono text-xs font-medium text-dark-blue-600">
+						font-sans
+					</span>
+					<span class="font-mono text-xs text-warm-brown-500">Cuerpos</span>
+				</div>
+
+				<h2 class="mt-4 font-sans text-2xl font-bold text-dark-blue-500">
+					Plus Jakarta Sans
+				</h2>
+
+				<div class="mt-6 space-y-4 border-t border-dark-blue-100 pt-5">
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">400 · Regular</p>
+						<p class="mt-1 font-sans text-base font-normal text-dark-blue-500">
+							Texto limpio y legible ·
+							<br />
+							<span class="italic text-warm-brown-600">versión itálica</span>
+						</p>
+					</div>
+
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">500 · Medium</p>
+						<p class="mt-1 font-sans text-base font-medium text-dark-blue-500">
+							Texto limpio y legible.
+							<br />
+							<span class="italic text-warm-brown-600">versión itálica</span>
+						</p>
+					</div>
+
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">600 · SemiBold</p>
+						<p class="mt-1 font-sans text-base font-semibold text-dark-blue-500">
+							Texto limpio y legible.
+							<br />
+							<span class="italic text-warm-brown-600">versión itálica</span>
+						</p>
+					</div>
+
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">700 · Bold</p>
+						<p class="mt-1 font-sans text-base font-bold text-dark-blue-500">
+							Texto limpio y legible.
+							<br />
+							<span class="italic text-warm-brown-600">versión itálica</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="mt-6 rounded-lg bg-warm-brown-100 p-3 font-mono text-xs text-warm-brown-700">
+				Tipografía base aplicada por defecto en &lt;body&gt;.
+			</div>
+		</article>
+
+		<!-- CARD 3: JETBRAINS MONO -->
+		<article class="flex flex-col justify-between rounded-2xl border border-dark-blue-200 bg-white p-6 shadow-sm">
+			<div>
+				<div class="flex items-center justify-between">
+					<span class="rounded-full bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-medium text-dark-blue-500">
+						font-mono
+					</span>
+					<span class="font-mono text-xs text-warm-brown-500">
+						Código & Badges
+					</span>
+				</div>
+
+				<h2 class="mt-4 font-mono text-2xl font-bold text-dark-blue-500">
+					JetBrains Mono
+				</h2>
+
+				<div class="mt-6 space-y-4 border-t border-dark-blue-100 pt-5">
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">400 · Regular</p>
+						<p class="mt-1 font-mono text-sm font-normal text-dark-blue-500">
+							const stack = "Astro".
+							<br />
+							<span class="italic text-mashle-red-500">// comment</span>
+						</p>
+					</div>
+
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">500 · Medium</p>
+						<p class="mt-1 font-mono text-sm font-medium text-dark-blue-500">
+							const stack = "Astro".
+							<br />
+							<span class="italic text-mashle-red-500">
+								// commentario de prueba para ver como luce la fuente
+							</span>
+						</p>
+					</div>
+
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">700 · Bold</p>
+						<p class="mt-1 font-mono text-sm font-bold text-dark-blue-500">
+							const stack = "Astro".
+							<br />
+							<span class="italic text-mashle-red-500">
+								// commentario de prueba para ver como luce la fuente
+							</span>
+						</p>
+					</div>
+
+					<div>
+						<p class="font-mono text-xs text-warm-brown-500">800 · ExtraBold</p>
+						<p class="mt-1 font-mono text-sm font-extrabold text-dark-blue-500">
+							const stack = "Astro".
+							<br />
+							<span class="italic text-mashle-red-500">
+								// commentario de prueba para ver como luce la fuente
+							</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="mt-6 rounded-lg bg-dark-blue-500 p-3 font-mono text-xs text-chalk-paper">
+				<span class="text-lunar-yellow-500">$</span> npm run dev{" "}
+				<span class="italic text-dark-blue-300"># listo</span>
+			</div>
+		</article>
+	</div>
+</div>
