@@ -7,8 +7,9 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* PALETA DE COLORES Y VARIANTES */
-  --color-chalk-paper: #f8f9fa;
-  --color-obsidian-ink: #1a1a1a;
+  --color-chalk-paper: #f8f9fa; /* Papel tiza suave para superficies base */
+  --color-vellum-sheet: #fffdfe; /* Hoja de vitela blanca nítida del borde del logo de Mashle */
+  --color-obsidian-ink: #1a1a1a; /* Tinta obsidiana oscura para textos y contrastes */
 
   /* Mashle Red */
   --color-mashle-red-100: #fcedee;
@@ -18,21 +19,21 @@
   --color-mashle-red-600: #d7333f;
   --color-mashle-red-700: #780000;
 
-  /* Dark Blue */
-  --color-dark-blue-100: #e7eef8;
-  --color-dark-blue-200: #cfdcf2;
-  --color-dark-blue-300: #9fbae5;
-  --color-dark-blue-500: #0f1e36;
-  --color-dark-blue-600: #1c3d7a;
-  --color-dark-blue-700: #1f3a60;
+  /* Easton Blue */
+  --color-easton-blue-100: #e7eef8;
+  --color-easton-blue-200: #cfdcf2;
+  --color-easton-blue-300: #9fbae5;
+  --color-easton-blue-500: #0f1e36;
+  --color-easton-blue-600: #1c3d7a;
+  --color-easton-blue-700: #1f3a60;
 
-  /* Warm Brown */
-  --color-warm-brown-100: #f7ede7;
-  --color-warm-brown-200: #ebd4c6;
-  --color-warm-brown-300: #ddb49c;
-  --color-warm-brown-500: #8c5230;
-  --color-warm-brown-600: #af5c2c;
-  --color-warm-brown-700: #6f3506;
+  /* Wand Brown */
+  --color-wand-brown-100: #f7ede7;
+  --color-wand-brown-200: #ebd4c6;
+  --color-wand-brown-300: #ddb49c;
+  --color-wand-brown-500: #8c5230;
+  --color-wand-brown-600: #af5c2c;
+  --color-wand-brown-700: #6f3506;
 
   /* Lunar Yellow */
   --color-lunar-yellow-100: #fff7db;
@@ -202,7 +203,8 @@
 
   /* ESTILOS BASE - DESIGN SYSTEM */
   html {
-    font-size: 16px; /* 1rem = 16px */
+    font-size: 16px;
+    /* 1rem = 16px */
   }
 
   body {
@@ -213,7 +215,12 @@
     color: var(--color-dark-blue-500);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
   }
 
@@ -267,95 +274,128 @@
   }
 
   @media (min-width: 768px) {
-    h1 { font-size: 3.375rem; }
-    h2 { font-size: 3rem; }
-    h3 { font-size: 2.375rem; }
-    h4 { font-size: 1.75rem; }
-    h5 { font-size: 1.25rem; }
-    h6 { font-size: 1.125rem; }
+    h1 {
+      font-size: 3.375rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 2.375rem;
+    }
+
+    h4 {
+      font-size: 1.75rem;
+    }
+
+    h5 {
+      font-size: 1.25rem;
+    }
+
+    h6 {
+      font-size: 1.125rem;
+    }
   }
 }
+
 @utility subtitle-1 {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 0.875rem;
+  /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 1rem; /* 16px desktop */
+  @media (width >=48rem) {
+    font-size: 1rem;
+    /* 16px desktop */
   }
 }
 
 @utility subtitle-2 {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 0.875rem;
+  /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 1rem; /* 16px desktop */
+  @media (width >=48rem) {
+    font-size: 1rem;
+    /* 16px desktop */
   }
 }
 
 @utility subtitle-3 {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.75rem; /* 12px mobile */
+  font-size: 0.75rem;
+  /* 12px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 0.875rem; /* 14px desktop */
+  @media (width >=48rem) {
+    font-size: 0.875rem;
+    /* 14px desktop */
   }
 }
 
 @utility body-1 {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 0.875rem;
+  /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 1rem; /* 16px desktop */
+  @media (width >=48rem) {
+    font-size: 1rem;
+    /* 16px desktop */
   }
 }
 
 @utility body-2 {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.75rem; /* 12px mobile */
+  font-size: 0.75rem;
+  /* 12px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 0.875rem; /* 14px desktop */
+  @media (width >=48rem) {
+    font-size: 0.875rem;
+    /* 14px desktop */
   }
 }
 
 @utility text-button {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 0.875rem;
+  /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 1rem; /* 16px desktop */
+  @media (width >=48rem) {
+    font-size: 1rem;
+    /* 16px desktop */
   }
 }
 
 @utility caption {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.625rem; /* 10px mobile */
+  font-size: 0.625rem;
+  /* 10px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 0.75rem; /* 12px desktop */
+  @media (width >=48rem) {
+    font-size: 0.75rem;
+    /* 12px desktop */
   }
 }
 
 @utility overline {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.625rem; /* 10px mobile & desktop */
+  font-size: 0.625rem;
+  /* 10px mobile & desktop */
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -364,84 +404,99 @@
 @utility mono-subtitle-1 {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 0.875rem;
+  /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 1rem; /* 16px desktop */
+  @media (width >=48rem) {
+    font-size: 1rem;
+    /* 16px desktop */
   }
 }
 
 @utility mono-subtitle-2 {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 0.875rem;
+  /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 1rem; /* 16px desktop */
+  @media (width >=48rem) {
+    font-size: 1rem;
+    /* 16px desktop */
   }
 }
 
 @utility mono-subtitle-3 {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.75rem; /* 12px mobile */
+  font-size: 0.75rem;
+  /* 12px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 0.875rem; /* 14px desktop */
+  @media (width >=48rem) {
+    font-size: 0.875rem;
+    /* 14px desktop */
   }
 }
 
 @utility mono-body-1 {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 0.875rem;
+  /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 1rem; /* 16px desktop */
+  @media (width >=48rem) {
+    font-size: 1rem;
+    /* 16px desktop */
   }
 }
 
 @utility mono-body-2 {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 0.75rem; /* 12px mobile */
+  font-size: 0.75rem;
+  /* 12px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 0.875rem; /* 14px desktop */
+  @media (width >=48rem) {
+    font-size: 0.875rem;
+    /* 14px desktop */
   }
 }
 
 @utility mono-text-button {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 0.875rem;
+  /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 1rem; /* 16px desktop */
+  @media (width >=48rem) {
+    font-size: 1rem;
+    /* 16px desktop */
   }
 }
 
 @utility mono-caption {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 0.625rem; /* 10px mobile */
+  font-size: 0.625rem;
+  /* 10px mobile */
   line-height: 1.5;
 
-  @media (width >= 48rem) {
-    font-size: 0.75rem; /* 12px desktop */
+  @media (width >=48rem) {
+    font-size: 0.75rem;
+    /* 12px desktop */
   }
 }
 
 @utility mono-overline {
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 0.625rem; /* 10px mobile & desktop */
+  font-size: 0.625rem;
+  /* 10px mobile & desktop */
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.08em;
