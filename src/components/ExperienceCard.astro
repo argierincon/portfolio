@@ -1,0 +1,79 @@
+---
+import Chip from "./Chip.astro";
+
+interface Props {
+  period: string;
+  role: string;
+  company: string;
+  domain?: string;
+  description: string;
+  tags: readonly string[];
+  accentColor?: "lunar-yellow" | "mashle-red" | "easton-blue" | "wand-brown";
+  class?: string;
+}
+
+const {
+  period,
+  role,
+  company,
+  domain,
+  description,
+  tags,
+  accentColor = "lunar-yellow",
+  class: className = "",
+} = Astro.props;
+---
+
+<article
+  class={`relative rounded-xl border border-easton-blue-500 bg-vellum-sheet p-3 md:p-7 shadow-[6px_6px_0_0_var(--color-wand-brown-500)] transition-transform duration-200 hover:-translate-y-0.5 ${className}`}
+>
+  <div class="flex flex-col items-start gap-3">
+    <!-- Badge de periodo -->
+    <Chip
+      size="sm"
+      variant="solid"
+      style="filled"
+      color={accentColor}
+      weight="medium"
+    >
+      {period}
+    </Chip>
+
+    <!-- Título del rol y empresa/dominio -->
+    <div class="space-y-1">
+      <h5 class="font-sans text-[1.125rem] font-bold leading-snug text-easton-blue-500">
+        {role}
+      </h5>
+      <p class="body-2 font-medium text-wand-brown-500">
+        {company}
+        {domain && <span> / {domain}</span>}
+      </p>
+    </div>
+
+    <!-- Descripción -->
+    <p class="body-1">{description}</p>
+
+    <!-- Tags de stack / herramientas -->
+    {tags.length > 0 && (
+      <ul
+        class="flex flex-wrap items-center gap-2 pt-2"
+        aria-label="Tecnologías utilizadas"
+      >
+        {tags.map((tag) => (
+          <li>
+            <Chip
+              size="sm"
+              variant="soft"
+              style="outlined"
+              color="easton-blue"
+              case="normal"
+              weight="medium"
+            >
+              {tag}
+            </Chip>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</article>

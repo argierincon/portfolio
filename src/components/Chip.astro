@@ -1,0 +1,87 @@
+---
+interface Props {
+  color?: "mashle-red" | "easton-blue" | "wand-brown" | "lunar-yellow";
+  variant?: "soft" | "solid";
+  style?: "filled" | "outlined";
+  size?: "md" | "sm"; // md -> .mono-body-2 | sm -> .mono-caption
+  weight?: "regular" | "medium"; // 400 -> font-normal | 500 -> font-medium
+  case?: "uppercase" | "lowercase" | "normal";
+  class?: string;
+}
+
+const {
+  color = "mashle-red",
+  variant = "soft",
+  style = "filled",
+  size = "md",
+  weight = "medium",
+  case: textCase = "uppercase",
+  class: className = "",
+} = Astro.props;
+
+const styles = {
+  soft: {
+    filled: {
+      "mashle-red":
+        "border-mashle-red-300 bg-mashle-red-100 text-mashle-red-500",
+      "easton-blue":
+        "border-easton-blue-300 bg-easton-blue-100 text-easton-blue-500",
+      "wand-brown":
+        "border-wand-brown-300 bg-wand-brown-100 text-wand-brown-500",
+      "lunar-yellow":
+        "border-lunar-yellow-300 bg-lunar-yellow-100 text-easton-blue-500",
+    },
+    outlined: {
+      "mashle-red": "border-mashle-red-300 bg-transparent text-mashle-red-500",
+      "easton-blue":
+        "border-easton-blue-300 bg-transparent text-easton-blue-500",
+      "wand-brown": "border-wand-brown-300 bg-transparent text-wand-brown-500",
+      "lunar-yellow":
+        "border-lunar-yellow-300 bg-transparent text-easton-blue-500",
+    },
+  },
+  solid: {
+    filled: {
+      "mashle-red": "border-mashle-red-600 bg-mashle-red-500 text-chalk-paper",
+      "easton-blue":
+        "border-easton-blue-600 bg-easton-blue-500 text-chalk-paper",
+      "wand-brown": "border-wand-brown-600 bg-wand-brown-500 text-chalk-paper",
+      "lunar-yellow":
+        "border-lunar-yellow-600 bg-lunar-yellow-500 text-easton-blue-500",
+    },
+    outlined: {
+      "mashle-red": "border-mashle-red-500 bg-transparent text-mashle-red-500",
+      "easton-blue":
+        "border-easton-blue-500 bg-transparent text-easton-blue-500",
+      "wand-brown": "border-wand-brown-500 bg-transparent text-wand-brown-500",
+      "lunar-yellow":
+        "border-lunar-yellow-500 bg-transparent text-easton-blue-500",
+    },
+  },
+} as const;
+
+const sizeClasses = {
+  md: "mono-body-2 px-3 py-1.5",
+  sm: "mono-caption px-3 py-1",
+} as const;
+
+const weightClasses = {
+  regular: "font-normal",
+  medium: "font-medium",
+} as const;
+
+const caseClasses = {
+  uppercase: "uppercase",
+  lowercase: "lowercase",
+  normal: "normal-case",
+} as const;
+
+const baseClasses =
+  "inline-flex items-center justify-center rounded-full border tracking-wider";
+
+const finalClass = `${baseClasses} ${weightClasses[weight]} ${caseClasses[textCase]} ${sizeClasses[size]} ${styles[variant][style][color]} ${className}`;
+---
+
+<span class={finalClass}>
+  <slot />
+</span>

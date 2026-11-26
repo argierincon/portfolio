@@ -1,0 +1,102 @@
+---
+interface Props {
+  value: string | number;
+  suffix?: string;
+  icon?: "star";
+  label: string;
+  size?: "normal" | "md" | "sm";
+  color?: "mashle-red" | "easton-blue" | "wand-brown" | "lunar-yellow";
+  class?: string;
+}
+
+const {
+  value,
+  suffix,
+  icon,
+  label,
+  size = "normal",
+  color = "mashle-red",
+  class: className = "",
+} = Astro.props;
+
+const colorStyles = {
+  "mashle-red": {
+    card: "bg-mashle-red-500 text-chalk-paper shadow-[0_18px_32px_-12px_rgba(197,30,37,0.38)]",
+    accent: "text-lunar-yellow-500",
+    label: "text-chalk-paper/90",
+  },
+  "easton-blue": {
+    card: "bg-easton-blue-500 text-chalk-paper shadow-[0_18px_32px_-12px_rgba(15,30,54,0.42)]",
+    accent: "text-mashle-red-500",
+    label: "text-chalk-paper/90",
+  },
+  "wand-brown": {
+    card: "bg-wand-brown-500 text-chalk-paper shadow-[0_18px_32px_-12px_rgba(140,82,48,0.38)]",
+    accent: "text-lunar-yellow-500",
+    label: "text-chalk-paper/90",
+  },
+  "lunar-yellow": {
+    card: "bg-lunar-yellow-500 text-easton-blue-500 shadow-[0_18px_32px_-12px_rgba(251,222,116,0.48)]",
+    accent: "text-wand-brown-500",
+    label: "text-easton-blue-500/85",
+  },
+} as const;
+
+const sizeStyles = {
+  normal: {
+    card: "min-h-44 rounded-2xl p-6 hover:-translate-y-1",
+    valueWrapper:
+      "gap-1.5 font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl",
+    suffix: "text-3xl font-bold sm:text-4xl",
+    icon: "h-8 w-8 sm:h-9 sm:w-9",
+    label: "mono-caption mt-6 uppercase tracking-[0.2em]",
+  },
+  md: {
+    card: "min-h-32 rounded-xl p-5 hover:-translate-y-0.5",
+    valueWrapper:
+      "gap-1 font-display text-4xl font-bold leading-none tracking-tight",
+    suffix: "text-2xl font-bold",
+    icon: "h-6 w-6",
+    label: "mono-caption mt-4 uppercase tracking-[0.18em]",
+  },
+  sm: {
+    card: "min-h-24 rounded-lg p-4 hover:-translate-y-0.5",
+    valueWrapper:
+      "gap-1 font-display text-2xl font-bold leading-none tracking-tight sm:text-3xl",
+    suffix: "text-lg font-bold sm:text-xl",
+    icon: "h-5 w-5",
+    label:
+      "mt-3 font-mono text-[10px] font-semibold uppercase tracking-[0.16em]",
+  },
+} as const;
+
+const currentColor = colorStyles[color];
+const currentSize = sizeStyles[size];
+---
+
+<article
+  class={`flex flex-col justify-between transition-transform duration-200 ${currentColor.card} ${currentSize.card} ${className}`}
+>
+  <div class={`flex items-center ${currentSize.valueWrapper}`}>
+    <span>{value}</span>
+
+    {suffix && (
+      <span class={`${currentColor.accent} ${currentSize.suffix}`}>
+        {suffix}
+      </span>
+    )}
+
+    {icon === "star" && (
+      <svg
+        class={`${currentColor.accent} ${currentSize.icon}`}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M12 2.25l2.917 5.91 6.523.948-4.72 4.601 1.114 6.497L12 16.738l-5.834 3.069 1.114-6.497-4.72-4.601 6.523-.948L12 2.25z" />
+      </svg>
+    )}
+  </div>
+
+  <p class={`${currentColor.label} ${currentSize.label}`}>{label}</p>
+</article>

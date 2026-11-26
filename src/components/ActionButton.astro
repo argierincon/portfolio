@@ -1,0 +1,55 @@
+---
+interface Props {
+	variant?: "filled" | "outlined";
+	color?: "mashle-red" | "easton-blue" | "wand-brown" | "lunar-yellow";
+	href?: string;
+	type?: "button" | "submit" | "reset";
+	class?: string;
+}
+
+const {
+	variant = "filled",
+	color = "mashle-red",
+	href,
+	type = "button",
+	class: className = "",
+} = Astro.props;
+
+const styles = {
+	filled: {
+		"mashle-red":
+			"border-transparent bg-mashle-red-500 text-chalk-paper hover:bg-mashle-red-600 active:bg-mashle-red-700",
+		"easton-blue":
+			"border-transparent bg-easton-blue-500 text-chalk-paper hover:bg-easton-blue-600 active:bg-easton-blue-700",
+		"wand-brown":
+			"border-transparent bg-wand-brown-500 text-chalk-paper hover:bg-wand-brown-600 active:bg-wand-brown-700",
+		"lunar-yellow":
+			"border-transparent bg-lunar-yellow-500 text-easton-blue-500 hover:bg-lunar-yellow-600 active:bg-lunar-yellow-700",
+	},
+	outlined: {
+		"mashle-red":
+			"border-mashle-red-500 bg-transparent text-mashle-red-500 hover:border-mashle-red-600 hover:bg-mashle-red-100 hover:text-mashle-red-600 active:border-mashle-red-700 active:bg-mashle-red-200 active:text-mashle-red-700",
+		"easton-blue":
+			"border-easton-blue-500 bg-transparent text-easton-blue-500 hover:border-easton-blue-600 hover:bg-easton-blue-100 hover:text-easton-blue-600 active:border-easton-blue-700 active:bg-easton-blue-200 active:text-easton-blue-700",
+		"wand-brown":
+			"border-wand-brown-500 bg-transparent text-wand-brown-500 hover:border-wand-brown-600 hover:bg-wand-brown-100 hover:text-wand-brown-600 active:border-wand-brown-700 active:bg-wand-brown-200 active:text-wand-brown-700",
+		"lunar-yellow":
+			"border-lunar-yellow-500 bg-transparent text-easton-blue-500 hover:border-lunar-yellow-700 hover:bg-lunar-yellow-100 hover:text-easton-blue-500 active:border-lunar-yellow-700 active:bg-lunar-yellow-200 active:text-easton-blue-500",
+	},
+} as const;
+
+const baseClasses =
+	"text-button inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md border px-4 py-4 md:py-3 min-w-[10.625rem] transition-colors duration-150";
+
+const finalClass = `${baseClasses} ${styles[variant][color]} ${className}`;
+---
+
+{href ? (
+	<a href={href} class={finalClass}>
+		<slot />
+	</a>
+) : (
+	<button type={type} class={finalClass}>
+		<slot />
+	</button>
+)}

@@ -1,0 +1,292 @@
+---
+export interface AccordionHighlight {
+  text: string;
+}
+
+export interface AccordionAction {
+  label: string;
+  href: string;
+  variant?: "primary" | "secondary";
+}
+
+export interface AccordionItem {
+  id: string;
+  index: string;
+  meta?: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+  highlights?: readonly string[];
+  tags?: readonly string[];
+  actions?: readonly AccordionAction[];
+  illustrationLabel?: string;
+  /** Variante visual cuando está colapsada */
+  collapsedTone?: "sheet" | "yellow";
+  /** Color del botón circular "+" cuando está colapsada */
+  buttonTone?: "red" | "blue";
+}
+
+interface Props {
+  items: readonly AccordionItem[];
+  defaultOpenIndex?: number;
+  class?: string;
+}
+
+const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
+---
+
+<div
+  data-vertical-accordion
+  class:list={[
+    "flex flex-col gap-4 lg:flex-row lg:items-stretch lg:gap-4",
+    className,
+  ]}
+>
+  {items.map((item, idx) => {
+    const isExpanded = idx === defaultOpenIndex;
+    const isYellowTone = item.collapsedTone === "yellow";
+    const isBlueButton = item.buttonTone === "blue";
+
+    return (
+      <article
+        id={item.id}
+        data-accordion-panel
+        data-expanded={isExpanded ? "true" : "false"}
+        class:list={[
+          "group relative rounded-3xl border border-easton-blue-500 shadow-[4px_4px_0_0_var(--color-wand-brown-500)] transition-all duration-300",
+          isExpanded
+            ? "flex-1 bg-vellum-sheet p-6 sm:p-8 lg:p-10"
+            : [
+                "w-full px-5 py-4 lg:w-24 lg:shrink-0 lg:px-0 lg:py-8",
+                isYellowTone ? "bg-lunar-yellow-500/20" : "bg-vellum-sheet",
+              ],
+        ]}
+      >
+        <!-- CONTENIDO EXPANDIDO -->
+        <div
+          data-accordion-content
+          class:list={[
+            "grid grid-cols-1 gap-8 xl:grid-cols-[1.15fr_0.95fr] xl:items-center",
+            !isExpanded && "hidden",
+          ]}
+        >
+          <div class="space-y-6">
+            <div class="space-y-2">
+              {item.meta && (
+                <p class="font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
+                  {item.index} · {item.meta}
+                </p>
+              )}
+              <h3 class="font-display text-2xl font-bold text-easton-blue-500 sm:text-3xl">
+                {item.title}
+              </h3>
+            </div>
+
+            <p class="body-1 text-easton-blue-500/85">{item.description}</p>
+
+            {item.highlights && item.highlights.length > 0 && (
+              <ul class="space-y-2.5">
+                {item.highlights.map((point) => (
+                  <li class="flex items-start gap-2.5 font-sans text-sm text-easton-blue-500">
+                    <span
+                      class="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-wand-brown-500 text-chalk-paper"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        class="h-2.5 w-2.5"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M2.5 6.2L5 8.7L9.5 3.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {item.tags && item.tags.length > 0 && (
+              <div class="flex flex-wrap gap-2">
+                {item.tags.map((tag) => (
+                  <span class="rounded-full bg-lunar-yellow-500/45 px-3.5 py-1 font-mono text-xs font-medium text-easton-blue-500">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {item.actions && item.actions.length > 0 && (
+              <div class="flex flex-wrap items-center gap-3 pt-1">
+                {item.actions.map((action) => {
+                  const isSecondary = action.variant === "secondary";
+                  return (
+                    <a
+                      href={action.href}
+                      class:list={[
+                        "inline-flex items-center justify-center rounded-xl border border-easton-blue-500 px-5 py-2.5 font-sans text-sm font-semibold shadow-[3px_3px_0_0_var(--color-easton-blue-500)] transition-transform duration-150 hover:-translate-y-0.5",
+                        isSecondary
+                          ? "bg-chalk-paper text-easton-blue-500"
+                          : "bg-mashle-red-500 text-chalk-paper",
+                      ]}
+                    >
+                      {action.label}
+                    </a>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          <!-- Slot opcional para ilustración personalizada; si no se pasa, muestra marco base -->
+          <div class="flex min-h-72 flex-col justify-between rounded-2xl border border-wand-brown-300/50 bg-lunar-yellow-500/15 p-5 sm:p-6">
+            <div class="flex flex-1 items-center justify-center">
+              <slot name={`illustration-${idx}`}>
+                <div class="w-full max-w-md rounded-xl border border-easton-blue-500 bg-chalk-paper p-4 shadow-[4px_4px_0_0_var(--color-easton-blue-500)]">
+                  <div class="mb-3 flex items-center gap-1.5 border-b border-wand-brown-300/40 pb-2">
+                    <span class="h-2.5 w-2.5 rounded-full bg-mashle-red-500" />
+                    <span class="h-2.5 w-2.5 rounded-full bg-lunar-yellow-500" />
+                    <span class="h-2.5 w-2.5 rounded-full bg-easton-blue-500/40" />
+                  </div>
+                  <div class="grid grid-cols-3 gap-2 font-mono text-[10px] text-easton-blue-500">
+                    <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
+                      FLUJO ACTIVO
+                    </div>
+                    <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
+                      MÉTRICAS
+                    </div>
+                    <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
+                      ESTADO OK
+                    </div>
+                  </div>
+                </div>
+              </slot>
+            </div>
+
+            {item.illustrationLabel && (
+              <p class="mt-4 font-mono text-[11px] tracking-widest text-wand-brown-500/80">
+                {item.illustrationLabel}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <!-- PESTaña COLAPSADA -->
+        <button
+          type="button"
+          data-accordion-trigger
+          aria-expanded={isExpanded ? "true" : "false"}
+          class:list={[
+            "w-full cursor-pointer items-center justify-between gap-4 text-left lg:h-full lg:flex-col lg:justify-between lg:text-center",
+            isExpanded ? "hidden" : "flex",
+          ]}
+        >
+          <span class="font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
+            {item.index}
+          </span>
+
+          <span class="font-display text-base font-bold text-easton-blue-500 lg:[writing-mode:vertical-rl] lg:rotate-180 lg:text-xl lg:tracking-wide">
+            {item.shortTitle}
+          </span>
+
+          <span
+            class:list={[
+              "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-mono text-xl font-bold text-chalk-paper shadow-[2px_2px_0_0_var(--color-wand-brown-500)] transition-transform duration-150 group-hover:scale-105",
+              isBlueButton ? "bg-easton-blue-500" : "bg-mashle-red-500",
+            ]}
+            aria-hidden="true"
+          >
+            +
+          </span>
+        </button>
+      </article>
+    );
+  })}
+</div>
+
+<script>
+  const accordions = document.querySelectorAll<HTMLElement>(
+    "[data-vertical-accordion]",
+  );
+
+  accordions.forEach((accordion) => {
+    const panels = Array.from(
+      accordion.querySelectorAll<HTMLElement>("[data-accordion-panel]"),
+    );
+
+    function activatePanel(targetPanel: HTMLElement) {
+      panels.forEach((panel) => {
+        const isSelected = panel === targetPanel;
+        const content = panel.querySelector<HTMLElement>(
+          "[data-accordion-content]",
+        );
+        const trigger = panel.querySelector<HTMLButtonElement>(
+          "[data-accordion-trigger]",
+        );
+        const isYellow = panel.dataset.tone === "yellow";
+
+        panel.dataset.expanded = String(isSelected);
+        trigger?.setAttribute("aria-expanded", String(isSelected));
+
+        if (isSelected) {
+          panel.classList.remove(
+            "w-full",
+            "px-5",
+            "py-4",
+            "lg:w-24",
+            "lg:shrink-0",
+            "lg:px-0",
+            "lg:py-8",
+            "bg-lunar-yellow-500/20",
+          );
+          panel.classList.add(
+            "flex-1",
+            "bg-vellum-sheet",
+            "p-6",
+            "sm:p-8",
+            "lg:p-10",
+          );
+          content?.classList.remove("hidden");
+          trigger?.classList.add("hidden");
+          trigger?.classList.remove("flex");
+        } else {
+          panel.classList.remove(
+            "flex-1",
+            "bg-vellum-sheet",
+            "p-6",
+            "sm:p-8",
+            "lg:p-10",
+          );
+          panel.classList.add(
+            "w-full",
+            "px-5",
+            "py-4",
+            "lg:w-24",
+            "lg:shrink-0",
+            "lg:px-0",
+            "lg:py-8",
+            isYellow ? "bg-lunar-yellow-500/20" : "bg-vellum-sheet",
+          );
+          content?.classList.add("hidden");
+          trigger?.classList.remove("hidden");
+          trigger?.classList.add("flex");
+        }
+      });
+    }
+
+    panels.forEach((panel) => {
+      const trigger = panel.querySelector<HTMLButtonElement>(
+        "[data-accordion-trigger]",
+      );
+      trigger?.addEventListener("click", () => {
+        activatePanel(panel);
+      });
+    });
+  });
+</script>

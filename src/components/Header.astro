@@ -1,0 +1,115 @@
+---
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: readonly NavItem[] = [
+  { label: "SOBRE MÍ", href: "#sobre-mi" },
+  { label: "EXPERIENCIAS", href: "#experiencias" },
+  { label: "STACK", href: "#stack" },
+  { label: "PROYECTOS", href: "#proyectos" },
+  { label: "EDUCACIÓN", href: "#educacion" },
+];
+---
+
+<header class="top-0 z-40 border-b border-wand-brown-300/40 bg-easton-blue/95 backdrop-blur-xs">
+  <div class="container-sections flex h-20 items-center justify-between gap-4">
+    <!-- Marca / Nombre -->
+    <a
+      href="#"
+      class="font-display text-lg font-bold tracking-wider text-easton-blue-500 transition-colors hover:text-mashle-red-500 sm:text-xl"
+    >
+      ARGIE RINCON
+    </a>
+
+    <!-- Navegación en escritorio -->
+    <nav aria-label="Navegación principal" class="hidden lg:block">
+      <ul class="flex items-center gap-7">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="text-xs font-semibold tracking-widest text-easton-blue-500 transition-colors hover:text-mashle-red-500"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- CTA + Botón hamburguesa en móvil -->
+    <div class="flex items-center gap-3">
+      <a
+        href="#contacto"
+        class="inline-flex items-center justify-center rounded-md bg-mashle-red-500 px-5 py-2.5 font-sans text-sm font-semibold text-chalk-paper transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
+      >
+        Hablemos
+      </a>
+
+      <button
+        type="button"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Abrir menú de navegación"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-easton-blue-500 bg-vellum-sheet text-easton-blue-500 lg:hidden"
+      >
+        <svg
+          class="h-5 w-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menú desplegable en móvil -->
+  <nav
+    id="mobile-nav"
+    data-mobile-menu
+    aria-label="Navegación móvil"
+    class="hidden border-t border-wand-brown-300/40 bg-vellum-sheet lg:hidden"
+  >
+    <ul class="container-sections flex flex-col gap-3 py-4">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            data-mobile-link
+            class="block py-1.5 font-mono text-xs font-semibold tracking-widest text-easton-blue-500 transition-colors hover:text-mashle-red-500"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggleBtn =
+    document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const mobileMenu = document.querySelector<HTMLElement>("[data-mobile-menu]");
+  const mobileLinks =
+    document.querySelectorAll<HTMLAnchorElement>("[data-mobile-link]");
+
+  toggleBtn?.addEventListener("click", () => {
+    const isOpen = toggleBtn.getAttribute("aria-expanded") === "true";
+    toggleBtn.setAttribute("aria-expanded", String(!isOpen));
+    mobileMenu?.classList.toggle("hidden", isOpen);
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      toggleBtn?.setAttribute("aria-expanded", "false");
+      mobileMenu?.classList.add("hidden");
+    });
+  });
+</script>
