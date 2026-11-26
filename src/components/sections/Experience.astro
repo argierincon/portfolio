@@ -1,0 +1,455 @@
+---
+import ExperienceCard from "../ExperienceCard.astro";
+import Chip from "../Chip.astro";
+import ActionButton from "../ActionButton.astro";
+
+type AccentColor = "lunar-yellow" | "mashle-red" | "easton-blue" | "wand-brown";
+type MilestoneIcon = "microservices" | "api" | "transition" | "clipboard";
+
+interface TimelineEntry {
+  side: "left" | "right";
+  year: string;
+  milestone: string;
+  icon: MilestoneIcon;
+  period: string;
+  role: string;
+  company: string;
+  domain?: string;
+  description: string;
+  tags: readonly string[];
+  accentColor?: AccentColor;
+}
+
+const timeline: readonly TimelineEntry[] = [
+  {
+    side: "left",
+    year: "2025",
+    milestone: "8 Secciones · Auth0 & Simulador de Compra",
+    icon: "microservices",
+    period: "FEBRERO 2025 — MARZO 2025",
+    role: "Fullstack Developer",
+    company: "Rumbo",
+    domain: "Lima, Perú · eCommerce / Coworking",
+    description:
+      "Desarrollé 8 secciones interactivas responsive con Next.js y TypeScript, control de accesos por roles con Auth0 y middlewares protegidos, sincronización con Zustand y simulador de compra/pagos con lógica encapsulada en hooks.",
+    tags: ["Next.js", "TypeScript", "Auth0", "Zustand", "REST APIs"],
+    accentColor: "lunar-yellow",
+  },
+  {
+    side: "right",
+    year: "2024",
+    milestone: "Migración Vue 2 → Vue 3 · 5 Meses",
+    icon: "api",
+    period: "DICIEMBRE 2023 — ABRIL 2024",
+    role: "Frontend Developer",
+    company: "Securitec",
+    domain: "Contrato Temporal · Contact Center",
+    description:
+      "Migré componentes legacy de Vue 2 a Vue 3, desarrollé nodos de configuración para módulos IVR, refactoricé Workspace y WebChat, gestioné estados con Pinia/Vuex e integré servicios REST en Python.",
+    tags: ["Vue 3", "TypeScript", "Pinia", "Vuex", "SASS", "REST API"],
+    accentColor: "lunar-yellow",
+  },
+  {
+    side: "left",
+    year: "2023",
+    milestone: "+47 Componentes · 7 Landings · 9 Módulos Pinia",
+    icon: "transition",
+    period: "DICIEMBRE 2022 — JUNIO 2023",
+    role: "Frontend Developer",
+    company: "Lúcuma Labs",
+    domain: "Lima, Perú · JSON-Driven UI",
+    description:
+      "Construí un sistema de diseño con +47 componentes reutilizables, un generador JSON-driven para 7 tipos de landings en Vue.js, Nuxt 3 y TypeScript, 9 módulos de Pinia, validación con VeeValidate/Yup, plantillas en SendGrid y entrevistas técnicas.",
+    tags: [
+      "Vue.js",
+      "Nuxt 3",
+      "TypeScript",
+      "Pinia",
+      "VeeValidate",
+      "SendGrid",
+    ],
+    accentColor: "lunar-yellow",
+  },
+  {
+    side: "right",
+    year: "2021 — 2022",
+    milestone: "SaaS Multi-Tenant · 1 Año 7 Meses",
+    icon: "clipboard",
+    period: "MARZO 2021 — SEPTIEMBRE 2022",
+    role: "Frontend Developer",
+    company: "Blooz",
+    domain: "Lima, Perú · Logística Última Milla",
+    description:
+      "Desarrollé flujos multi-tenant de logística (calculadora de envíos, ruteo y Google Maps), un microservicio en Node.js/Express con WhatsApp API, despliegues en AWS CloudFront y liderazgo de entrevistas técnicas y ceremonias Scrum.",
+    tags: [
+      "Vue",
+      "Nuxt",
+      "Vuex",
+      "Node.js",
+      "Google Maps API",
+      "AWS CloudFront",
+    ],
+    accentColor: "lunar-yellow",
+  },
+];
+---
+
+<section class="container-sections space-y-12">
+  <div class="max-w-xl space-y-6">
+    <h2 class="title-sections">Experiencias</h2>
+    <p class="body-1">
+      Sin atajos ni trucos mágicos: construyo software sólido a base de
+      disciplina, arquitectura limpia y ejecución constante.
+    </p>
+  </div>
+
+  <div class="relative">
+    <!-- Línea vertical: alineada desde el inicio de la primera tarjeta hasta el final de la última -->
+    <div
+      class="pointer-events-none absolute left-3.5 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-wand-brown-500/70 lg:left-1/2 lg:bottom-[-8px]"
+      aria-hidden="true"
+    />
+
+    <div class="space-y-12">
+      {timeline.map((item) => {
+        const isLeft = item.side === "left";
+
+        return (
+          <div class="relative grid grid-cols-[1.75rem_1fr] items-start gap-1 lg:grid-cols-[1fr_3rem_1fr] lg:items-center lg:gap-8">
+            <!-- Nodo en MOBILE (alineado a la línea izquierda) -->
+            <div
+              class="flex h-10 w-7 shrink-0 items-center justify-center lg:hidden"
+              aria-hidden="true"
+            >
+              <svg
+                class="relative z-10 h-10 w-10 shrink-0 text-wand-brown-500"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 1.5C12.5 7.8 16.2 11.5 22.5 12C16.2 12.5 12.5 16.2 12 22.5C11.5 16.2 7.8 12.5 1.5 12C7.8 11.5 11.5 7.8 12 1.5Z"
+                  class="stroke-chalk-paper"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <!-- Columna izquierda en desktop (y bloque principal en mobile) -->
+            <div
+              class={
+                !isLeft
+                  ? "flex flex-col items-start gap-3 lg:flex lg:flex-col lg:items-end lg:px-4 lg:text-right"
+                  : "lg:px-4"
+              }
+            >
+              {isLeft ? (
+                <div class="flex flex-col gap-6 lg:block">
+                  <!-- Año + hito en mobile encima de la card -->
+                  <div class="flex flex-col items-start gap-2.5 lg:hidden">
+                    <span class="font-display text-4xl font-bold leading-none tracking-tight text-easton-blue-500">
+                      {item.year}
+                    </span>
+                    <Chip
+                      size="sm"
+                      variant="soft"
+                      style="outlined"
+                      color="wand-brown"
+                      case="normal"
+                      weight="regular"
+                      class="bg-vellum-sheet"
+                    >
+                      {item.milestone}
+                    </Chip>
+                  </div>
+
+                  <ExperienceCard
+                    period={item.period}
+                    role={item.role}
+                    company={item.company}
+                    domain={item.domain}
+                    description={item.description}
+                    tags={item.tags}
+                    accentColor={item.accentColor}
+                  />
+                </div>
+              ) : (
+                <>
+                  <!-- En mobile: año arriba, luego card, luego hito -->
+                  <div class="flex flex-col items-start gap-2.5 lg:hidden">
+                    <span class="font-display text-4xl font-bold leading-none tracking-tight text-easton-blue-500">
+                      {item.year}
+                    </span>
+                    <Chip
+                      size="sm"
+                      variant="soft"
+                      style="outlined"
+                      color="wand-brown"
+                      case="normal"
+                      weight="regular"
+                      class="bg-vellum-sheet"
+                    >
+                      {item.milestone}
+                    </Chip>
+                  </div>
+
+                  <div class="w-full lg:hidden">
+                    <ExperienceCard
+                      period={item.period}
+                      role={item.role}
+                      company={item.company}
+                      domain={item.domain}
+                      description={item.description}
+                      tags={item.tags}
+                      accentColor={item.accentColor}
+                    />
+                  </div>
+
+                  <!-- En desktop: año + icono + chip -->
+                  <div
+                    class={`hidden lg:flex items-center gap-3 ${item.icon === "transition" ? "flex-col items-end" : "flex-row-reverse"}`}
+                  >
+                    <span class="font-display text-5xl font-bold tracking-tight text-easton-blue-500">
+                      {item.year}
+                    </span>
+
+                    {item.icon === "api" && (
+                      <svg
+                        class="h-14 w-14 text-easton-blue-500"
+                        viewBox="0 0 64 64"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="20"
+                          y="6"
+                          width="24"
+                          height="12"
+                          rx="2"
+                          class="fill-vellum-sheet"
+                        />
+                        <path
+                          d="M32 18v8M20 32h24v12H20z"
+                          class="fill-vellum-sheet"
+                        />
+                        <text
+                          x="32"
+                          y="41"
+                          text-anchor="middle"
+                          class="fill-easton-blue-500 stroke-none font-mono text-[9px] font-bold"
+                        >
+                          API
+                        </text>
+                        <path d="M12 36v14h8M44 38h8v12" />
+                        <ellipse
+                          cx="12"
+                          cy="54"
+                          rx="7"
+                          ry="3.5"
+                          class="fill-vellum-sheet"
+                        />
+                        <path d="M5 54v6c0 2 3.1 3.5 7 3.5s7-1.5 7-3.5v-6" />
+                        <path d="M46 50h12v10H46z" class="fill-vellum-sheet" />
+                      </svg>
+                    )}
+
+                    {item.icon === "clipboard" && (
+                      <svg
+                        class="h-12 w-12 text-easton-blue-500"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <rect
+                          x="10"
+                          y="8"
+                          width="22"
+                          height="30"
+                          rx="2"
+                          class="fill-vellum-sheet"
+                        />
+                        <path d="M16 15h10M16 21h10M16 27h6" />
+                        <circle
+                          cx="34"
+                          cy="33"
+                          r="6"
+                          class="fill-vellum-sheet stroke-wand-brown-500"
+                        />
+                        <circle
+                          cx="34"
+                          cy="33"
+                          r="2"
+                          class="stroke-wand-brown-500"
+                        />
+                      </svg>
+                    )}
+                  </div>
+
+                  <div class="hidden lg:block">
+                    <Chip
+                      size="sm"
+                      variant="soft"
+                      style="outlined"
+                      color="wand-brown"
+                      case="normal"
+                      weight="regular"
+                      class="bg-vellum-sheet"
+                    >
+                      {item.milestone}
+                    </Chip>
+                  </div>
+                </>
+              )}
+            </div>
+
+            <!-- Nodo central en desktop -->
+            <div
+              class="relative z-10 hidden items-center justify-center lg:flex"
+              aria-hidden="true"
+            >
+              <svg
+                class="h-16 w-16 text-wand-brown-500"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 1.5C12.5 7.8 16.2 11.5 22.5 12C16.2 12.5 12.5 16.2 12 22.5C11.5 16.2 7.8 12.5 1.5 12C7.8 11.5 11.5 7.8 12 1.5Z"
+                  class="stroke-chalk-paper"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+
+            <!-- Columna derecha en desktop (solo visible en lg+ cuando side="left") -->
+            <div
+              class={
+                isLeft
+                  ? "hidden lg:flex lg:flex-col lg:items-start lg:gap-3 lg:px-4 lg:text-left"
+                  : "hidden lg:block lg:px-4"
+              }
+            >
+              {isLeft ? (
+                <>
+                  <div class="flex flex-wrap items-center gap-4">
+                    <span class="font-display text-5xl font-bold tracking-tight text-easton-blue-500">
+                      {item.year}
+                    </span>
+
+                    {item.icon === "microservices" && (
+                      <svg
+                        class="h-12 w-14 text-easton-blue-500"
+                        viewBox="0 0 64 48"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path d="M6 24h10M12 19l4 5-4 5" />
+                        <rect
+                          x="22"
+                          y="8"
+                          width="22"
+                          height="8"
+                          rx="1.5"
+                          class="fill-vellum-sheet"
+                        />
+                        <rect
+                          x="22"
+                          y="20"
+                          width="22"
+                          height="8"
+                          rx="1.5"
+                          class="fill-vellum-sheet"
+                        />
+                        <rect
+                          x="22"
+                          y="32"
+                          width="22"
+                          height="8"
+                          rx="1.5"
+                          class="fill-vellum-sheet"
+                        />
+                        <path d="M44 12h6v24h-6M50 24h8" />
+                      </svg>
+                    )}
+
+                    {item.icon === "transition" && (
+                      <div class="flex flex-col items-center gap-1">
+                        <div class="flex items-center gap-2">
+                          <svg
+                            class="h-10 w-10 text-easton-blue-500"
+                            viewBox="0 0 40 40"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M6 32V18l8 5v-5l8 5v9H6z"
+                              class="fill-vellum-sheet"
+                            />
+                            <path d="M18 14V7h4v10" />
+                          </svg>
+                          <span class="font-mono text-sm font-bold text-wand-brown-500">
+                            →
+                          </span>
+                          <div class="flex h-10 w-12 flex-col items-center justify-center rounded border border-easton-blue-500 bg-vellum-sheet font-mono text-[10px] font-bold text-easton-blue-500">
+                            <span>&lt;/&gt;</span>
+                          </div>
+                        </div>
+                        <span class="font-mono text-[10px] leading-tight text-easton-blue-500/80">
+                          JSON-Driven · Design System
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  <Chip
+                    size="sm"
+                    variant="soft"
+                    style="outlined"
+                    color="wand-brown"
+                    case="normal"
+                    weight="regular"
+                    class="bg-vellum-sheet"
+                  >
+                    {item.milestone}
+                  </Chip>
+                </>
+              ) : (
+                <ExperienceCard
+                  period={item.period}
+                  role={item.role}
+                  company={item.company}
+                  domain={item.domain}
+                  description={item.description}
+                  tags={item.tags}
+                  accentColor={item.accentColor}
+                />
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <div class="mx-auto mt-16 w-fit flex flex-col items-center gap-6">
+    <h3 class="text-easton-blue-500">¿Siguiente Reto?</h3>
+
+    <div class="flex flex-wrap items-center gap-6">
+      <ActionButton
+        variant="filled"
+        color="mashle-red"
+        class="w-full sm:w-auto"
+      >
+        Hablemos
+      </ActionButton>
+    </div>
+  </div>
+</section>

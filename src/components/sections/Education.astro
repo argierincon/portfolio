@@ -1,0 +1,191 @@
+---
+interface EducationItem {
+  number: string;
+  title: string;
+  subtitle: string;
+  badge: string;
+  credentialNote?: string;
+}
+
+const items: readonly EducationItem[] = [
+  {
+    number: "01",
+    title: "Bootcamp Java Full Stack",
+    subtitle: "InnoLab · 800+ horas de formación intensiva",
+    badge: "Java · Spring Boot",
+    credentialNote:
+      "Formación intensiva en desarrollo backend, APIs REST y frontend.",
+  },
+  {
+    number: "02",
+    title: "Oracle Java SE Certified Associate",
+    subtitle: "Oracle Academy · Certificación oficial",
+    badge: "Java 25",
+    credentialNote:
+      "Fundamentos del lenguaje, POO, colecciones y manejo de excepciones.",
+  },
+  {
+    number: "03",
+    title: "Spring Framework & Microservices Specialist",
+    subtitle: "Spring Academy · Arquitectura y patrones",
+    badge: "Spring Boot",
+    credentialNote:
+      "Diseño de servicios desacoplados, configuración y buenas prácticas.",
+  },
+  {
+    number: "04",
+    title: "AWS Cloud Practitioner",
+    subtitle: "Amazon Web Services · Cloud Architecture",
+    badge: "AWS Cloud",
+    credentialNote:
+      "Arquitectura cloud, seguridad, redes y modelos de despliegue.",
+  },
+  {
+    number: "05",
+    title: "Administración Industrial",
+    subtitle: "Instituto Tecnológico · Gestión de procesos y flujos",
+    badge: "Procesos · Kaizen",
+    credentialNote:
+      "Optimización operativa, mejora continua y análisis de flujos.",
+  },
+  {
+    number: "06",
+    title: "SQL & Modelado de Bases de Datos",
+    subtitle: "PostgreSQL & MySQL Advanced",
+    badge: "Relacional",
+    credentialNote:
+      "Modelado relacional, normalización, índices y consultas eficientes.",
+  },
+];
+---
+
+<section id="educacion" class="container-sections space-y-6">
+  <!-- Encabezado de sección -->
+  <div class="max-w-2xl space-y-6">
+    <h2 class="title-sections">Educación</h2>
+    <p class="body-1">
+      Trayectoria académica, certificaciones técnicas y formación continua.
+    </p>
+  </div>
+
+  <!-- Panel principal dividido en 2 columnas -->
+  <div class="grid grid-cols-1 overflow-hidden rounded-3xl border border-easton-blue-500 bg-vellum-sheet shadow-[6px_6px_0_0_var(--color-wand-brown-500)] lg:grid-cols-[0.95fr_1.35fr]">
+    <!-- Columna izquierda: editorial + composición geométrica -->
+    <div class="flex flex-col justify-between border-b border-easton-blue-500 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
+      <div class="space-y-6">
+        <span class="block font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
+          05
+        </span>
+
+        <h3 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-easton-blue-500 sm:text-5xl">
+          Siempre
+          <br />
+          aprendiendo<span class="text-mashle-red-500">.</span>
+        </h3>
+
+        <p class="body-1 max-w-md text-easton-blue-500/85">
+          Certificaciones y especializaciones enfocadas en bases de datos,
+          microservicios, desarrollo backend y arquitectura de software.
+        </p>
+      </div>
+
+      <!-- Composición geométrica inferior -->
+      <div class="relative mt-10 flex min-h-56 items-end justify-between pt-6">
+        <!-- Líneas punteadas de cuadrícula decorativa a la derecha -->
+        <div
+          class="pointer-events-none absolute right-6 top-6 h-28 w-28"
+          aria-hidden="true"
+        >
+          <div class="absolute inset-x-0 top-1/2 border-t border-dashed border-wand-brown-500/50" />
+          <div class="absolute inset-y-0 left-1/2 border-l border-dashed border-wand-brown-500/50" />
+          <!-- Estrella marrón superior derecha -->
+          <svg
+            class="absolute -right-2 -top-2 h-6 w-6 text-wand-brown-500"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M12 1.5C12.5 7.8 16.2 11.5 22.5 12C16.2 12.5 12.5 16.2 12 22.5C11.5 16.2 7.8 12.5 1.5 12C7.8 11.5 11.5 7.8 12 1.5Z" />
+          </svg>
+          <!-- Estrella amarilla pequeña -->
+          <svg
+            class="absolute bottom-3 left-7 h-4 w-4 text-lunar-yellow-500"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M12 1.5C12.5 7.8 16.2 11.5 22.5 12C16.2 12.5 12.5 16.2 12 22.5C11.5 16.2 7.8 12.5 1.5 12C7.8 11.5 11.5 7.8 12 1.5Z" />
+          </svg>
+        </div>
+
+        <!-- Figuras geométricas -->
+        <div class="relative z-10 flex w-full items-end">
+          <!-- Cuarto de círculo marrón -->
+          <div
+            class="h-28 w-24 shrink-0 rounded-tl-full bg-wand-brown-500"
+            aria-hidden="true"
+          />
+
+          <div class="flex flex-1 flex-col">
+            <!-- Círculo amarillo superior -->
+            <div class="flex items-end gap-4 pl-2">
+              <span
+                class="h-20 w-20 shrink-0 rounded-full bg-lunar-yellow-500"
+                aria-hidden="true"
+              />
+            </div>
+
+            <!-- Rectángulo rojo + semicírculo inferior azul -->
+            <div class="relative flex items-center bg-mashle-red-500 px-4 py-3">
+              <span class="rounded bg-lunar-yellow-500 px-3 py-1 font-mono text-[11px] font-bold tracking-wider text-easton-blue-500">
+                ESTUDIO CONSTANTE
+              </span>
+
+              <span
+                class="ml-auto h-11 w-20 shrink-0 rounded-b-full bg-easton-blue-500"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: listado de certificaciones y formación -->
+    <div class="flex flex-col justify-between bg-chalk-paper/60">
+      <ul class="divide-y divide-easton-blue-500/20">
+        {items.map((item) => (
+          <li class="group transition-colors duration-150 hover:bg-easton-blue-500">
+            <div class="flex flex-col justify-between gap-3 px-6 py-5 sm:flex-row sm:items-center sm:gap-6 sm:px-8">
+              <div class="flex items-start gap-5 sm:items-center">
+                <span class="font-mono text-sm font-bold text-wand-brown-500 transition-colors group-hover:text-lunar-yellow-500">
+                  {item.number}
+                </span>
+
+                <div class="space-y-0.5">
+                  <h4 class="font-sans text-base font-bold text-easton-blue-500 transition-colors group-hover:text-chalk-paper sm:text-lg">
+                    {item.title}
+                  </h4>
+                  <p class="font-sans text-xs text-easton-blue-500/75 transition-colors group-hover:text-lunar-yellow-500 sm:text-sm">
+                    {item.subtitle}
+                  </p>
+                  {item.credentialNote && (
+                    <p class="hidden pt-1 font-sans text-xs text-chalk-paper/85 group-hover:block">
+                      {item.credentialNote}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <span class="w-fit shrink-0 rounded-md bg-lunar-yellow-500 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+                {item.badge}
+              </span>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <p class="border-t border-easton-blue-500/20 px-6 py-4 font-sans text-xs text-wand-brown-500 sm:px-8">
+        Pasa el cursor sobre cada certificación para ver credenciales y detalles
+      </p>
+    </div>
+  </div>
+</section>

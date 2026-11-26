@@ -1,0 +1,126 @@
+---
+import StatCard from "../StatCard.astro";
+---
+
+<section
+  id="about"
+  class="container-sections grid items-center lg:grid-cols-12"
+>
+  <!-- Columna izquierda -->
+  <div class="space-y-6 lg:col-span-7">
+    <!-- Encabezado -->
+    <h2 class="title-sections">Acerca de mí</h2>
+
+    <!-- Dos columnas de texto (24px entre columnas) -->
+    <div class="grid gap-1.5 md:gap-6 sm:grid-cols-2">
+      <p class="body-1">
+        Hola, ¡soy Argie! Nací en Venezuela y crecí en Colombia, pero desde hace
+        7 años vivo en Perú, así que ya me siento casi una peruana más, jaja.
+        Durante este tiempo, mi curiosidad y ganas de crecer me llevaron de la
+        Administración Industrial al apasionante mundo del desarrollo software.
+        No creo en los atajos ni en los trucos mágicos: creo en la disciplina
+        diaria, el orden y la constancia para construir soluciones de calidad.
+      </p>
+
+      <p class="body-1">
+        Cuando no estoy escribiendo código en Java o Spring Boot, me gusta leer,
+        aprender cosas nuevas o conectarme con otras personas para seguir
+        mejorando. Me apasiona afrontar nuevos retos y colaborar con equipos que
+        buscan marcar la diferencia. ¡Sigamos construyendo juntos!
+      </p>
+    </div>
+
+    <div class="max-w-md grid grid-cols-2 gap-4">
+      <StatCard
+        value={450}
+        suffix="+"
+        label="LeetCode"
+        size="sm"
+        color="wand-brown"
+      />
+      <StatCard
+        value={500}
+        suffix="+"
+        label="CodeChef"
+        size="sm"
+        color="easton-blue"
+      />
+      <StatCard
+        value={277}
+        suffix="+"
+        label="GeeksforGeeks"
+        size="sm"
+        color="easton-blue"
+      />
+      <StatCard
+        value={18}
+        icon="star"
+        label="HackerRank Stars"
+        size="sm"
+        color="mashle-red"
+      />
+    </div>
+
+    <!-- Chips de intereses (24px arriba desde los párrafos) -->
+    <!-- <div class="flex flex-wrap items-center gap-3">
+      <span class="mono-body-2 rounded-full bg-lunar-yellow-500 px-4 py-1.5 text-easton-blue-500">
+        Lectura y estudio
+      </span>
+      <span class="mono-body-2 rounded-full bg-lunar-yellow-500 px-4 py-1.5 text-easton-blue-500">
+        Desarrollo backend
+      </span>
+      <span class="mono-body-2 rounded-full bg-lunar-yellow-500 px-4 py-1.5 text-easton-blue-500">
+        Sistemas y procesos
+      </span>
+      <span class="mono-body-2 rounded-full bg-lunar-yellow-500 px-4 py-1.5 text-easton-blue-500">
+        Colaboración
+      </span>
+    </div> -->
+  </div>
+
+  <!-- Columna derecha -->
+  <!-- Columna derecha -->
+  <div class="relative mt-10 lg:col-span-5 lg:mt-0">
+    <div class="relative mx-auto max-w-md pt-4 pb-6 pr-4 sm:pr-6">
+      <!-- Bloques geométricos y marco decorativo -->
+      <div class="pointer-events-none select-none" aria-hidden="true">
+        <!-- Bloque marrón central -->
+        <div class="absolute right-12 top-32 h-28 w-24 bg-wand-brown-500/90 sm:right-14 sm:h-32 sm:w-28" />
+
+        <!-- Bloque marrón inferior derecho -->
+        <div class="absolute bottom-2 right-0 h-32 w-20 bg-wand-brown-500 sm:h-36 sm:w-24" />
+
+        <!-- Marco fino con esquina redondeada detrás de la foto inferior -->
+        <div class="absolute bottom-10 left-0 h-56 w-64 rounded-3xl border border-easton-blue-500/45 sm:h-64 sm:w-72" />
+      </div>
+
+      <!-- Foto superior con forma de arco (reemplaza src por la URL directa de Pixabay) -->
+      <div class="relative z-10 ml-auto w-64 overflow-hidden rounded-t-full border-2 border-easton-blue-500 bg-vellum-sheet shadow-[6px_6px_0_0_rgba(12,25,44,0.12)] sm:w-72">
+        <img
+          src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849824_1280.jpg"
+          alt="Cuaderno y notas de estudio sobre escritorio"
+          class="h-64 w-full object-cover sm:h-72"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Círculo amarillo superpuesto entre ambas fotos -->
+      <div
+        class="pointer-events-none relative z-30 -mt-12 ml-auto mr-20 flex justify-end sm:mr-24"
+        aria-hidden="true"
+      >
+        <span class="h-24 w-24 rounded-full border-2 border-easton-blue-500/20 bg-lunar-yellow-500 sm:h-28 sm:w-28" />
+      </div>
+
+      <!-- Foto inferior con esquinas redondeadas (reemplaza src por la URL directa de Pixabay) -->
+      <div class="relative z-20 -mt-14 w-64 overflow-hidden rounded-3xl border border-easton-blue-500 bg-[#11151c] shadow-[6px_6px_0_0_var(--color-wand-brown-500)] sm:w-72">
+        <img
+          src="https://m.media-amazon.com/images/I/81r6Ia6foWL.jpg"
+          alt="Entorno de desarrollo con código en pantalla"
+          class="h-56 w-full object-cover sm:h-64"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
