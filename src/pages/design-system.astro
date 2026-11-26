@@ -1,0 +1,1192 @@
+---
+import Layout from "../layouts/Layout.astro";
+import StatCard from "../components/StatCard.astro";
+import Chip from "../components/Chip.astro";
+---
+
+<Layout>
+	<div class="mx-auto max-w-7xl space-y-12 my-10 border-b border-easton-blue-200 pb-6">
+		<!-- ENCABEZADOS H1 - H6 -->
+		<section class="space-y-6">
+			<header class="mb-10">
+				<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+					Headers · Cinzel
+				</span>
+				<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+					Muestrario de Encabezados
+				</h1>
+			</header>
+
+			<div class="space-y-6 rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6">
+				<div class="border-b border-easton-blue-100 pb-5">
+					<span class="caption text-wand-brown-500">
+						H1 · 900 · Mobile 36px / Desktop 54px · LH 1.2
+					</span>
+					<h1 class="mt-1 text-easton-blue-500">Encabezado H1 Principal</h1>
+				</div>
+
+				<div class="border-b border-easton-blue-100 pb-5">
+					<span class="caption text-wand-brown-500">
+						H2 · 900 · Mobile 32px / Desktop 48px · LH 1.2
+					</span>
+					<h2 class="mt-1 text-easton-blue-500">Encabezado H2 de Sección</h2>
+				</div>
+
+				<div class="border-b border-easton-blue-100 pb-5">
+					<span class="caption text-wand-brown-500">
+						H3 · 700 · Mobile 28px / Desktop 38px · LH 1.3
+					</span>
+					<h3 class="mt-1 text-easton-blue-500">Encabezado H3 Subtítulo</h3>
+				</div>
+
+				<div class="border-b border-easton-blue-100 pb-5">
+					<span class="caption text-wand-brown-500">
+						H4 · 700 · Mobile 24px / Desktop 28px · LH 1.3
+					</span>
+					<h4 class="mt-1 text-easton-blue-500">Encabezado H4 Tarjeta</h4>
+				</div>
+
+				<div class="border-b border-easton-blue-100 pb-5">
+					<span class="caption text-wand-brown-500">
+						H5 · 700 · Mobile 18px / Desktop 20px · LH 1.3
+					</span>
+					<h5 class="mt-1 text-easton-blue-500">Encabezado H5 Menor</h5>
+				</div>
+
+				<div>
+					<span class="caption text-wand-brown-500">
+						H6 · 400 · Mobile 16px / Desktop 18px · LH 1.3
+					</span>
+					<h6 class="mt-1 text-easton-blue-500">Encabezado H6 Etiqueta</h6>
+				</div>
+			</div>
+		</section>
+
+		<!-- SUBTÍTULOS Y TEXTO -->
+		<section class="space-y-6">
+			<header class="mb-10">
+				<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+					Typography Utilities · Plus Jakarta Sans
+				</span>
+				<h2 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+					Muestrario de Subtítulos y Texto
+				</h2>
+			</header>
+
+			<div class="grid gap-6 rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 md:grid-cols-2">
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="caption text-wand-brown-500">
+						.subtitle-1 · 700 · Mobile 14px (0.875rem) / Desktop 16px (1rem) ·
+						LH 1.5
+					</span>
+					<p class="subtitle-1 text-easton-blue-500">
+						Texto de subtítulo principal para destacar bloques o resúmenes.
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="caption text-wand-brown-500">
+						.subtitle-2 · 600 · Mobile 14px (0.875rem) / Desktop 16px (1rem) ·
+						LH 1.5
+					</span>
+					<p class="subtitle-2 text-easton-blue-500">
+						Texto de subtítulo secundario para destacar bloques o resúmenes.
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="caption text-wand-brown-500">
+						.subtitle-3 · 600 · Mobile 12px (0.75rem) / Desktop 14px (0.875rem)
+						· LH 1.5
+					</span>
+					<p class="subtitle-3 text-easton-blue-500">
+						Texto de subtítulo terciario para encabezados de apoyo o metadatos.
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="caption text-wand-brown-500">
+						.body-1 · 400 · Mobile 14px (0.875rem) / Desktop 16px (1rem) · LH
+						1.5
+					</span>
+					<p class="body-1 text-obsidian-ink">
+						Párrafo principal de lectura cómoda con interlineado 1.5 y buen
+						contraste sobre fondo claro.
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="caption text-wand-brown-500">
+						.body-2 · 400 · Mobile 12px (0.75rem) / Desktop 14px (0.875rem) · LH
+						1.5
+					</span>
+					<p class="body-2 text-obsidian-ink">
+						Texto secundario para descripciones compactas, tarjetas o notas
+						complementarias.
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="caption text-wand-brown-500">
+						.text-button · 600 · Mobile 14px (0.875rem) / Desktop 16px (1rem) ·
+						LH 1.5
+					</span>
+					<p class="text-button text-mashle-red-500">
+						Etiqueta tipográfica para acciones y botones
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="caption text-wand-brown-500">
+						.caption · 400 · Mobile 10px (0.625rem) / Desktop 12px (0.75rem) ·
+						LH 1.5
+					</span>
+					<p class="caption text-wand-brown-500">
+						Nota al pie, aclaración o dato auxiliar de tamaño reducido.
+					</p>
+				</div>
+
+				<div class="space-y-1 md:col-span-2">
+					<span class="caption text-wand-brown-500">
+						.overline · 500 · 10px (0.625rem) · LH 1.5
+					</span>
+					<p class="overline text-easton-blue-500">
+						Antetítulo o categoría superior en mayúsculas
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- SUBTÍTULOS Y TEXTO · JETBRAINS MONO -->
+		<section class="space-y-6">
+			<header class="mb-10">
+				<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+					Typography Utilities · JetBrains Mono
+				</span>
+				<h2 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+					Muestrario de Subtítulos y Texto (Mono)
+				</h2>
+			</header>
+
+			<div class="grid gap-6 rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 md:grid-cols-2">
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="mono-caption text-wand-brown-500">
+						.mono-subtitle-1 · 700 · Mobile 14px (0.875rem) / Desktop 16px
+						(1rem) · LH 1.5
+					</span>
+					<p class="mono-subtitle-1 text-easton-blue-500">
+						const moduleName = "HexagonalArchitecture";
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="mono-caption text-wand-brown-500">
+						.mono-subtitle-2 · 600 · Mobile 14px (0.875rem) / Desktop 16px
+						(1rem) · LH 1.5
+					</span>
+					<p class="mono-subtitle-2 text-easton-blue-500">
+						GET /api/v1/products · 200 OK
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="mono-caption text-wand-brown-500">
+						.mono-subtitle-3 · 600 · Mobile 12px (0.75rem) / Desktop 14px
+						(0.875rem) · LH 1.5
+					</span>
+					<p class="mono-subtitle-3 text-easton-blue-500">
+						spring.profiles.active=dev
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="mono-caption text-wand-brown-500">
+						.mono-body-1 · 400 · Mobile 14px (0.875rem) / Desktop 16px (1rem) ·
+						LH 1.5
+					</span>
+					<p class="mono-body-1 text-obsidian-ink">
+						// Bloque de código o salida técnica con interlineado 1.5
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="mono-caption text-wand-brown-500">
+						.mono-body-2 · 400 · Mobile 12px (0.75rem) / Desktop 14px (0.875rem)
+						· LH 1.5
+					</span>
+					<p class="mono-body-2 text-obsidian-ink">
+						docker compose up -d --build
+					</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="mono-caption text-wand-brown-500">
+						.mono-text-button · 600 · Mobile 14px (0.875rem) / Desktop 16px
+						(1rem) · LH 1.5
+					</span>
+					<p class="mono-text-button text-mashle-red-500">[ RUN_TESTS ]</p>
+				</div>
+
+				<div class="space-y-1 border-b border-easton-blue-100 pb-4">
+					<span class="mono-caption text-wand-brown-500">
+						.mono-caption · 400 · Mobile 10px (0.625rem) / Desktop 12px
+						(0.75rem) · LH 1.5
+					</span>
+					<p class="mono-caption text-wand-brown-500">v2.4.0 · build #1084</p>
+				</div>
+
+				<div class="space-y-1 md:col-span-2">
+					<span class="mono-caption text-wand-brown-500">
+						.mono-overline · 500 · 10px (0.625rem) · LH 1.5
+					</span>
+					<p class="mono-overline text-easton-blue-500">
+						SYSTEM TELEMETRY · TERMINAL OUTPUT
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<div class="mx-auto max-w-7xl space-y-4 my-10 border-b border-easton-blue-200 pb-6">
+		<header class="mb-10">
+			<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+				CHIPS
+			</span>
+			<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+				Muestrario de Chips
+			</h1>
+			<p class="mt-2 font-sans text-base text-easton-blue-500">
+				Pasa el cursor y mantén presionado en cada chip para verificar estados
+				<span class="font-mono text-sm">hover</span> y
+				<span class="font-mono text-sm">active</span>.
+			</p>
+		</header>
+
+		<!-- Variante 1 · .mono-body-2 -->
+		<div class="space-y-4">
+			<div class="mb-2">
+				<span class="mono-overline text-wand-brown-500">
+					Variante 1 · .mono-body-2
+				</span>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-3">
+				<Chip size="md" appearance="soft" color="mashle-red">
+					Java
+				</Chip>
+				<Chip size="md" appearance="soft" color="easton-blue">
+					React
+				</Chip>
+				<Chip size="md" appearance="soft" color="wand-brown">
+					MySQL
+				</Chip>
+				<Chip size="md" appearance="soft" color="lunar-yellow">
+					TypeScript
+				</Chip>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-3">
+				<Chip size="md" appearance="solid" color="mashle-red">
+					Java
+				</Chip>
+				<Chip size="md" appearance="solid" color="easton-blue">
+					React
+				</Chip>
+				<Chip size="md" appearance="solid" color="wand-brown">
+					MySQL
+				</Chip>
+				<Chip size="md" appearance="solid" color="lunar-yellow">
+					TypeScript
+				</Chip>
+			</div>
+		</div>
+
+		<!-- Variante 2 · .mono-caption -->
+		<div class="mt-8 space-y-4">
+			<div class="mb-2">
+				<span class="mono-overline text-wand-brown-500">
+					Variante 2 · .mono-caption
+				</span>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-3">
+				<Chip size="sm" appearance="soft" color="mashle-red">
+					Java
+				</Chip>
+				<Chip size="sm" appearance="soft" color="easton-blue">
+					React
+				</Chip>
+				<Chip size="sm" appearance="soft" color="wand-brown">
+					MySQL
+				</Chip>
+				<Chip size="sm" appearance="soft" color="lunar-yellow">
+					TypeScript
+				</Chip>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-3">
+				<Chip size="sm" appearance="solid" color="mashle-red">
+					Java
+				</Chip>
+				<Chip size="sm" appearance="solid" color="easton-blue">
+					React
+				</Chip>
+				<Chip size="sm" appearance="solid" color="wand-brown">
+					MySQL
+				</Chip>
+				<Chip size="sm" appearance="solid" color="lunar-yellow">
+					TypeScript
+				</Chip>
+			</div>
+		</div>
+	</div>
+
+	<div class="mx-auto max-w-7xl space-y-4 my-10 border-b border-easton-blue-200 pb-6">
+		<header class="mb-10">
+			<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+				BUTTON STATES · 500 / 600 / 700
+			</span>
+			<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+				Muestrario de Botones
+			</h1>
+			<p class="mt-2 font-sans text-base text-easton-blue-500">
+				Pasa el cursor (<span class="font-mono text-sm">hover:600</span>) y haz
+				clic mantenido (<span class="font-mono text-sm">active:700</span>) en
+				cada botón.
+			</p>
+		</header>
+
+		<!-- BOTONES FILLED -->
+		<div>
+			<div class="mb-2">
+				<span class="mono-overline text-wand-brown-500">
+					Variante 1 · Filled
+				</span>
+			</div>
+			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				<!-- 1. MASHLE RED -->
+				<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 shadow-sm">
+					<div class="space-y-4">
+						<div class="flex items-center justify-between gap-2">
+							<h2 class="font-display text-lg font-bold text-easton-blue-500">
+								Mashle Red
+							</h2>
+							<span class="font-mono text-xs text-wand-brown-500">500</span>
+						</div>
+
+						<!-- Botón interactivo -->
+						<button
+							type="button"
+							class="text-button w-full cursor-pointer whitespace-nowrap rounded-md bg-mashle-red-500 px-4 py-2.5 text-chalk-paper transition-colors duration-150 hover:bg-mashle-red-600 active:bg-mashle-red-700"
+						>
+							Acción Mashle Red
+						</button>
+
+						<!-- Referencia visual de estados -->
+						<div class="space-y-2 border-t border-easton-blue-100 pt-4 font-mono text-xs">
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Normal (500)</span>
+								<span class="shrink-0 rounded bg-mashle-red-500 px-2 py-0.5 text-chalk-paper">
+									#C51E25
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Hover (600)</span>
+								<span class="shrink-0 rounded bg-mashle-red-600 px-2 py-0.5 text-chalk-paper">
+									#D7333F
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Active (700)</span>
+								<span class="shrink-0 rounded bg-mashle-red-700 px-2 py-0.5 text-chalk-paper">
+									#780000
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<p class="mt-5 break-words font-mono text-[11px] text-easton-blue-600">
+						bg-mashle-red-500 hover:bg-mashle-red-600 active:bg-mashle-red-700
+					</p>
+				</article>
+
+				<!-- 2. EASTON BLUE -->
+				<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 shadow-sm">
+					<div class="space-y-4">
+						<div class="flex items-center justify-between gap-2">
+							<h2 class="font-display text-lg font-bold text-easton-blue-500">
+								Easton Blue
+							</h2>
+							<span class="font-mono text-xs text-wand-brown-500">500</span>
+						</div>
+
+						<!-- Botón interactivo -->
+						<button
+							type="button"
+							class="text-button w-full cursor-pointer whitespace-nowrap rounded-md bg-easton-blue-500 px-4 py-2.5 text-chalk-paper transition-colors duration-150 hover:bg-easton-blue-600 active:bg-easton-blue-700"
+						>
+							Acción Easton Blue
+						</button>
+
+						<!-- Referencia visual de estados -->
+						<div class="space-y-2 border-t border-easton-blue-100 pt-4 font-mono text-xs">
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Normal (500)</span>
+								<span class="shrink-0 rounded bg-easton-blue-500 px-2 py-0.5 text-chalk-paper">
+									#0F1E36
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Hover (600)</span>
+								<span class="shrink-0 rounded bg-easton-blue-600 px-2 py-0.5 text-chalk-paper">
+									#1C3D7A
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Active (700)</span>
+								<span class="shrink-0 rounded bg-easton-blue-700 px-2 py-0.5 text-chalk-paper">
+									#1F3A60
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<p class="mt-5 break-words font-mono text-[11px] text-easton-blue-600">
+						bg-easton-blue-500 hover:bg-easton-blue-600
+						active:bg-easton-blue-700
+					</p>
+				</article>
+
+				<!-- 3. WAND BROWN -->
+				<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 shadow-sm">
+					<div class="space-y-4">
+						<div class="flex items-center justify-between gap-2">
+							<h2 class="font-display text-lg font-bold text-easton-blue-500">
+								Wand Brown
+							</h2>
+							<span class="font-mono text-xs text-wand-brown-500">500</span>
+						</div>
+
+						<!-- Botón interactivo -->
+						<button
+							type="button"
+							class="text-button w-full cursor-pointer whitespace-nowrap rounded-md bg-wand-brown-500 px-4 py-2.5 text-chalk-paper transition-colors duration-150 hover:bg-wand-brown-600 active:bg-wand-brown-700"
+						>
+							Acción Wand Brown
+						</button>
+
+						<!-- Referencia visual de estados -->
+						<div class="space-y-2 border-t border-easton-blue-100 pt-4 font-mono text-xs">
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Normal (500)</span>
+								<span class="shrink-0 rounded bg-wand-brown-500 px-2 py-0.5 text-chalk-paper">
+									#8C5230
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Hover (600)</span>
+								<span class="shrink-0 rounded bg-wand-brown-600 px-2 py-0.5 text-chalk-paper">
+									#AF5C2C
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Active (700)</span>
+								<span class="shrink-0 rounded bg-wand-brown-700 px-2 py-0.5 text-chalk-paper">
+									#6F3506
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<p class="mt-5 break-words font-mono text-[11px] text-easton-blue-600">
+						bg-wand-brown-500 hover:bg-wand-brown-600 active:bg-wand-brown-700
+					</p>
+				</article>
+
+				<!-- 4. LUNAR YELLOW -->
+				<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 shadow-sm">
+					<div class="space-y-4">
+						<div class="flex items-center justify-between gap-2">
+							<h2 class="font-display text-lg font-bold text-easton-blue-500">
+								Lunar Yellow
+							</h2>
+							<span class="font-mono text-xs text-wand-brown-500">500</span>
+						</div>
+
+						<!-- Botón interactivo -->
+						<button
+							type="button"
+							class="text-button w-full cursor-pointer whitespace-nowrap rounded-md bg-lunar-yellow-500 px-4 py-2.5 text-easton-blue-500 transition-colors duration-150 hover:bg-lunar-yellow-600 active:bg-lunar-yellow-700"
+						>
+							Acción Lunar Yellow
+						</button>
+
+						<!-- Referencia visual de estados -->
+						<div class="space-y-2 border-t border-easton-blue-100 pt-4 font-mono text-xs">
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Normal (500)</span>
+								<span class="shrink-0 rounded bg-lunar-yellow-500 px-2 py-0.5 text-easton-blue-500">
+									#FBDE74
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Hover (600)</span>
+								<span class="shrink-0 rounded bg-lunar-yellow-600 px-2 py-0.5 text-easton-blue-500">
+									#F9E69F
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Active (700)</span>
+								<span class="shrink-0 rounded bg-lunar-yellow-700 px-2 py-0.5 text-easton-blue-500">
+									#ECC022
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<p class="mt-5 break-words font-mono text-[11px] text-easton-blue-600">
+						bg-lunar-yellow-500 hover:bg-lunar-yellow-600
+						active:bg-lunar-yellow-700
+					</p>
+				</article>
+			</div>
+		</div>
+
+		<!-- BOTONES OUTLINED -->
+		<div>
+			<div class="mb-2">
+				<span class="mono-overline text-wand-brown-500">
+					Variante 2 · Outlined
+				</span>
+			</div>
+			<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+				<!-- 1. MASHLE RED -->
+				<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 shadow-sm">
+					<div class="space-y-4">
+						<div class="flex items-center justify-between gap-2">
+							<h2 class="font-display text-lg font-bold text-easton-blue-500">
+								Mashle Red
+							</h2>
+							<span class="font-mono text-xs text-wand-brown-500">500</span>
+						</div>
+
+						<!-- Botón interactivo Outline -->
+						<button
+							type="button"
+							class="text-button w-full cursor-pointer whitespace-nowrap rounded-md border border-mashle-red-500 bg-transparent px-4 py-2.5 text-mashle-red-500 transition-colors duration-150 hover:border-mashle-red-600 hover:bg-mashle-red-100 hover:text-mashle-red-600 active:border-mashle-red-700 active:bg-mashle-red-200 active:text-mashle-red-700"
+						>
+							Acción Mashle Red
+						</button>
+
+						<!-- Referencia visual de estados -->
+						<div class="space-y-2 border-t border-easton-blue-100 pt-4 font-mono text-xs">
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Border / Text</span>
+								<span class="shrink-0 rounded bg-mashle-red-500 px-2 py-0.5 text-chalk-paper">
+									#C51E25
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Hover</span>
+								<span class="shrink-0 rounded bg-mashle-red-600 px-2 py-0.5 text-chalk-paper">
+									#D7333F
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Active</span>
+								<span class="shrink-0 rounded bg-mashle-red-700 px-2 py-0.5 text-chalk-paper">
+									#780000
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<p class="mt-5 break-words font-mono text-[11px] text-easton-blue-600">
+						border border-mashle-red-500 text-mashle-red-500
+						hover:bg-mashle-red-100 active:bg-mashle-red-200
+					</p>
+				</article>
+
+				<!-- 2. EASTON BLUE -->
+				<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 shadow-sm">
+					<div class="space-y-4">
+						<div class="flex items-center justify-between gap-2">
+							<h2 class="font-display text-lg font-bold text-easton-blue-500">
+								Easton Blue
+							</h2>
+							<span class="font-mono text-xs text-wand-brown-500">500</span>
+						</div>
+
+						<!-- Botón interactivo Outline -->
+						<button
+							type="button"
+							class="text-button w-full cursor-pointer whitespace-nowrap rounded-md border border-easton-blue-500 bg-transparent px-4 py-2.5 text-easton-blue-500 transition-colors duration-150 hover:border-easton-blue-600 hover:bg-easton-blue-100 hover:text-easton-blue-600 active:border-easton-blue-700 active:bg-easton-blue-200 active:text-easton-blue-700"
+						>
+							Acción Easton Blue
+						</button>
+
+						<!-- Referencia visual de estados -->
+						<div class="space-y-2 border-t border-easton-blue-100 pt-4 font-mono text-xs">
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Border / Text</span>
+								<span class="shrink-0 rounded bg-easton-blue-500 px-2 py-0.5 text-chalk-paper">
+									#0F1E36
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Hover</span>
+								<span class="shrink-0 rounded bg-easton-blue-600 px-2 py-0.5 text-chalk-paper">
+									#1C3D7A
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Active</span>
+								<span class="shrink-0 rounded bg-easton-blue-700 px-2 py-0.5 text-chalk-paper">
+									#1F3A60
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<p class="mt-5 break-words font-mono text-[11px] text-easton-blue-600">
+						border border-easton-blue-500 text-easton-blue-500
+						hover:bg-easton-blue-100 active:bg-easton-blue-200
+					</p>
+				</article>
+
+				<!-- 3. WAND BROWN -->
+				<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 shadow-sm">
+					<div class="space-y-4">
+						<div class="flex items-center justify-between gap-2">
+							<h2 class="font-display text-lg font-bold text-easton-blue-500">
+								Wand Brown
+							</h2>
+							<span class="font-mono text-xs text-wand-brown-500">500</span>
+						</div>
+
+						<!-- Botón interactivo Outline -->
+						<button
+							type="button"
+							class="text-button w-full cursor-pointer whitespace-nowrap rounded-md border border-wand-brown-500 bg-transparent px-4 py-2.5 text-wand-brown-500 transition-colors duration-150 hover:border-wand-brown-600 hover:bg-wand-brown-100 hover:text-wand-brown-600 active:border-wand-brown-700 active:bg-wand-brown-200 active:text-wand-brown-700"
+						>
+							Acción Wand Brown
+						</button>
+
+						<!-- Referencia visual de estados -->
+						<div class="space-y-2 border-t border-easton-blue-100 pt-4 font-mono text-xs">
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Border / Text</span>
+								<span class="shrink-0 rounded bg-wand-brown-500 px-2 py-0.5 text-chalk-paper">
+									#8C5230
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Hover</span>
+								<span class="shrink-0 rounded bg-wand-brown-600 px-2 py-0.5 text-chalk-paper">
+									#AF5C2C
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Active</span>
+								<span class="shrink-0 rounded bg-wand-brown-700 px-2 py-0.5 text-chalk-paper">
+									#6F3506
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<p class="mt-5 break-words font-mono text-[11px] text-easton-blue-600">
+						border border-wand-brown-500 text-wand-brown-500
+						hover:bg-wand-brown-100 active:bg-wand-brown-200
+					</p>
+				</article>
+
+				<!-- 4. LUNAR YELLOW -->
+				<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-sheet p-6 shadow-sm">
+					<div class="space-y-4">
+						<div class="flex items-center justify-between gap-2">
+							<h2 class="font-display text-lg font-bold text-easton-blue-500">
+								Lunar Yellow
+							</h2>
+							<span class="font-mono text-xs text-wand-brown-500">500</span>
+						</div>
+
+						<!-- Botón interactivo Outline -->
+						<button
+							type="button"
+							class="text-button w-full cursor-pointer whitespace-nowrap rounded-md border border-lunar-yellow-500 bg-transparent px-4 py-2.5 text-easton-blue-500 transition-colors duration-150 hover:border-lunar-yellow-700 hover:bg-lunar-yellow-100 active:border-lunar-yellow-700 active:bg-lunar-yellow-200"
+						>
+							Acción Lunar Yellow
+						</button>
+
+						<!-- Referencia visual de estados -->
+						<div class="space-y-2 border-t border-easton-blue-100 pt-4 font-mono text-xs">
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Border / Bg</span>
+								<span class="shrink-0 rounded bg-lunar-yellow-500 px-2 py-0.5 text-easton-blue-500">
+									#FBDE74
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Hover</span>
+								<span class="shrink-0 rounded bg-lunar-yellow-100 px-2 py-0.5 text-easton-blue-500">
+									#FFF7DB
+								</span>
+							</div>
+							<div class="flex items-center justify-between gap-3">
+								<span class="text-wand-brown-500">Active</span>
+								<span class="shrink-0 rounded bg-lunar-yellow-200 px-2 py-0.5 text-easton-blue-500">
+									#FFF4BD
+								</span>
+							</div>
+						</div>
+					</div>
+
+					<p class="mt-5 break-words font-mono text-[11px] text-easton-blue-600">
+						border border-lunar-yellow-500 text-easton-blue-500
+						hover:bg-lunar-yellow-100 active:bg-lunar-yellow-200
+					</p>
+				</article>
+			</div>
+		</div>
+	</div>
+
+	<div class="mx-auto max-w-7xl space-y-4 my-10 border-b border-easton-blue-200 pb-6">
+		<!-- Encabezado de la guía -->
+		<header class="mb-10">
+			<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-bold text-easton-blue-500">
+				DESIGN SYSTEM · TYPOGRAPHY CHECK
+			</span>
+			<h1 class="mt-3 font-display text-3xl font-bold tracking-wide text-mashle-red-500">
+				Muestrario de Tipografías
+			</h1>
+			<p class="mt-2 font-sans text-base text-easton-blue-500">
+				Verificación visual de pesos e itálicas locales en Astro + Tailwind v4.
+			</p>
+		</header>
+
+		<!-- Grid de Cards por familia -->
+		<div class="grid gap-8 md:grid-cols-3">
+			<!-- CARD 1: CINZEL -->
+			<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-white p-6 shadow-sm">
+				<div>
+					<div class="flex items-center justify-between">
+						<span class="rounded-full bg-mashle-red-100 px-3 py-1 font-mono text-xs font-medium text-mashle-red-500">
+							font-display
+						</span>
+						<span class="font-mono text-xs text-wand-brown-500">Titulares</span>
+					</div>
+
+					<h2 class="mt-4 font-display text-2xl font-bold text-easton-blue-500">
+						Cinzel
+					</h2>
+
+					<div class="mt-6 space-y-5 border-t border-easton-blue-100 pt-5">
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">400 · Regular</p>
+							<p class="mt-1 font-display text-lg font-normal text-easton-blue-500">
+								Arquitectura & Código
+							</p>
+						</div>
+
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">700 · Bold</p>
+							<p class="mt-1 font-display text-lg font-bold text-easton-blue-500">
+								Arquitectura & Código
+							</p>
+						</div>
+
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">900 · Black</p>
+							<p class="mt-1 font-display text-lg font-black text-easton-blue-500">
+								Arquitectura & Código
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-6 rounded-lg bg-easton-blue-100/60 p-3 font-mono text-xs text-easton-blue-600">
+					Nota: Cinzel es una fuente romana de versalitas (sin variante
+					itálica).
+				</div>
+			</article>
+
+			<!-- CARD 2: PLUS JAKARTA SANS -->
+			<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-white p-6 shadow-sm">
+				<div>
+					<div class="flex items-center justify-between">
+						<span class="rounded-full bg-easton-blue-100 px-3 py-1 font-mono text-xs font-medium text-easton-blue-600">
+							font-sans
+						</span>
+						<span class="font-mono text-xs text-wand-brown-500">Cuerpos</span>
+					</div>
+
+					<h2 class="mt-4 font-sans text-2xl font-bold text-easton-blue-500">
+						Plus Jakarta Sans
+					</h2>
+
+					<div class="mt-6 space-y-4 border-t border-easton-blue-100 pt-5">
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">400 · Regular</p>
+							<p class="mt-1 font-sans text-base font-normal text-easton-blue-500">
+								Texto limpio y legible ·
+								<br />
+								<span class="italic text-wand-brown-600">versión itálica</span>
+							</p>
+						</div>
+
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">500 · Medium</p>
+							<p class="mt-1 font-sans text-base font-medium text-easton-blue-500">
+								Texto limpio y legible.
+								<br />
+								<span class="italic text-wand-brown-600">versión itálica</span>
+							</p>
+						</div>
+
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">
+								600 · SemiBold
+							</p>
+							<p class="mt-1 font-sans text-base font-semibold text-easton-blue-500">
+								Texto limpio y legible.
+								<br />
+								<span class="italic text-wand-brown-600">versión itálica</span>
+							</p>
+						</div>
+
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">700 · Bold</p>
+							<p class="mt-1 font-sans text-base font-bold text-easton-blue-500">
+								Texto limpio y legible.
+								<br />
+								<span class="italic text-wand-brown-600">versión itálica</span>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-6 rounded-lg bg-wand-brown-100 p-3 font-mono text-xs text-wand-brown-700">
+					Tipografía base aplicada por defecto en &lt;body&gt;.
+				</div>
+			</article>
+
+			<!-- CARD 3: JETBRAINS MONO -->
+			<article class="flex flex-col justify-between rounded-2xl border border-easton-blue-200 bg-vellum-white p-6 shadow-sm">
+				<div>
+					<div class="flex items-center justify-between">
+						<span class="rounded-full bg-mashle-yellow-100 px-3 py-1 font-mono text-xs font-medium text-easton-blue-500">
+							font-mono
+						</span>
+						<span class="font-mono text-xs text-wand-brown-500">
+							Código & Badges
+						</span>
+					</div>
+
+					<h2 class="mt-4 font-mono text-2xl font-bold text-easton-blue-500">
+						JetBrains Mono
+					</h2>
+
+					<div class="mt-6 space-y-4 border-t border-easton-blue-100 pt-5">
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">400 · Regular</p>
+							<p class="mt-1 font-mono text-sm font-normal text-easton-blue-500">
+								const stack = "Astro".
+								<br />
+								<span class="italic text-mashle-red-500">// comment</span>
+							</p>
+						</div>
+
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">500 · Medium</p>
+							<p class="mt-1 font-mono text-sm font-medium text-easton-blue-500">
+								const stack = "Astro".
+								<br />
+								<span class="italic text-mashle-red-500">
+									// commentario de prueba para ver como luce la fuente
+								</span>
+							</p>
+						</div>
+
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">700 · Bold</p>
+							<p class="mt-1 font-mono text-sm font-bold text-easton-blue-500">
+								const stack = "Astro".
+								<br />
+								<span class="italic text-mashle-red-500">
+									// commentario de prueba para ver como luce la fuente
+								</span>
+							</p>
+						</div>
+
+						<div>
+							<p class="font-mono text-xs text-wand-brown-500">
+								800 · ExtraBold
+							</p>
+							<p class="mt-1 font-mono text-sm font-extrabold text-easton-blue-500">
+								const stack = "Astro".
+								<br />
+								<span class="italic text-mashle-red-500">
+									// commentario de prueba para ver como luce la fuente
+								</span>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-6 rounded-lg bg-easton-blue-500 p-3 font-mono text-xs text-chalk-paper">
+					<span class="text-mashle-yellow-500">$</span> npm run dev{" "}
+					<span class="italic text-easton-blue-300"># listo</span>
+				</div>
+			</article>
+		</div>
+	</div>
+
+	<!-- MUESTRARIO: NÚMEROS DE ÉXITO (PROOF OF WORK) -->
+	<div class="mx-auto max-w-7xl space-y-6 my-10 border-b border-easton-blue-200 pb-10">
+		<!-- Encabezado de la guía -->
+		<header class="mb-8">
+			<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-bold text-easton-blue-500">
+				DESIGN SYSTEM · PROOF OF WORK STATS
+			</span>
+			<h2 class="mt-3 font-display text-3xl font-bold tracking-wide text-mashle-red-500">
+				Muestrario de Números de Éxito
+			</h2>
+			<p class="mt-2 font-sans text-base text-easton-blue-500">
+				Tarjetas de métricas con alternancia entre{" "}
+				<span class="font-mono text-sm">mashle-red</span> y{" "}
+				<span class="font-mono text-sm">easton-blue</span>, acento de símbolo y
+				sombra suave inferior.
+			</p>
+		</header>
+
+		<!-- Grid de métricas (4 columnas) -->
+		<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			<!-- 1. MASHLE RED (+) -->
+			<article class="group relative flex min-h-44 flex-col justify-between rounded-2xl bg-mashle-red-500 p-6 text-chalk-paper shadow-[0_18px_32px_-12px_rgba(197,30,37,0.38)] transition-transform duration-200 hover:-translate-y-1">
+				<div class="flex items-baseline gap-1 font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl">
+					<span>450</span>
+					<span class="text-3xl font-bold text-lunar-yellow-500 sm:text-4xl">
+						+
+					</span>
+				</div>
+				<p class="mono-caption mt-6 uppercase tracking-[0.2em] text-chalk-paper/90">
+					LeetCode
+				</p>
+			</article>
+
+			<!-- 2. EASTON BLUE (+) -->
+			<article class="group relative flex min-h-44 flex-col justify-between rounded-2xl bg-easton-blue-500 p-6 text-chalk-paper shadow-[0_18px_32px_-12px_rgba(15,30,54,0.42)] transition-transform duration-200 hover:-translate-y-1">
+				<div class="flex items-baseline gap-1 font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl">
+					<span>500</span>
+					<span class="text-3xl font-bold text-mashle-red-500 sm:text-4xl">
+						+
+					</span>
+				</div>
+				<p class="mono-caption mt-6 uppercase tracking-[0.2em] text-chalk-paper/90">
+					CodeChef
+				</p>
+			</article>
+
+			<!-- 3. MASHLE RED (+) -->
+			<article class="group relative flex min-h-44 flex-col justify-between rounded-2xl bg-mashle-red-500 p-6 text-chalk-paper shadow-[0_18px_32px_-12px_rgba(197,30,37,0.38)] transition-transform duration-200 hover:-translate-y-1">
+				<div class="flex items-baseline gap-1 font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl">
+					<span>277</span>
+					<span class="text-3xl font-bold text-lunar-yellow-500 sm:text-4xl">
+						+
+					</span>
+				</div>
+				<p class="mono-caption mt-6 uppercase tracking-[0.2em] text-chalk-paper/90">
+					GeeksforGeeks
+				</p>
+			</article>
+
+			<!-- 4. EASTON BLUE (ESTRELLA) -->
+			<article class="group relative flex min-h-44 flex-col justify-between rounded-2xl bg-easton-blue-500 p-6 text-chalk-paper shadow-[0_18px_32px_-12px_rgba(15,30,54,0.42)] transition-transform duration-200 hover:-translate-y-1">
+				<div class="flex items-center gap-2 font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl">
+					<span>18</span>
+					<svg
+						class="h-8 w-8 text-mashle-red-500 sm:h-9 sm:w-9"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+						aria-hidden="true"
+					>
+						<path d="M12 2.25l2.917 5.91 6.523.948-4.72 4.601 1.114 6.497L12 16.738l-5.834 3.069 1.114-6.497-4.72-4.601 6.523-.948L12 2.25z" />
+					</svg>
+				</div>
+				<p class="mono-caption mt-6 uppercase tracking-[0.2em] text-chalk-paper/90">
+					HackerRank Stars
+				</p>
+			</article>
+		</div>
+
+		<!-- Nota técnica de tokens usados -->
+		<p class="font-mono text-xs text-wand-brown-500">
+			Tokens aplicados:{" "}
+			<span class="text-easton-blue-600">bg-mashle-red-500</span> ·{" "}
+			<span class="text-easton-blue-600">bg-easton-blue-500</span> ·{" "}
+			<span class="text-easton-blue-600">text-chalk-paper</span> ·{" "}
+			<span class="text-easton-blue-600">mono-caption</span>
+		</p>
+		<!-- MUESTRARIO COMPLETO DE NÚMEROS DE ÉXITO (NORMAL · MEDIUM · SMALL · 4 COLORES) -->
+		<div class="mx-auto max-w-7xl space-y-12 my-10 border-b border-easton-blue-200 pb-10">
+			<header>
+				<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-bold text-easton-blue-500">
+					DESIGN SYSTEM · PROOF OF WORK STATS
+				</span>
+				<h2 class="mt-3 font-display text-3xl font-bold tracking-wide text-mashle-red-500">
+					Muestrario de Números de Éxito
+				</h2>
+				<p class="mt-2 font-sans text-base text-easton-blue-500">
+					Comparativa de las tres escalas (
+					<span class="font-mono text-sm">Normal</span>,{" "}
+					<span class="font-mono text-sm">Medium</span> y{" "}
+					<span class="font-mono text-sm">Small</span>) mostrando un ejemplo por
+					color: <span class="font-mono text-sm">mashle-red</span>,{" "}
+					<span class="font-mono text-sm">easton-blue</span>,{" "}
+					<span class="font-mono text-sm">wand-brown</span> y{" "}
+					<span class="font-mono text-sm">lunar-yellow</span>.
+				</p>
+			</header>
+
+			<!-- 1. TAMAÑO NORMAL -->
+			<div class="space-y-3">
+				<span class="mono-overline text-wand-brown-500">
+					Tamaño Normal · Base
+				</span>
+
+				<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+					<StatCard
+						value={450}
+						suffix="+"
+						label="LeetCode"
+						size="normal"
+						color="mashle-red"
+					/>
+					<StatCard
+						value={500}
+						suffix="+"
+						label="CodeChef"
+						size="normal"
+						color="easton-blue"
+					/>
+					<StatCard
+						value={277}
+						suffix="+"
+						label="GeeksforGeeks"
+						size="normal"
+						color="wand-brown"
+					/>
+					<StatCard
+						value={18}
+						icon="star"
+						label="HackerRank Stars"
+						size="normal"
+						color="lunar-yellow"
+					/>
+				</div>
+
+				<p class="font-mono text-xs text-wand-brown-500">
+					Tokens aplicados (Normal):{" "}
+					<span class="text-easton-blue-600">bg-mashle-red-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-easton-blue-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-wand-brown-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-lunar-yellow-500</span> ·{" "}
+					<span class="text-easton-blue-600">mono-caption</span>
+				</p>
+			</div>
+
+			<!-- 2. TAMAÑO MEDIUM (MD) -->
+			<div class="space-y-3">
+				<span class="mono-overline text-wand-brown-500">
+					Tamaño Medium · MD
+				</span>
+
+				<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+					<StatCard
+						value={450}
+						suffix="+"
+						label="LeetCode"
+						size="md"
+						color="mashle-red"
+					/>
+					<StatCard
+						value={500}
+						suffix="+"
+						label="CodeChef"
+						size="md"
+						color="easton-blue"
+					/>
+					<StatCard
+						value={277}
+						suffix="+"
+						label="GeeksforGeeks"
+						size="md"
+						color="wand-brown"
+					/>
+					<StatCard
+						value={18}
+						icon="star"
+						label="HackerRank Stars"
+						size="md"
+						color="lunar-yellow"
+					/>
+				</div>
+
+				<p class="font-mono text-xs text-wand-brown-500">
+					Tokens aplicados (MD):{" "}
+					<span class="text-easton-blue-600">bg-mashle-red-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-easton-blue-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-wand-brown-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-lunar-yellow-500</span> ·{" "}
+					<span class="text-easton-blue-600">mono-caption</span>
+				</p>
+			</div>
+
+			<!-- 3. TAMAÑO SMALL (SM) -->
+			<div class="space-y-3">
+				<span class="mono-overline text-wand-brown-500">Tamaño Small · SM</span>
+
+				<div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+					<StatCard
+						value={450}
+						suffix="+"
+						label="LeetCode"
+						size="sm"
+						color="mashle-red"
+					/>
+					<StatCard
+						value={500}
+						suffix="+"
+						label="CodeChef"
+						size="sm"
+						color="easton-blue"
+					/>
+					<StatCard
+						value={277}
+						suffix="+"
+						label="GeeksforGeeks"
+						size="sm"
+						color="wand-brown"
+					/>
+					<StatCard
+						value={18}
+						icon="star"
+						label="HackerRank Stars"
+						size="sm"
+						color="lunar-yellow"
+					/>
+				</div>
+
+				<p class="font-mono text-xs text-wand-brown-500">
+					Tokens aplicados (SM):{" "}
+					<span class="text-easton-blue-600">bg-mashle-red-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-easton-blue-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-wand-brown-500</span> ·{" "}
+					<span class="text-easton-blue-600">bg-lunar-yellow-500</span> ·{" "}
+					<span class="text-easton-blue-600">font-mono</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</Layout>
