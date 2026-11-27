@@ -48,7 +48,7 @@ const socials: readonly SocialLink[] = [
 
   <!-- Tarjeta principal -->
   <div class="relative rounded-xl">
-    <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.15fr_0.95fr] lg:gap-10">
+    <div class="grid grid-cols-1 items-center gap-10 sm:gap-20 lg:grid-cols-[1.15fr_0.95fr] lg:gap-10">
       <!-- Columna izquierda: texto y botones -->
       <div class="relative z-10 space-y-6">
         <h3 class="font-display text-2xl font-bold text-easton-blue-500 sm:text-3xl">
@@ -80,7 +80,10 @@ const socials: readonly SocialLink[] = [
                 in
               </span>
               LinkedIn
-              <span class="font-mono text-xs opacity-80 ml-2" aria-hidden="true">
+              <span
+                class="font-mono text-xs opacity-80 ml-2"
+                aria-hidden="true"
+              >
                 ↗
               </span>
             </Chip>
@@ -92,7 +95,12 @@ const socials: readonly SocialLink[] = [
             rel="noopener noreferrer"
             class="transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
           >
-            <Chip variant="solid" style="outlined" size="md" color="easton-blue">
+            <Chip
+              variant="solid"
+              style="outlined"
+              size="md"
+              color="easton-blue"
+            >
               <svg
                 class="h-4 w-4 mr-2"
                 viewBox="0 0 24 24"
@@ -102,7 +110,10 @@ const socials: readonly SocialLink[] = [
                 <path d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.52.1.72-.22.72-.5v-1.9c-2.94.64-3.56-1.25-3.56-1.25-.48-1.22-1.18-1.55-1.18-1.55-.96-.66.07-.65.07-.65 1.07.08 1.63 1.1 1.63 1.1.95 1.62 2.48 1.15 3.09.88.1-.69.37-1.15.67-1.42-2.35-.27-4.82-1.17-4.82-5.22 0-1.15.41-2.1 1.09-2.84-.11-.27-.47-1.35.1-2.82 0 0 .89-.28 2.91 1.08a10.1 10.1 0 0 1 5.3 0c2.02-1.36 2.91-1.08 2.91-1.08.57 1.47.21 2.55.1 2.82.68.74 1.09 1.69 1.09 2.84 0 4.06-2.47 4.95-4.83 5.21.38.33.72.97.72 1.96v2.9c0 .28.19.61.72.5A10.5 10.5 0 0 0 12 1.5Z" />
               </svg>
               GitHub
-              <span class="font-mono text-xs opacity-80 ml-2" aria-hidden="true">
+              <span
+                class="font-mono text-xs opacity-80 ml-2"
+                aria-hidden="true"
+              >
                 ↗
               </span>
             </Chip>
@@ -134,7 +145,10 @@ const socials: readonly SocialLink[] = [
                 />
               </svg>
               Instagram
-              <span class="font-mono text-xs opacity-80 ml-2" aria-hidden="true">
+              <span
+                class="font-mono text-xs opacity-80 ml-2"
+                aria-hidden="true"
+              >
                 ↗
               </span>
             </Chip>
@@ -142,8 +156,8 @@ const socials: readonly SocialLink[] = [
         </div>
       </div>
 
-        <!-- Columna derecha: composición geométrica + escena del escritorio -->
-      <div class="relative flex min-h-80 items-center justify-center">
+      <!-- Columna derecha: composición geométrica + escena del escritorio -->
+      <div class="relative flex flex-col sm:flex-row sm:min-h-80 items-center justify-center">
         <!-- Líneas punteadas inferiores -->
         <div
           class="pointer-events-none absolute bottom-0 left-6 h-44 w-40"
@@ -155,7 +169,7 @@ const socials: readonly SocialLink[] = [
         </div>
 
         <!-- Formas geométricas inferiores izquierdas -->
-        <div class="pointer-events-none relative z-10 mt-28 flex items-end">
+        <div class="pointer-events-none relative z-10 translate-3 sm:translate-0 sm:mt-28 flex items-end">
           <div class="flex flex-col items-center">
             <div class="h-14 w-24 rounded-t-full bg-mashle-red-500" />
             <div class="my-3 h-14 w-14 rounded-full bg-lunar-yellow-500" />
@@ -164,13 +178,14 @@ const socials: readonly SocialLink[] = [
         </div>
 
         <!-- Marco en arco con escena de trabajo -->
-        <div class="relative z-10 -ml-8 w-full max-w-sm">
+        <div class="relative z-10 sm:-ml-8 w-fit max-w-sm">
           <!-- Burbuja "¡Hola!" -->
-          <div class="absolute -left-2 top-3 z-20 -rotate-6 rounded-xl border border-easton-blue-500 bg-lunar-yellow-500 px-3 py-1 font-sans text-xs font-bold text-easton-blue-500 shadow-[2px_2px_0_0_var(--color-easton-blue-500)]">
+          <div class="absolute -left-2 top-3 z-20 -rotate-6 rounded-md border border-easton-blue-500 bg-easton-blue-100 px-3 py-1 font-sans text-xs font-bold text-easton-blue-500 shadow-[2px_2px_0_0_var(--color-easton-blue-500)]">
             ¡Hola! 👋
           </div>
 
-          <div class="overflow-hidden rounded-t-full border-2 border-easton-blue-500 bg-wand-brown-500 pt-10 px-4 pb-0">
+          <!-- Circulo amarillo -->
+          <div class="flex aspect-square w-[270px] h[270px] sm:min-w-[20rem] sm:min-h[20rem] items-center justify-center overflow-hidden rounded-full bg-lunar-yellow-500 p-6">
             <svg
               class="h-auto w-full"
               viewBox="0 0 320 260"
@@ -267,7 +282,7 @@ const socials: readonly SocialLink[] = [
               <!-- Libreta amarilla -->
               <polygon
                 points="62,174 102,166 118,176 78,184"
-                class="fill-lunar-yellow-500 stroke-easton-blue-500"
+                class="fill-wand-brown-500 stroke-easton-blue-500"
                 stroke-width="2"
                 stroke-linejoin="round"
               />
@@ -279,7 +294,7 @@ const socials: readonly SocialLink[] = [
                 width="22"
                 height="24"
                 rx="3"
-                class="fill-chalk-paper stroke-easton-blue-500"
+                class="fill-mashle-red-500 stroke-easton-blue-500"
                 stroke-width="2"
               />
               <path
