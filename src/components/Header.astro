@@ -107,7 +107,7 @@ const v = variants[variant];
         href="#contacto"
         class={`inline-flex items-center justify-center rounded-md px-5 py-2.5 font-sans text-sm font-semibold transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0 ${v.cta}`}
       >
-        Hablemos
+        Contáctame
       </a>
 
       <button
@@ -159,8 +159,7 @@ const v = variants[variant];
   document.querySelectorAll<HTMLElement>("[data-header]").forEach((header) => {
     const toggleBtn =
       header.querySelector<HTMLButtonElement>("[data-menu-toggle]");
-    const mobileMenu =
-      header.querySelector<HTMLElement>("[data-mobile-menu]");
+    const mobileMenu = header.querySelector<HTMLElement>("[data-mobile-menu]");
     const mobileLinks =
       header.querySelectorAll<HTMLAnchorElement>("[data-mobile-link]");
 
