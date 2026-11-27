@@ -169,16 +169,18 @@ const items: readonly EducationItem[] = [
               </div>
 
               {item.badge && (
-                <Chip
-                  size="sm"
-                  variant="solid"
-                  style="filled"
-                  color="lunar-yellow"
-                  weight="medium"
-                  case="normal"
-                >
-                  {item.badge}
-                </Chip>
+                <div class="min-w-[170px]">
+                  <Chip
+                    size="sm"
+                    variant="solid"
+                    style="filled"
+                    color="lunar-yellow"
+                    weight="medium"
+                    case="normal"
+                  >
+                    {item.badge}
+                  </Chip>
+                </div>
               )}
             </div>
           </li>
