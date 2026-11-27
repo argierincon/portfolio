@@ -1,4 +1,6 @@
 ---
+import ActionButton from "./ActionButton.astro";
+
 export interface AccordionHighlight {
   text: string;
 }
@@ -11,7 +13,7 @@ export interface AccordionAction {
 
 export interface AccordionItem {
   id: string;
-  index: string;
+  index?: string;
   meta?: string;
   title: string;
   shortTitle: string;
@@ -44,8 +46,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
 >
   {items.map((item, idx) => {
     const isExpanded = idx === defaultOpenIndex;
-    const isYellowTone = item.collapsedTone === "yellow";
-    const isBlueButton = item.buttonTone === "blue";
+    const itemIndex = item.index ?? (idx + 1).toString().padStart(2, "0");
 
     return (
       <article
@@ -53,12 +54,12 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
         data-accordion-panel
         data-expanded={isExpanded ? "true" : "false"}
         class:list={[
-          "group relative rounded-3xl border border-easton-blue-500 shadow-[4px_4px_0_0_var(--color-wand-brown-500)] transition-all duration-300",
+          "group relative rounded-xl border border-easton-blue-500 shadow-[4px_4px_0_0_var(--color-wand-brown-500)] transition-all duration-300",
           isExpanded
             ? "flex-1 bg-vellum-sheet p-6 sm:p-8 lg:p-10"
             : [
                 "w-full px-5 py-4 lg:w-24 lg:shrink-0 lg:px-0 lg:py-8",
-                isYellowTone ? "bg-lunar-yellow-500/20" : "bg-vellum-sheet",
+                "bg-vellum-sheet",
               ],
         ]}
       >
@@ -74,7 +75,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
             <div class="space-y-2">
               {item.meta && (
                 <p class="font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
-                  {item.index} · {item.meta}
+                  {itemIndex} · {item.meta}
                 </p>
               )}
               <h3 class="font-display text-2xl font-bold text-easton-blue-500 sm:text-3xl">
@@ -127,17 +128,13 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
                 {item.actions.map((action) => {
                   const isSecondary = action.variant === "secondary";
                   return (
-                    <a
+                    <ActionButton
                       href={action.href}
-                      class:list={[
-                        "inline-flex items-center justify-center rounded-xl border border-easton-blue-500 px-5 py-2.5 font-sans text-sm font-semibold shadow-[3px_3px_0_0_var(--color-easton-blue-500)] transition-transform duration-150 hover:-translate-y-0.5",
-                        isSecondary
-                          ? "bg-chalk-paper text-easton-blue-500"
-                          : "bg-mashle-red-500 text-chalk-paper",
-                      ]}
+                      variant={isSecondary ? "outlined" : "filled"}
+                      color={isSecondary ? "easton-blue" : "mashle-red"}
                     >
                       {action.label}
-                    </a>
+                    </ActionButton>
                   );
                 })}
               </div>
@@ -188,7 +185,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
           ]}
         >
           <span class="font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
-            {item.index}
+            {itemIndex}
           </span>
 
           <span class="font-display text-base font-bold text-easton-blue-500 lg:[writing-mode:vertical-rl] lg:rotate-180 lg:text-xl lg:tracking-wide">
@@ -196,10 +193,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
           </span>
 
           <span
-            class:list={[
-              "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-mono text-xl font-bold text-chalk-paper shadow-[2px_2px_0_0_var(--color-wand-brown-500)] transition-transform duration-150 group-hover:scale-105",
-              isBlueButton ? "bg-easton-blue-500" : "bg-mashle-red-500",
-            ]}
+            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-mono text-xl font-bold text-chalk-paper bg-easton-blue-500 transition-transform duration-150 group-hover:scale-105"
             aria-hidden="true"
           >
             +
@@ -229,8 +223,6 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
         const trigger = panel.querySelector<HTMLButtonElement>(
           "[data-accordion-trigger]",
         );
-        const isYellow = panel.dataset.tone === "yellow";
-
         panel.dataset.expanded = String(isSelected);
         trigger?.setAttribute("aria-expanded", String(isSelected));
 
@@ -243,7 +235,6 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
             "lg:shrink-0",
             "lg:px-0",
             "lg:py-8",
-            "bg-lunar-yellow-500/20",
           );
           panel.classList.add(
             "flex-1",
@@ -271,7 +262,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
             "lg:shrink-0",
             "lg:px-0",
             "lg:py-8",
-            isYellow ? "bg-lunar-yellow-500/20" : "bg-vellum-sheet",
+            "bg-vellum-sheet",
           );
           content?.classList.add("hidden");
           trigger?.classList.remove("hidden");

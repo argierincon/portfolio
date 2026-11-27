@@ -6,7 +6,6 @@ import VerticalAccordion, {
 const projects: readonly AccordionItem[] = [
   {
     id: "proyecto-inventario",
-    index: "01",
     meta: "SISTEMAS INDUSTRIALES · WEB · BACKEND",
     title: "Gestor de Inventario y Procesos",
     shortTitle: "Gestor de Inventario",
@@ -37,7 +36,6 @@ const projects: readonly AccordionItem[] = [
   },
   {
     id: "proyecto-reservas",
-    index: "02",
     meta: "BACKEND · APIS · ARQUITECTURA",
     title: "API de Reservas y Turnos",
     shortTitle: "API de Reservas y Turnos",
@@ -59,7 +57,28 @@ const projects: readonly AccordionItem[] = [
   },
   {
     id: "proyecto-panel",
-    index: "03",
+    meta: "FULL STACK · INTERFAZ · DATOS",
+    title: "Panel Operativo Full Stack",
+    shortTitle: "Panel Operativo Full Stack",
+    description:
+      "Interfaz operativa conectada a servicios backend para monitorear estados, consultar registros y agilizar la toma de decisiones diarias.",
+    highlights: [
+      "Componentes reutilizables y diseño responsive",
+      "Integración fluida con servicios REST",
+      "Visualización clara de indicadores clave",
+      "Base preparada para escalar nuevas vistas",
+    ],
+    tags: ["TypeScript", "React", "Tailwind CSS", "Spring Boot", "MySQL"],
+    actions: [
+      { label: "Ver en GitHub", href: "#contacto", variant: "primary" },
+      { label: "Demo en vivo", href: "#contacto", variant: "secondary" },
+    ],
+    illustrationLabel: "ILLUSTRATIVE UI",
+    collapsedTone: "yellow",
+    buttonTone: "blue",
+  },
+  {
+    id: "proyecto-panel",
     meta: "FULL STACK · INTERFAZ · DATOS",
     title: "Panel Operativo Full Stack",
     shortTitle: "Panel Operativo Full Stack",
@@ -83,10 +102,7 @@ const projects: readonly AccordionItem[] = [
 ];
 ---
 
-<section
-  id="proyectos"
-  class="container-sections relative isolate space-y-8"
->
+<section id="proyectos" class="container-sections relative isolate space-y-8">
   <!-- Adornos decorativos de fondo -->
   <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
     <!-- Superior derecha: círculo outlined, estrella de 4 puntas y polígono -->
