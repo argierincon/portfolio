@@ -1,0 +1,249 @@
+---
+interface Props {
+  color?: "mashle-red" | "easton-blue" | "wand-brown" | "lunar-yellow";
+  variant?: "soft" | "solid";
+  style?: "filled" | "outlined";
+  size?: "md" | "sm";
+  weight?: "regular" | "medium";
+  case?: "uppercase" | "lowercase" | "normal";
+  class?: string;
+}
+
+const {
+  color = "mashle-red",
+  variant = "soft",
+  style = "filled",
+  size = "md",
+  weight = "medium",
+  case: textCase = "uppercase",
+  class: className = "",
+} = Astro.props;
+
+const styles = {
+  soft: {
+    filled: {
+      "mashle-red": {
+        outer: "bg-mashle-red-300",
+        inner: "bg-mashle-red-100 text-mashle-red-600",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-mashle-red-300)]",
+        bevelColor: "var(--color-mashle-red-300)",
+      },
+      "easton-blue": {
+        outer: "bg-easton-blue-300",
+        inner: "bg-easton-blue-100 text-easton-blue-600",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-easton-blue-300)]",
+        bevelColor: "var(--color-easton-blue-300)",
+      },
+      "wand-brown": {
+        outer: "bg-wand-brown-300",
+        inner: "bg-wand-brown-100 text-wand-brown-600",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-wand-brown-300)]",
+        bevelColor: "var(--color-wand-brown-300)",
+      },
+      "lunar-yellow": {
+        outer: "bg-lunar-yellow-300",
+        inner: "bg-lunar-yellow-100 text-easton-blue-500",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-lunar-yellow-300)]",
+        bevelColor: "var(--color-lunar-yellow-300)",
+      },
+    },
+    outlined: {
+      "mashle-red": {
+        outer: "bg-mashle-red-300",
+        inner: "bg-chalk-paper text-mashle-red-500",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-mashle-red-300)]",
+        bevelColor: "var(--color-mashle-red-300)",
+      },
+      "easton-blue": {
+        outer: "bg-easton-blue-300",
+        inner: "bg-chalk-paper text-easton-blue-500",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-easton-blue-300)]",
+        bevelColor: "var(--color-easton-blue-300)",
+      },
+      "wand-brown": {
+        outer: "bg-wand-brown-300",
+        inner: "bg-chalk-paper text-wand-brown-500",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-wand-brown-300)]",
+        bevelColor: "var(--color-wand-brown-300)",
+      },
+      "lunar-yellow": {
+        outer: "bg-lunar-yellow-300",
+        inner: "bg-chalk-paper text-easton-blue-500",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-lunar-yellow-300)]",
+        bevelColor: "var(--color-lunar-yellow-300)",
+      },
+    },
+  },
+  solid: {
+    filled: {
+      "mashle-red": {
+        outer: "bg-easton-blue-500",
+        inner: "bg-mashle-red-500 text-chalk-paper",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-easton-blue-500)]",
+        bevelColor: "var(--color-easton-blue-500)",
+      },
+      "easton-blue": {
+        outer: "bg-mashle-red-500",
+        inner: "bg-easton-blue-500 text-chalk-paper",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-mashle-red-500)]",
+        bevelColor: "var(--color-mashle-red-500)",
+      },
+      "wand-brown": {
+        outer: "bg-lunar-yellow-500",
+        inner: "bg-wand-brown-500 text-chalk-paper",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-lunar-yellow-500)]",
+        bevelColor: "var(--color-lunar-yellow-500)",
+      },
+      "lunar-yellow": {
+        outer: "bg-wand-brown-500",
+        inner: "bg-lunar-yellow-500 text-easton-blue-500",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-wand-brown-500)]",
+        bevelColor: "var(--color-wand-brown-500)",
+      },
+    },
+    outlined: {
+      "mashle-red": {
+        outer: "bg-mashle-red-500",
+        inner: "bg-chalk-paper text-mashle-red-600",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-mashle-red-500)]",
+        bevelColor: "var(--color-mashle-red-500)",
+      },
+      "easton-blue": {
+        outer: "bg-easton-blue-500",
+        inner: "bg-chalk-paper text-easton-blue-600",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-easton-blue-500)]",
+        bevelColor: "var(--color-easton-blue-500)",
+      },
+      "wand-brown": {
+        outer: "bg-wand-brown-500",
+        inner: "bg-chalk-paper text-wand-brown-600",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-wand-brown-500)]",
+        bevelColor: "var(--color-wand-brown-500)",
+      },
+      "lunar-yellow": {
+        outer: "bg-lunar-yellow-500",
+        inner: "bg-chalk-paper text-easton-blue-500",
+        frameBorder:
+          "after:shadow-[inset_0_0_0_1px_var(--color-lunar-yellow-500)]",
+        bevelColor: "var(--color-lunar-yellow-500)",
+      },
+    },
+  },
+} as const;
+
+const sizeClasses = {
+  md: {
+    text: "mono-body-2",
+    pad: "px-3.5 py-1.5",
+  },
+  sm: {
+    text: "mono-caption",
+    pad: "px-3 py-1",
+  },
+} as const;
+
+const weightClasses = {
+  regular: "font-normal",
+  medium: "font-medium",
+} as const;
+
+const caseClasses = {
+  uppercase: "uppercase",
+  lowercase: "lowercase",
+  normal: "normal-case",
+} as const;
+
+const chamferClip =
+  "polygon(8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px), 0% 8px)";
+
+const currentTone = styles[variant][style][color];
+const currentSize = sizeClasses[size];
+---
+
+<!-- Borde exterior de 1px con esquinas planas/biseladas -->
+<span
+  class:list={[
+    "easton-chip inline-flex p-[1px] select-none",
+    currentTone.outer,
+    className,
+  ]}
+  style={`clip-path: ${chamferClip};`}
+>
+  <span
+    class:list={[
+      "easton-chip__inner relative inline-flex w-full items-center justify-center tracking-wider",
+      "before:content-[''] before:pointer-events-none before:absolute before:inset-[3px]",
+      "after:content-[''] after:pointer-events-none after:absolute after:inset-[3px]",
+      currentTone.frameBorder,
+      currentSize.text,
+      currentSize.pad,
+      weightClasses[weight],
+      caseClasses[textCase],
+      currentTone.inner,
+    ]}
+    style={`clip-path: ${chamferClip}; --chip-clip: ${chamferClip}; --bevel-color: ${currentTone.bevelColor};`}
+  >
+    <span class="relative z-10 inline-flex items-center gap-1.5">
+      <slot />
+    </span>
+  </span>
+</span>
+
+<style>
+  .easton-chip__inner::after {
+    clip-path: var(--chip-clip);
+  }
+
+  /* Completa las 4 esquinas diagonales del marco interior de 1px sin rebabas */
+ .easton-chip__inner::before {
+    clip-path: var(--chip-clip);
+    background:
+      linear-gradient(
+          to bottom right,
+          transparent calc(50% - 0.69px), /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
+          var(--bevel-color) calc(50% - 0.69px),
+          var(--bevel-color) calc(50% + 0.69px),
+          transparent calc(50% + 0.69px)
+        )
+        top left / 9px 9px no-repeat, /* AJUSTE: tamaño de esquina 9px (antes 10px) */
+      linear-gradient(
+          to bottom left,
+          transparent calc(50% - 0.69px), /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
+          var(--bevel-color) calc(50% - 0.69px),
+          var(--bevel-color) calc(50% + 0.69px),
+          transparent calc(50% + 0.69px)
+        )
+        top right / 9px 9px no-repeat, /* AJUSTE: tamaño de esquina 9px (antes 10px) */
+      linear-gradient(
+          to top right,
+          transparent calc(50% - 0.69px), /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
+          var(--bevel-color) calc(50% - 0.69px),
+          var(--bevel-color) calc(50% + 0.69px),
+          transparent calc(50% + 0.69px)
+        )
+        bottom left / 9px 9px no-repeat, /* AJUSTE: tamaño de esquina 9px (antes 10px) */
+      linear-gradient(
+          to top left,
+          transparent calc(50% - 0.69px), /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
+          var(--bevel-color) calc(50% - 0.69px),
+          var(--bevel-color) calc(50% + 0.69px),
+          transparent calc(50% + 0.69px)
+        )
+        bottom right / 9px 9px no-repeat; /* AJUSTE: tamaño de esquina 9px (antes 10px) */
+  }
+</style>
