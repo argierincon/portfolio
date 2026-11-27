@@ -7,6 +7,8 @@ interface EducationItem {
   credentialNote?: string;
 }
 
+import Chip from "../Chip.astro";
+
 const items: readonly EducationItem[] = [
   {
     number: "01",
@@ -73,7 +75,7 @@ const items: readonly EducationItem[] = [
     <!-- Columna izquierda: editorial + composición geométrica -->
     <div class="flex flex-col justify-between border-b border-easton-blue-500 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
       <div class="space-y-6">
-        <span class="block font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
+        <span class="mono-caption text-wand-brown-500">
           05
         </span>
 
@@ -156,28 +158,28 @@ const items: readonly EducationItem[] = [
           <li class="group transition-colors duration-150 hover:bg-easton-blue-500">
             <div class="flex flex-col justify-between gap-3 px-6 py-5 sm:flex-row sm:items-center sm:gap-6 sm:px-8">
               <div class="flex items-start gap-5 sm:items-center">
-                <span class="font-mono text-sm font-bold text-wand-brown-500 transition-colors group-hover:text-lunar-yellow-500">
+                <span class="mono-caption text-wand-brown-500 transition-colors group-hover:text-lunar-yellow-500">
                   {item.number}
                 </span>
 
                 <div class="space-y-0.5">
-                  <h4 class="font-sans text-base font-bold text-easton-blue-500 transition-colors group-hover:text-chalk-paper sm:text-lg">
+                  <h4 class="subtitle-1 text-easton-blue-500 transition-colors group-hover:text-chalk-paper">
                     {item.title}
                   </h4>
-                  <p class="font-sans text-xs text-easton-blue-500/75 transition-colors group-hover:text-lunar-yellow-500 sm:text-sm">
+                  <p class="subtitle-2 text-easton-blue-500/75 transition-colors group-hover:text-lunar-yellow-500">
                     {item.subtitle}
                   </p>
                   {item.credentialNote && (
-                    <p class="hidden pt-1 font-sans text-xs text-chalk-paper/85 group-hover:block">
+                    <p class="caption hidden pt-1 text-chalk-paper/85 group-hover:block">
                       {item.credentialNote}
                     </p>
                   )}
                 </div>
               </div>
 
-              <span class="w-fit shrink-0 rounded-md bg-lunar-yellow-500 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+              <Chip size="sm" variant="solid" style="filled" color="lunar-yellow" weight="medium" case="normal">
                 {item.badge}
-              </span>
+              </Chip>
             </div>
           </li>
         ))}
