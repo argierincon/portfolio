@@ -1,4 +1,6 @@
 ---
+import Chip from "../Chip.astro";
+
 interface SocialLink {
   name: string;
   handleText: string;
@@ -38,22 +40,18 @@ const socials: readonly SocialLink[] = [
     <h2 class="font-display text-4xl font-bold tracking-tight text-mashle-red-500 sm:text-5xl">
       CONTACTO
     </h2>
-    <p class="body-1 text-easton-blue-500/85">
+    <p class="body-1 text-obsidian-ink">
       Sin formularios largos ni spam. Hablemos de ingeniería, código o proyectos
       a través de mis redes profesionales.
     </p>
   </div>
 
   <!-- Tarjeta principal -->
-  <div class="relative rounded-xl border border-easton-blue-500 bg-vellum-sheet shadow-[6px_6px_0_0_var(--color-wand-brown-500)]">
-    <div class="grid grid-cols-1 items-center gap-8 p-6 sm:p-8 lg:grid-cols-[1.15fr_0.95fr] lg:gap-10 lg:p-12">
+  <div class="relative rounded-xl">
+    <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.15fr_0.95fr] lg:gap-10">
       <!-- Columna izquierda: texto y botones -->
       <div class="relative z-10 space-y-6">
-        <span class="inline-block rounded-full border border-easton-blue-500 bg-lunar-yellow-500 px-3.5 py-1 font-mono text-[11px] font-bold tracking-widest text-easton-blue-500">
-          CONTACT
-        </span>
-
-        <h3 class="font-display text-4xl font-bold tracking-tight text-easton-blue-500 sm:text-6xl">
+        <h3 class="font-display text-2xl font-bold text-easton-blue-500 sm:text-3xl">
           ¡Hablemos!
         </h3>
 
@@ -71,103 +69,80 @@ const socials: readonly SocialLink[] = [
 
         <!-- Botones de redes -->
         <div class="flex flex-wrap items-center gap-3.5 pt-1">
-          {socials.map((item) => {
-            const buttonClasses =
-              item.variant === "dark"
-                ? "bg-easton-blue-500 text-chalk-paper shadow-[3px_3px_0_0_var(--color-wand-brown-500)]"
-                : item.variant === "yellow"
-                  ? "bg-lunar-yellow-500 text-easton-blue-500 shadow-[3px_3px_0_0_var(--color-easton-blue-500)]"
-                  : "bg-chalk-paper text-easton-blue-500 shadow-[3px_3px_0_0_var(--color-easton-blue-500)]";
+          <a
+            href="https://www.linkedin.com/in/argierincon"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <Chip variant="solid" style="filled" size="md" color="easton-blue">
+              <span class="!lowercase inline-flex h-4 w-4 items-center justify-center rounded-[3px] bg-chalk-paper font-sans text-[10px] font-extrabold text-easton-blue-500 mr-2">
+                in
+              </span>
+              LinkedIn
+              <span class="font-mono text-xs opacity-80 ml-2" aria-hidden="true">
+                ↗
+              </span>
+            </Chip>
+          </a>
 
-            return (
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class:list={[
-                  "inline-flex items-center gap-2.5 rounded-xl border border-easton-blue-500 px-4 py-2.5 font-sans text-sm font-semibold transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0",
-                  buttonClasses,
-                ]}
+          <a
+            href="https://github.com/argierincon"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <Chip variant="solid" style="outlined" size="md" color="easton-blue">
+              <svg
+                class="h-4 w-4 mr-2"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
               >
-                {item.network === "linkedin" && (
-                  <span class="inline-flex h-4 w-4 items-center justify-center rounded-[3px] bg-chalk-paper font-sans text-[10px] font-extrabold text-easton-blue-500">
-                    in
-                  </span>
-                )}
-
-                {item.network === "github" && (
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.52.1.72-.22.72-.5v-1.9c-2.94.64-3.56-1.25-3.56-1.25-.48-1.22-1.18-1.55-1.18-1.55-.96-.66.07-.65.07-.65 1.07.08 1.63 1.1 1.63 1.1.95 1.62 2.48 1.15 3.09.88.1-.69.37-1.15.67-1.42-2.35-.27-4.82-1.17-4.82-5.22 0-1.15.41-2.1 1.09-2.84-.11-.27-.47-1.35.1-2.82 0 0 .89-.28 2.91 1.08a10.1 10.1 0 0 1 5.3 0c2.02-1.36 2.91-1.08 2.91-1.08.57 1.47.21 2.55.1 2.82.68.74 1.09 1.69 1.09 2.84 0 4.06-2.47 4.95-4.83 5.21.38.33.72.97.72 1.96v2.9c0 .28.19.61.72.5A10.5 10.5 0 0 0 12 1.5Z" />
-                  </svg>
-                )}
-
-                {item.network === "instagram" && (
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    aria-hidden="true"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle
-                      cx="17.5"
-                      cy="6.5"
-                      r="1"
-                      fill="currentColor"
-                      stroke="none"
-                    />
-                  </svg>
-                )}
-
-                <span>{item.name}</span>
-                <span class="font-mono text-xs opacity-80" aria-hidden="true">
-                  ↗
-                </span>
-              </a>
-            );
-          })}
-        </div>
-
-        <!-- Pie de enlaces directos -->
-        <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 border-t border-wand-brown-300/40 pt-4 font-mono text-xs text-wand-brown-500">
-          <a
-            href={socials[2].href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="break-words hover:text-easton-blue-500"
-          >
-            {socials[2].handleText}
+                <path d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.52.1.72-.22.72-.5v-1.9c-2.94.64-3.56-1.25-3.56-1.25-.48-1.22-1.18-1.55-1.18-1.55-.96-.66.07-.65.07-.65 1.07.08 1.63 1.1 1.63 1.1.95 1.62 2.48 1.15 3.09.88.1-.69.37-1.15.67-1.42-2.35-.27-4.82-1.17-4.82-5.22 0-1.15.41-2.1 1.09-2.84-.11-.27-.47-1.35.1-2.82 0 0 .89-.28 2.91 1.08a10.1 10.1 0 0 1 5.3 0c2.02-1.36 2.91-1.08 2.91-1.08.57 1.47.21 2.55.1 2.82.68.74 1.09 1.69 1.09 2.84 0 4.06-2.47 4.95-4.83 5.21.38.33.72.97.72 1.96v2.9c0 .28.19.61.72.5A10.5 10.5 0 0 0 12 1.5Z" />
+              </svg>
+              GitHub
+              <span class="font-mono text-xs opacity-80 ml-2" aria-hidden="true">
+                ↗
+              </span>
+            </Chip>
           </a>
-          <span aria-hidden="true">·</span>
+
           <a
-            href={socials[0].href}
+            href="https://www.instagram.com/argie.rincon"
             target="_blank"
             rel="noopener noreferrer"
-            class="break-all hover:text-easton-blue-500"
+            class="transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
           >
-            {socials[0].handleText}
-          </a>
-          <span aria-hidden="true">·</span>
-          <a
-            href={socials[1].href}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="break-all hover:text-easton-blue-500"
-          >
-            {socials[1].handleText}
+            <Chip variant="solid" style="filled" size="md" color="lunar-yellow">
+              <svg
+                class="h-4 w-4 mr-2"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+              Instagram
+              <span class="font-mono text-xs opacity-80 ml-2" aria-hidden="true">
+                ↗
+              </span>
+            </Chip>
           </a>
         </div>
       </div>
 
-      <!-- Columna derecha: composición geométrica + escena del escritorio -->
+        <!-- Columna derecha: composición geométrica + escena del escritorio -->
       <div class="relative flex min-h-80 items-center justify-center">
         <!-- Líneas punteadas inferiores -->
         <div

@@ -479,14 +479,159 @@ import EastonChip from "../components/EastonChip.astro";
 					TypeScript
 				</Chip>
 			</div>
+			</div>
 		</div>
-	</div>
 
-	<div class="mx-auto max-w-7xl space-y-4 my-10 border-b border-easton-blue-200 pb-6">
-		<header class="mb-10">
-			<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
-				BUTTON STATES · 500 / 600 / 700
-			</span>
+		<!-- CHIPS · TODAS LAS VARIANTES -->
+		<div class="mx-auto max-w-7xl space-y-4 my-10 border-b border-easton-blue-200 pb-6">
+			<header class="mb-10">
+				<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+					CHIP COMPONENT · ALL VARIANTS
+				</span>
+				<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
+					Muestrario Completo de Chips
+				</h1>
+				<p class="mt-2 font-sans text-base text-easton-blue-500">
+					Todas las combinaciones de <span class="font-mono text-sm">variant</span> (
+					<span class="font-mono text-sm">soft</span>,{" "}
+					<span class="font-mono text-sm">solid</span>) ×{" "}
+					<span class="font-mono text-sm">style</span> (
+					<span class="font-mono text-sm">filled</span>,{" "}
+					<span class="font-mono text-sm">outlined</span>) en los 4 colores.
+				</p>
+			</header>
+
+			<!-- Soft + Filled -->
+			<div class="space-y-3 border-b border-easton-blue-100 pb-6">
+				<span class="mono-caption block text-wand-brown-500">
+					variant="soft" · style="filled" · size="md" · Colors
+				</span>
+				<div class="flex flex-wrap items-center gap-3">
+					<Chip color="mashle-red" variant="soft" style="filled">
+						Mashle Red
+					</Chip>
+					<Chip color="easton-blue" variant="soft" style="filled">
+						Easton Blue
+					</Chip>
+					<Chip color="wand-brown" variant="soft" style="filled">
+						Wand Brown
+					</Chip>
+					<Chip color="lunar-yellow" variant="soft" style="filled">
+						Lunar Yellow
+					</Chip>
+				</div>
+			</div>
+
+			<!-- Soft + Outlined -->
+			<div class="space-y-3 border-b border-easton-blue-100 pb-6">
+				<span class="mono-caption block text-wand-brown-500">
+					variant="soft" · style="outlined" · size="md" · Colors
+				</span>
+				<div class="flex flex-wrap items-center gap-3">
+					<Chip color="mashle-red" variant="soft" style="outlined">
+						Mashle Red
+					</Chip>
+					<Chip color="easton-blue" variant="soft" style="outlined">
+						Easton Blue
+					</Chip>
+					<Chip color="wand-brown" variant="soft" style="outlined">
+						Wand Brown
+					</Chip>
+					<Chip color="lunar-yellow" variant="soft" style="outlined">
+						Lunar Yellow
+					</Chip>
+				</div>
+			</div>
+
+			<!-- Solid + Filled -->
+			<div class="space-y-3 border-b border-easton-blue-100 pb-6">
+				<span class="mono-caption block text-wand-brown-500">
+					variant="solid" · style="filled" · size="md" · Colors
+				</span>
+				<div class="flex flex-wrap items-center gap-3">
+					<Chip color="mashle-red" variant="solid" style="filled">
+						Mashle Red
+					</Chip>
+					<Chip color="easton-blue" variant="solid" style="filled">
+						Easton Blue
+					</Chip>
+					<Chip color="wand-brown" variant="solid" style="filled">
+						Wand Brown
+					</Chip>
+					<Chip color="lunar-yellow" variant="solid" style="filled">
+						Lunar Yellow
+					</Chip>
+				</div>
+			</div>
+
+			<!-- Solid + Outlined -->
+			<div class="space-y-3 border-b border-easton-blue-100 pb-6">
+				<span class="mono-caption block text-wand-brown-500">
+					variant="solid" · style="outlined" · size="md" · Colors
+				</span>
+				<div class="flex flex-wrap items-center gap-3">
+					<Chip color="mashle-red" variant="solid" style="outlined">
+						Mashle Red
+					</Chip>
+					<Chip color="easton-blue" variant="solid" style="outlined">
+						Easton Blue
+					</Chip>
+					<Chip color="wand-brown" variant="solid" style="outlined">
+						Wand Brown
+					</Chip>
+					<Chip color="lunar-yellow" variant="solid" style="outlined">
+						Lunar Yellow
+					</Chip>
+				</div>
+			</div>
+
+			<!-- Sizes -->
+			<div class="grid gap-6 md:grid-cols-2">
+				<div class="space-y-3">
+					<span class="mono-caption block text-wand-brown-500">
+						size · "md" vs "sm"
+					</span>
+					<div class="flex flex-wrap items-center gap-3">
+						<Chip size="md" variant="solid" color="easton-blue">
+							Size MD (.mono-body-2)
+						</Chip>
+						<Chip size="sm" variant="solid" color="easton-blue">
+							Size SM (.mono-caption)
+						</Chip>
+					</div>
+				</div>
+
+				<div class="space-y-3">
+					<span class="mono-caption block text-wand-brown-500">
+						weight & case · regular / normal / lowercase
+					</span>
+					<div class="flex flex-wrap items-center gap-3">
+						<Chip
+							color="wand-brown"
+							variant="soft"
+							weight="regular"
+							case="normal"
+						>
+							Java 25 · Spring Boot
+						</Chip>
+						<Chip
+							color="lunar-yellow"
+							variant="solid"
+							weight="medium"
+							case="lowercase"
+						>
+							clean-architecture
+						</Chip>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mx-auto max-w-7xl space-y-4 my-10 border-b border-easton-blue-200 pb-6">
+			<header class="mb-10">
+				<span class="inline-block rounded bg-lunar-yellow-100 px-3 py-1 font-mono text-xs font-semibold text-easton-blue-500">
+					BUTTON STATES · 500 / 600 / 700
+				</span>
 			<h1 class="mt-3 font-display text-3xl font-bold text-mashle-red-500">
 				Muestrario de Botones
 			</h1>
