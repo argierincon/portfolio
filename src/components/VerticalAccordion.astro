@@ -54,134 +54,141 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
         data-accordion-panel
         data-expanded={isExpanded ? "true" : "false"}
         class:list={[
-          "group relative rounded-xl border border-easton-blue-500 shadow-[4px_4px_0_0_var(--color-wand-brown-500)] transition-all duration-300",
+          "group relative overflow-hidden rounded-xl border border-easton-blue-500 bg-vellum-sheet shadow-[4px_4px_0_0_var(--color-wand-brown-500)]",
+          "transition-[flex,padding] duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]",
           isExpanded
-            ? "flex-1 bg-vellum-sheet p-6 sm:p-8 lg:p-10"
-            : [
-                "w-full px-5 py-4 lg:w-24 lg:shrink-0 lg:px-0 lg:py-8",
-                "bg-vellum-sheet",
-              ],
+            ? "p-6 sm:p-8 lg:flex-[1_1_0%] lg:p-10"
+            : "px-5 py-4 lg:flex-[0_0_6rem] lg:px-0 lg:py-8",
         ]}
       >
-        <!-- CONTENIDO EXPANDIDO -->
+        <!-- CONTENIDO EXPANDIDO (sin display:none para permitir transición tipo Bootstrap) -->
         <div
           data-accordion-content
+          aria-hidden={!isExpanded}
           class:list={[
-            "grid grid-cols-1 gap-8 xl:grid-cols-[1.15fr_0.95fr] xl:items-center",
-            !isExpanded && "hidden",
+            "grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]",
+            isExpanded
+              ? "grid-rows-[1fr] opacity-100 delay-100"
+              : "pointer-events-none grid-rows-[0fr] opacity-0 lg:h-0",
           ]}
         >
-          <div class="space-y-6">
-            <div class="space-y-2">
-              {item.meta && (
-                <p class="font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
-                  {itemIndex} · {item.meta}
-                </p>
-              )}
-              <h3 class="font-display text-2xl font-bold text-easton-blue-500 sm:text-3xl">
-                {item.title}
-              </h3>
-            </div>
-
-            <p class="body-1 text-easton-blue-500/85">{item.description}</p>
-
-            {item.highlights && item.highlights.length > 0 && (
-              <ul class="space-y-2.5">
-                {item.highlights.map((point) => (
-                  <li class="flex items-start gap-2.5 font-sans text-sm text-easton-blue-500">
-                    <span
-                      class="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-wand-brown-500 text-chalk-paper"
-                      aria-hidden="true"
-                    >
-                      <svg
-                        class="h-2.5 w-2.5"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          d="M2.5 6.2L5 8.7L9.5 3.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            {item.tags && item.tags.length > 0 && (
-              <div class="flex flex-wrap gap-2">
-                {item.tags.map((tag) => (
-                  <span class="rounded-full bg-lunar-yellow-500/45 px-3.5 py-1 font-mono text-xs font-medium text-easton-blue-500">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-
-            {item.actions && item.actions.length > 0 && (
-              <div class="flex flex-wrap items-center gap-3 pt-1">
-                {item.actions.map((action) => {
-                  const isSecondary = action.variant === "secondary";
-                  return (
-                    <ActionButton
-                      href={action.href}
-                      variant={isSecondary ? "outlined" : "filled"}
-                      color={isSecondary ? "easton-blue" : "mashle-red"}
-                    >
-                      {action.label}
-                    </ActionButton>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-
-          <!-- Slot opcional para ilustración personalizada; si no se pasa, muestra marco base -->
-          <div class="flex min-h-72 flex-col justify-between rounded-2xl border border-wand-brown-300/50 bg-lunar-yellow-500/15 p-5 sm:p-6">
-            <div class="flex flex-1 items-center justify-center">
-              <slot name={`illustration-${idx}`}>
-                <div class="w-full max-w-md rounded-xl border border-easton-blue-500 bg-chalk-paper p-4 shadow-[4px_4px_0_0_var(--color-easton-blue-500)]">
-                  <div class="mb-3 flex items-center gap-1.5 border-b border-wand-brown-300/40 pb-2">
-                    <span class="h-2.5 w-2.5 rounded-full bg-mashle-red-500" />
-                    <span class="h-2.5 w-2.5 rounded-full bg-lunar-yellow-500" />
-                    <span class="h-2.5 w-2.5 rounded-full bg-easton-blue-500/40" />
-                  </div>
-                  <div class="grid grid-cols-3 gap-2 font-mono text-[10px] text-easton-blue-500">
-                    <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
-                      FLUJO ACTIVO
-                    </div>
-                    <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
-                      MÉTRICAS
-                    </div>
-                    <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
-                      ESTADO OK
-                    </div>
-                  </div>
+          <div class="min-h-0 overflow-hidden">
+            <div class="grid grid-cols-1 gap-8 xl:grid-cols-[1.15fr_0.95fr] xl:items-center">
+              <div class="space-y-6">
+                <div class="space-y-2">
+                  {item.meta && (
+                    <p class="font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
+                      {itemIndex} · {item.meta}
+                    </p>
+                  )}
+                  <h3 class="font-display text-2xl font-bold text-easton-blue-500 sm:text-3xl">
+                    {item.title}
+                  </h3>
                 </div>
-              </slot>
-            </div>
 
-            {item.illustrationLabel && (
-              <p class="mt-4 font-mono text-[11px] tracking-widest text-wand-brown-500/80">
-                {item.illustrationLabel}
-              </p>
-            )}
+                <p class="body-1 text-easton-blue-500/85">{item.description}</p>
+
+                {item.highlights && item.highlights.length > 0 && (
+                  <ul class="space-y-2.5">
+                    {item.highlights.map((point) => (
+                      <li class="flex items-start gap-2.5 font-sans text-sm text-easton-blue-500">
+                        <span
+                          class="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-wand-brown-500 text-chalk-paper"
+                          aria-hidden="true"
+                        >
+                          <svg
+                            class="h-2.5 w-2.5"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path
+                              d="M2.5 6.2L5 8.7L9.5 3.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {item.tags && item.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <span class="rounded-full bg-lunar-yellow-500/45 px-3.5 py-1 font-mono text-xs font-medium text-easton-blue-500">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {item.actions && item.actions.length > 0 && (
+                  <div class="flex flex-wrap items-center gap-3 pt-1">
+                    {item.actions.map((action) => {
+                      const isSecondary = action.variant === "secondary";
+                      return (
+                        <ActionButton
+                          href={action.href}
+                          variant={isSecondary ? "outlined" : "filled"}
+                          color={isSecondary ? "easton-blue" : "mashle-red"}
+                        >
+                          {action.label}
+                        </ActionButton>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              <!-- Slot opcional para ilustración personalizada -->
+              <div class="flex min-h-72 flex-col justify-between rounded-2xl border border-wand-brown-300/50 bg-lunar-yellow-500/15 p-5 sm:p-6">
+                <div class="flex flex-1 items-center justify-center">
+                  <slot name={`illustration-${idx}`}>
+                    <div class="w-full max-w-md rounded-xl border border-easton-blue-500 bg-chalk-paper p-4 shadow-[4px_4px_0_0_var(--color-easton-blue-500)]">
+                      <div class="mb-3 flex items-center gap-1.5 border-b border-wand-brown-300/40 pb-2">
+                        <span class="h-2.5 w-2.5 rounded-full bg-mashle-red-500" />
+                        <span class="h-2.5 w-2.5 rounded-full bg-lunar-yellow-500" />
+                        <span class="h-2.5 w-2.5 rounded-full bg-easton-blue-500/40" />
+                      </div>
+                      <div class="grid grid-cols-3 gap-2 font-mono text-[10px] text-easton-blue-500">
+                        <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
+                          FLUJO ACTIVO
+                        </div>
+                        <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
+                          MÉTRICAS
+                        </div>
+                        <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
+                          ESTADO OK
+                        </div>
+                      </div>
+                    </div>
+                  </slot>
+                </div>
+
+                {item.illustrationLabel && (
+                  <p class="mt-4 font-mono text-[11px] tracking-widest text-wand-brown-500/80">
+                    {item.illustrationLabel}
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- PESTaña COLAPSADA -->
+        <!-- PESTAÑA COLAPSADA -->
         <button
           type="button"
           data-accordion-trigger
           aria-expanded={isExpanded ? "true" : "false"}
           class:list={[
-            "w-full cursor-pointer items-center justify-between gap-4 text-left lg:h-full lg:flex-col lg:justify-between lg:text-center",
-            isExpanded ? "hidden" : "flex",
+            "flex w-full cursor-pointer items-center justify-between gap-4 text-left transition-opacity duration-300 lg:h-full lg:flex-col lg:justify-between lg:text-center",
+            isExpanded
+              ? "pointer-events-none absolute inset-0 opacity-0"
+              : "relative opacity-100 delay-150",
           ]}
         >
           <span class="font-mono text-xs font-semibold tracking-widest text-wand-brown-500">
@@ -193,7 +200,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
           </span>
 
           <span
-            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-mono text-xl font-bold text-chalk-paper bg-easton-blue-500 transition-transform duration-150 group-hover:scale-105"
+            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-easton-blue-500 font-mono text-xl font-bold text-chalk-paper transition-transform duration-500 ease-out group-hover:scale-105"
             aria-hidden="true"
           >
             +
@@ -223,50 +230,70 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
         const trigger = panel.querySelector<HTMLButtonElement>(
           "[data-accordion-trigger]",
         );
+
         panel.dataset.expanded = String(isSelected);
         trigger?.setAttribute("aria-expanded", String(isSelected));
+        content?.setAttribute("aria-hidden", String(!isSelected));
 
         if (isSelected) {
           panel.classList.remove(
-            "w-full",
             "px-5",
             "py-4",
-            "lg:w-24",
-            "lg:shrink-0",
+            "lg:flex-[0_0_6rem]",
             "lg:px-0",
             "lg:py-8",
           );
-          panel.classList.add(
-            "flex-1",
-            "bg-vellum-sheet",
-            "p-6",
-            "sm:p-8",
-            "lg:p-10",
+          panel.classList.add("p-6", "sm:p-8", "lg:flex-[1_1_0%]", "lg:p-10");
+
+          content?.classList.remove(
+            "pointer-events-none",
+            "grid-rows-[0fr]",
+            "opacity-0",
+            "lg:h-0",
           );
-          content?.classList.remove("hidden");
-          trigger?.classList.add("hidden");
-          trigger?.classList.remove("flex");
+          content?.classList.add("grid-rows-[1fr]", "opacity-100", "delay-100");
+
+          trigger?.classList.remove("relative", "opacity-100", "delay-150");
+          trigger?.classList.add(
+            "pointer-events-none",
+            "absolute",
+            "inset-0",
+            "opacity-0",
+          );
         } else {
           panel.classList.remove(
-            "flex-1",
-            "bg-vellum-sheet",
             "p-6",
             "sm:p-8",
+            "lg:flex-[1_1_0%]",
             "lg:p-10",
           );
           panel.classList.add(
-            "w-full",
             "px-5",
             "py-4",
-            "lg:w-24",
-            "lg:shrink-0",
+            "lg:flex-[0_0_6rem]",
             "lg:px-0",
             "lg:py-8",
-            "bg-vellum-sheet",
           );
-          content?.classList.add("hidden");
-          trigger?.classList.remove("hidden");
-          trigger?.classList.add("flex");
+
+          content?.classList.remove(
+            "grid-rows-[1fr]",
+            "opacity-100",
+            "delay-100",
+          );
+          content?.classList.add(
+            "pointer-events-none",
+            "grid-rows-[0fr]",
+            "opacity-0",
+            "lg:h-0",
+          );
+
+          trigger?.classList.remove(
+            "pointer-events-none",
+            "absolute",
+            "inset-0",
+            "opacity-0",
+          );
+          trigger?.classList.add("relative", "opacity-100", "delay-150");
         }
       });
     }
