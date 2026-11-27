@@ -311,39 +311,48 @@
 @utility subtitle-1 {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 1rem; /* 16px mobile */
   line-height: 1.5;
 
   @media (width >=48rem) {
-    font-size: 1rem; /* 16px desktop */
+    font-size: 1.125; /* 18px desktop */
   }
 }
 
 @utility subtitle-2 {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.875rem;
-  /* 14px mobile */
+  font-size: 1rem;  /* 16px mobile */
   line-height: 1.5;
 
   @media (width >=48rem) {
-    font-size: 1rem;
-    /* 16px desktop */
+    font-size: 1.125rem;  /* 18px desktop */
   }
 }
 
 @utility subtitle-3 {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.75rem; /* 12px mobile */
+  font-size: 0.875rem; /* 14px mobile */
   line-height: 1.5;
 
   @media (width >=48rem) {
-    font-size: 0.875rem; /* 14px desktop */
+    font-size: 1rem; /* 16px desktop */
   }
 }
 
 @utility body-1 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1rem; /* 16px mobile */
+  line-height: 1.5;
+
+  @media (width >=48rem) {
+    font-size: 1.125rem; /* 18px desktop */
+  }
+}
+
+@utility body-2 {
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 0.875rem; /* 14px mobile */
@@ -354,22 +363,17 @@
   }
 }
 
-@utility body-2 {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 0.75rem; /* 12px mobile */
-  line-height: 1.5;
-
-  @media (width >=48rem) {
-    font-size: 0.875rem; /* 14px desktop */
-  }
-}
-
 @utility text-button {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.875rem;
-  /* 14px mobile */
+  font-size: 1rem; /* 16px desktop */
+  line-height: 1.5;
+}
+
+@utility caption {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.875rem; /* 14px mobile */
   line-height: 1.5;
 
   @media (width >=48rem) {
@@ -377,21 +381,10 @@
   }
 }
 
-@utility caption {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 0.625rem; /* 10px mobile */
-  line-height: 1.5;
-
-  @media (width >=48rem) {
-    font-size: 0.75rem; /* 12px desktop */
-  }
-}
-
 @utility overline {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.625rem; /* 10px mobile & desktop */
+  font-size: 0.75rem; /* 12px mobile & desktop */
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -400,37 +393,48 @@
 @utility mono-subtitle-1 {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 1rem; /* 16px mobile */
   line-height: 1.5;
 
   @media (width >=48rem) {
-    font-size: 1rem; /* 16px desktop */
+    font-size: 1.125rem; /* 18px desktop */
   }
 }
 
 @utility mono-subtitle-2 {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: 1rem; /* 16px mobile */
   line-height: 1.5;
 
   @media (width >=48rem) {
-    font-size: 1rem; /* 16px desktop */
+    font-size: 1.125rem; /* 18px desktop */
   }
 }
 
 @utility mono-subtitle-3 {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.75rem; /* 12px mobile */
+  font-size: 0.875rem; /* 14px mobile */
   line-height: 1.5;
 
   @media (width >=48rem) {
-    font-size: 0.875rem; /* 14px desktop */
+    font-size: 1rem; /* 16px desktop */
   }
 }
 
 @utility mono-body-1 {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 1rem; /* 16px mobile */
+  line-height: 1.5;
+
+  @media (width >=48rem) {
+    font-size: 1.125rem; /* 18px desktop */
+  }
+}
+
+@utility mono-body-2 {
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 0.875rem; /* 14px mobile */
@@ -441,7 +445,14 @@
   }
 }
 
-@utility mono-body-2 {
+@utility mono-text-button {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1rem; 
+  line-height: 1.5;
+}
+
+@utility mono-caption {
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 0.75rem; /* 12px mobile */
@@ -452,34 +463,10 @@
   }
 }
 
-@utility mono-text-button {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 0.875rem; /* 14px mobile */
-  line-height: 1.5;
-
-  @media (width >=48rem) {
-    font-size: 1rem;
- /* 16px desktop */
-  }
-}
-
-@utility mono-caption {
-  font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: 0.625rem; /* 10px mobile */
-  line-height: 1.5;
-
-  @media (width >=48rem) {
-    font-size: 0.75rem;
- /* 12px desktop */
-  }
-}
-
 @utility mono-overline {
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 0.625rem; /* 10px mobile & desktop */
+  font-size: 0.75rem; /* 12px mobile & desktop */
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.08em;
