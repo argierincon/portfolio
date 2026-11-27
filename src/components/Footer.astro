@@ -1,5 +1,6 @@
 ---
 import EastonChip from "./EastonChip.astro";
+import avatar from "../assets/argie-mashle-avatar.png";
 
 const currentYear = new Date().getFullYear();
 
@@ -45,13 +46,14 @@ const socials: readonly FooterLink[] = [
 
 <footer class="relative overflow-hidden bg-mashle-red-500 text-vellum-sheet">
   <!-- Corte superior diagonal con vértice / punta central hacia abajo -->
-  <div class="relative -mt-px w-full" aria-hidden="true">
+  <div class="relative -mt-px w-full">
     <svg
       class="block h-20 w-full sm:h-28 lg:h-32"
       viewBox="0 0 1440 160"
       preserveAspectRatio="none"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
       <!-- Ajusta el fill al color exacto de la sección superior -->
       <polygon
@@ -67,6 +69,17 @@ const socials: readonly FooterLink[] = [
         fill="none"
       />
     </svg>
+
+    <!-- Avatar centrado sobre la ranura del borde -->
+    <div class="absolute left-1/2 top-[95%] z-20 -translate-x-1/2 -translate-y-1/2">
+      <div class="relative overflow-visible rounded-full after:pointer-events-none after:absolute after:-inset-1 after:rounded-full after:border after:border-1 after:border-lunar-yellow-500/70">
+        <img
+          src={avatar.src}
+          alt="Logo Argie Rincón"
+          class="h-14 w-14 rounded-full border border-wand-brown-500/60 object-cover sm:h-16 sm:w-16"
+        />
+      </div>
+    </div>
   </div>
 
   <div class="container-sections py-10 pb-12 md:pt-14 lg:pt-18">
