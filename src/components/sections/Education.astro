@@ -4,6 +4,7 @@ interface EducationItem {
   title: string;
   subtitle: string;
   badge: string;
+  description?: string;
 }
 
 import Chip from "../Chip.astro";
@@ -14,32 +15,52 @@ const items: readonly EducationItem[] = [
     title: "Programa de Desarrollador Full Stack Java",
     subtitle: "Generation Colombia, Lima, Perú",
     badge: "Java · Spring Boot",
+    description:
+      "Formación intensiva en desarrollo backend, APIs REST y frontend.",
   },
   {
     period: "Jul 2026 – Ene 2027",
     title: "Programa de Desarrollo web Full Stack con Java",
     subtitle: "CodiGo Tecsup, Lima, Perú",
     badge: "Java · Spring Boot",
+    description:
+      "Fundamentos del lenguaje, POO, colecciones y manejo de excepciones.",
   },
   {
     period: "Feb 2020 – Sep 2020",
     title: "Especialización en Desarrollo Web Frontend",
     subtitle: "Laboratoria, Lima, Perú",
     badge: "Java · Spring Boot",
+    description:
+      "Diseño de servicios desacoplados, configuración y buenas prácticas.",
   },
   {
     period: "Feb 2012 – Sep 2015",
     title: "Técnico Superior Universitario en Administración Industrial",
     subtitle: "IUTIRLA, Maturín, Venezuela",
     badge: "Java · Spring Boot",
+    description:
+      "Optimización operativa, mejora continua y análisis de flujos.",
+  },
+  {
+    period: "Abril, 2026",
+    title: "Fundamentos y Modelamiento de Datos con SQL (SQL Server)",
+    subtitle: "",
+    badge: "",
+  },
+  {
+    period: "Octubre, 2023",
+    title: "Curso Intermedio de Programación Orientada a Objetos en JavaScript",
+    subtitle: "",
+    badge: "",
   },
 ];
 ---
 
-<section id="educacion" class="container-sections space-y-6">
+<section id="formacion" class="container-sections space-y-6">
   <!-- Encabezado de sección -->
   <div class="max-w-2xl space-y-6">
-    <h2 class="title-sections">Educación</h2>
+    <h2 class="title-sections">Formación académica</h2>
     <p class="body-1">
       Trayectoria académica, certificaciones técnicas y formación continua.
     </p>
@@ -137,9 +158,14 @@ const items: readonly EducationItem[] = [
                   <h4 class="subtitle-main text-easton-blue-500 transition-colors group-hover:text-chalk-paper">
                     {item.title}
                   </h4>
-                  <p class="body-2 text-easton-blue-500/75 transition-colors group-hover:text-lunar-yellow-500">
+                  <p class="body-2 text-easton-blue-500 transition-colors group-hover:text-lunar-yellow-500">
                     {item.subtitle}
                   </p>
+                  {item.description && (
+                    <p class="caption pt-1 text-easton-blue-500/90 transition-colors group-hover:text-lunar-yellow-500">
+                      {item.description}
+                    </p>
+                  )}
                 </div>
               </div>
 
