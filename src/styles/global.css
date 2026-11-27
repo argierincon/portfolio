@@ -347,9 +347,9 @@
   font-size: 1rem; /* 16px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1.125rem; /* 18px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1.125rem; 
+  } */
 }
 
 @utility body-2 {
@@ -358,9 +358,9 @@
   font-size: 0.875rem; /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1rem; /* 16px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1rem;
+  } */
 }
 
 @utility text-button {
@@ -376,9 +376,9 @@
   font-size: 0.875rem; /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1rem; /* 16px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1rem; 
+  } */
 }
 
 @utility overline {
@@ -396,9 +396,9 @@
   font-size: 1rem; /* 16px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1.125rem; /* 18px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1.125rem;
+  } */
 }
 
 @utility mono-subtitle-2 {
@@ -407,9 +407,9 @@
   font-size: 1rem; /* 16px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1.125rem; /* 18px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1.125rem; 
+  } */
 }
 
 @utility mono-subtitle-3 {
@@ -418,9 +418,9 @@
   font-size: 0.875rem; /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1rem; /* 16px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1rem;
+  } */
 }
 
 @utility mono-body-1 {
@@ -429,9 +429,9 @@
   font-size: 1rem; /* 16px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1.125rem; /* 18px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1.125rem;
+  } */
 }
 
 @utility mono-body-2 {
@@ -440,9 +440,9 @@
   font-size: 0.875rem; /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1rem; /* 16px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1rem; 
+  } */
 }
 
 @utility mono-text-button {
@@ -458,9 +458,9 @@
   font-size: 0.75rem; /* 12px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 0.875rem; /* 14px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 0.875rem;
+  } */
 }
 
 @utility mono-overline {
