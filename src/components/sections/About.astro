@@ -80,18 +80,20 @@ import StatCard from "../StatCard.astro";
 
   <!-- Columna derecha -->
   <div class="relative mt-10 overflow-hidden sm:overflow-visible lg:col-span-5 lg:mt-0">
-    <div class="relative mx-auto w-80 max-w-md sm:w-auto">
+    <div class="relative py-3 mx-auto w-80 max-w-md sm:w-auto">
       <!-- Bloque marrón central -->
       <div class="absolute top-[34%] left-[16%] sm:left-[13%] md:left-[22%] lg:left-[15%] h-60 w-60 bg-wand-brown-500/90" />
 
-      <!-- Foto superior con forma de arco pegada a la derecha -->
-      <div class="relative z-10 ml-[104px] md:ml-[220px] lg:ml-auto w-64 sm:w-72 overflow-hidden rounded-t-full">
-        <img
-          src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849824_1280.jpg"
-          alt="Cuaderno y notas de estudio sobre escritorio"
-          class="h-64 sm:h-72 w-full object-cover"
-          loading="lazy"
-        />
+      <!-- Foto superior con forma de arco + marco separado con ::after -->
+      <div class="relative z-10 ml-[104px] md:ml-[220px] lg:ml-auto w-64 sm:w-72 overflow-visible rounded-t-full after:pointer-events-none after:absolute after:-inset-2 after:rounded-t-full after:border after:border-easton-blue-500">
+        <div class="h-64 sm:h-72 w-full overflow-hidden rounded-t-full">
+          <img
+            src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849824_1280.jpg"
+            alt="Cuaderno y notas de estudio sobre escritorio"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       <!-- Círculo amarillo flotante -->
@@ -100,14 +102,16 @@ import StatCard from "../StatCard.astro";
         aria-hidden="true"
       />
 
-      <!-- Foto inferior manteniendo su posición -->
-      <div class="relative z-20 -left-10 sm:-left-[3.75rem] mt-0 w-72 overflow-hidden rounded-3xl">
-        <img
-          src="https://m.media-amazon.com/images/I/81r6Ia6foWL.jpg"
-          alt="Entorno de desarrollo con código en pantalla"
-          class="h-56 sm:h-64 w-full object-cover"
-          loading="lazy"
-        />
+      <!-- Foto inferior + marco separado con ::after -->
+      <div class="relative z-20 -left-10 sm:-left-[3.75rem] mt-0 w-72 overflow-visible rounded-3xl after:pointer-events-none after:absolute after:-inset-2 after:rounded-lg after:border after:border-easton-blue-500">
+        <div class="h-56 sm:h-64 w-full overflow-hidden rounded-lg">
+          <img
+            src="https://m.media-amazon.com/images/I/81r6Ia6foWL.jpg"
+            alt="Entorno de desarrollo con código en pantalla"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </div>
