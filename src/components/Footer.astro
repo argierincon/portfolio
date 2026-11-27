@@ -1,6 +1,8 @@
 ---
 import EastonChip from "./EastonChip.astro";
 
+const currentYear = new Date().getFullYear();
+
 interface FooterLink {
   label: string;
   href: string;
@@ -41,7 +43,7 @@ const socials: readonly FooterLink[] = [
 ];
 ---
 
-<footer class="relative overflow-hidden bg-mashle-red-500 text-chalk-paper">
+<footer class="relative overflow-hidden bg-mashle-red-500 text-vellum-sheet">
   <!-- Corte superior diagonal con vértice / punta central hacia abajo -->
   <div class="relative w-full" aria-hidden="true">
     <svg
@@ -54,7 +56,7 @@ const socials: readonly FooterLink[] = [
       <!-- Fondo superior de transición (papel o sección anterior) con punta hacia abajo en el centro -->
       <polygon
         points="0,0 1440,0 1440,28 765,112 720,152 675,112 0,28"
-        class="fill-chalk-paper"
+        class="fill-vellum-sheet"
       />
 
       <!-- Línea decorativa siguiendo el ángulo -->
@@ -73,7 +75,7 @@ const socials: readonly FooterLink[] = [
       <div class="flex items-center justify-center gap-1 sm:gap-2 md:gap-3">
         <!-- Triángulo izquierdo apuntando hacia adentro -->
         <svg
-          class="h-5 w-4 shrink-0 text-chalk-paper sm:h-7 sm:w-5"
+          class="h-5 w-4 shrink-0 text-vellum-sheet sm:h-7 sm:w-5"
           viewBox="0 0 20 28"
           fill="currentColor"
           aria-hidden="true"
@@ -81,13 +83,13 @@ const socials: readonly FooterLink[] = [
           <polygon points="0,0 20,14 0,28" />
         </svg>
 
-        <p class="font-display text-4xl font-black uppercase tracking-tight text-chalk-paper drop-shadow-[0_4px_0_var(--color-easton-blue-500)] sm:text-6xl lg:text-7xl">
+        <p class="font-display text-4xl font-black uppercase tracking-tight text-vellum-sheet drop-shadow-[0_4px_0_var(--color-easton-blue-500)] sm:text-6xl lg:text-7xl">
           ARGIE RINCÓN
         </p>
 
         <!-- Triángulo derecho apuntando hacia adentro -->
         <svg
-          class="h-5 w-4 shrink-0 text-chalk-paper sm:h-7 sm:w-5"
+          class="h-5 w-4 shrink-0 text-vellum-sheet sm:h-7 sm:w-5"
           viewBox="0 0 20 28"
           fill="currentColor"
           aria-hidden="true"
@@ -111,7 +113,7 @@ const socials: readonly FooterLink[] = [
     </div>
 
     <!-- Zona inferior: enlaces y redes -->
-    <div class="mt-14 grid grid-cols-1 items-start gap-10 border-t border-chalk-paper/15 pt-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+    <div class="mt-14 grid grid-cols-1 items-start gap-10 border-t border-vellum-sheet/15 pt-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
       <!-- Columnas de navegación -->
       <div class="grid grid-cols-2 gap-6 sm:grid-cols-3">
         <ul class="space-y-3">
@@ -119,7 +121,7 @@ const socials: readonly FooterLink[] = [
             <li>
               <a
                 href={item.href}
-                class="font-display text-lg font-bold text-chalk-paper transition-colors hover:text-lunar-yellow-500 sm:text-xl"
+                class="font-display text-lg font-bold text-vellum-sheet transition-colors hover:text-lunar-yellow-500 sm:text-xl"
               >
                 {item.label}
               </a>
@@ -132,7 +134,7 @@ const socials: readonly FooterLink[] = [
             <li>
               <a
                 href={item.href}
-                class="font-display text-lg font-bold text-chalk-paper transition-colors hover:text-lunar-yellow-500 sm:text-xl"
+                class="font-display text-lg font-bold text-vellum-sheet transition-colors hover:text-lunar-yellow-500 sm:text-xl"
               >
                 {item.label}
               </a>
@@ -145,7 +147,7 @@ const socials: readonly FooterLink[] = [
             <li>
               <a
                 href={item.href}
-                class="font-display text-lg font-bold text-chalk-paper transition-colors hover:text-lunar-yellow-500 sm:text-xl"
+                class="font-display text-lg font-bold text-vellum-sheet transition-colors hover:text-lunar-yellow-500 sm:text-xl"
               >
                 {item.label}
               </a>
@@ -160,45 +162,45 @@ const socials: readonly FooterLink[] = [
           <span class="font-mono text-xs font-bold uppercase tracking-widest text-lunar-yellow-500">
             Lima, Perú
           </span>
-          <span class="text-chalk-paper/40" aria-hidden="true">
+          <span class="text-vellum-sheet/40" aria-hidden="true">
             ·
           </span>
           <a
             href="#contacto"
-            class="font-mono text-xs font-semibold text-chalk-paper underline-offset-4 hover:text-lunar-yellow-500 hover:underline"
+            class="font-mono text-xs font-semibold text-vellum-sheet underline-offset-4 hover:text-lunar-yellow-500 hover:underline"
           >
             Contacto
-          </a>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-4 font-mono text-xs text-chalk-paper/90">
-          <span class="font-semibold uppercase tracking-widest text-lunar-yellow-500">
-            Oficial
-          </span>
-          {socials.map((social) => (
-            <a
-              href={social.href}
-              target={social.external ? "_blank" : undefined}
-              rel={social.external ? "noopener noreferrer" : undefined}
-              class="transition-colors hover:text-lunar-yellow-500"
-            >
-              {social.label}
-            </a>
-          ))}
-          <a
-            href="#"
-            class="rounded border border-chalk-paper/40 px-2.5 py-1 text-chalk-paper transition-colors hover:border-lunar-yellow-500 hover:text-lunar-yellow-500"
-          >
-            Arriba ↑
           </a>
         </div>
       </div>
     </div>
 
     <!-- Créditos base -->
-    <div class="mt-8 flex flex-col justify-between gap-2 border-t border-chalk-paper/15 pt-5 font-mono text-xs text-chalk-paper/75 sm:flex-row">
-      <p>© 2026 Argie Rincón</p>
-      <p>Java 25 · Spring Boot · Astro</p>
+    <div class="mt-8 flex flex-col items-center justify-center gap-6 border-t border-chalk-paper pt-5 sm:flex-row sm:justify-between sm:items-center">
+      <p class="mono-body-1 text-vellum-sheet/80 text-center sm:text-start">
+        © {currentYear} Argie Rincón
+      </p>
+      <div class="flex flex-wrap items-center gap-4 mono-body-2 text-vellum-sheet/80">
+        <span class="font-semibold uppercase tracking-widest text-lunar-yellow-500">
+          Oficial
+        </span>
+        {socials.map((social) => (
+          <a
+            href={social.href}
+            target={social.external ? "_blank" : undefined}
+            rel={social.external ? "noopener noreferrer" : undefined}
+            class="transition-colors hover:text-lunar-yellow-500"
+          >
+            {social.label}
+          </a>
+        ))}
+        <a
+          href="#"
+          class="rounded border border-vellum-sheet/80  px-2.5 py-1 text-vellum-sheet/80 transition-colors hover:border-lunar-yellow-500 hover:text-lunar-yellow-500 ml-3"
+        >
+          Arriba ↑
+        </a>
+      </div>
     </div>
   </div>
 </footer>
