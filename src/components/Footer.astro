@@ -44,7 +44,7 @@ const socials: readonly FooterLink[] = [
 ];
 ---
 
-<footer class="relative overflow-hidden bg-mashle-red-500 text-vellum-sheet">
+<footer class="relative overflow-visible bg-mashle-red-500 text-vellum-sheet">
   <!-- Corte superior diagonal con vértice / punta central hacia abajo -->
   <div class="relative -mt-px w-full">
     <svg
@@ -71,12 +71,12 @@ const socials: readonly FooterLink[] = [
     </svg>
 
     <!-- Avatar centrado sobre la ranura del borde -->
-    <div class="absolute left-1/2 top-[95%] z-20 -translate-x-1/2 -translate-y-1/2">
+    <div class="absolute left-1/2 top-[95%] z-20 -translate-x-1/2 -translate-y-[83%]">
       <div class="relative overflow-visible rounded-full after:pointer-events-none after:absolute after:-inset-1 after:rounded-full after:border after:border-1 after:border-lunar-yellow-500/70">
         <img
           src={avatar.src}
           alt="Logo Argie Rincón"
-          class="h-14 w-14 rounded-full border border-wand-brown-500/60 object-cover sm:h-16 sm:w-16"
+          class="h-32 w-32 rounded-full border border-wand-brown-500/60 object-cover lg:h-48 lg:w-48"
         />
       </div>
     </div>
