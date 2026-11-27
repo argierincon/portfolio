@@ -1,4 +1,6 @@
 ---
+import EastonChip from "./EastonChip.astro";
+
 interface FooterLink {
   label: string;
   href: string;
@@ -94,12 +96,10 @@ const socials: readonly FooterLink[] = [
         </svg>
       </div>
 
-      <!-- Subtítulo / Rol enmarcado -->
-      <div class="mt-3 inline-flex items-center gap-3 rounded-md border border-easton-blue-500 bg-easton-blue-500/90 px-4 py-1.5 shadow-[3px_3px_0_0_var(--color-lunar-yellow-500)]">
-        <span class="font-mono text-xs font-bold uppercase tracking-[0.22em] text-lunar-yellow-500 sm:text-sm">
-          FULL STACK JAVA DEVELOPER
-        </span>
-      </div>
+      <!-- Subtítulo / Rol -->
+      <EastonChip class="mt-3 min-w-[250px]" variant="solid" style="filled" color="easton-blue" size="md">
+        FULL STACK<br />JAVA DEVELOPER
+      </EastonChip>
     </div>
 
     <!-- Zona inferior: enlaces y redes -->
