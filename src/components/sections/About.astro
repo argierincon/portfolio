@@ -4,10 +4,10 @@ import StatCard from "../StatCard.astro";
 
 <section
   id="about"
-  class="container-sections grid items-center lg:grid-cols-12"
+  class="mx-auto sm:px-6 xl:px-0 max-w-6xl grid items-center lg:grid-cols-12 gap-4 sm:gap-8 lg:gap-0"
 >
   <!-- Columna izquierda -->
-  <div class="space-y-6 lg:col-span-7">
+  <div class="px-6 sm:px-0 mx-auto lg:mx-0 space-y-6 lg:col-span-7">
     <!-- Encabezado -->
     <h2 class="title-sections">Acerca de mí</h2>
 
@@ -79,45 +79,33 @@ import StatCard from "../StatCard.astro";
   </div>
 
   <!-- Columna derecha -->
-  <!-- Columna derecha -->
-  <div class="relative mt-10 lg:col-span-5 lg:mt-0">
-    <div class="relative mx-auto max-w-md pt-4 pb-6 pr-4 sm:pr-6">
-      <!-- Bloques geométricos y marco decorativo -->
-      <div class="pointer-events-none select-none" aria-hidden="true">
-        <!-- Bloque marrón central -->
-        <div class="absolute right-12 top-32 h-28 w-24 bg-wand-brown-500/90 sm:right-14 sm:h-32 sm:w-28" />
+  <div class="relative mt-10 overflow-hidden sm:overflow-visible lg:col-span-5 lg:mt-0">
+    <div class="relative mx-auto w-80 max-w-md sm:w-auto">
+      <!-- Bloque marrón central -->
+      <div class="absolute top-[34%] left-[16%] sm:left-[13%] h-60 w-60 bg-wand-brown-500/90" />
 
-        <!-- Bloque marrón inferior derecho -->
-        <div class="absolute bottom-2 right-0 h-32 w-20 bg-wand-brown-500 sm:h-36 sm:w-24" />
-
-        <!-- Marco fino con esquina redondeada detrás de la foto inferior -->
-        <div class="absolute bottom-10 left-0 h-56 w-64 rounded-3xl border border-easton-blue-500/45 sm:h-64 sm:w-72" />
-      </div>
-
-      <!-- Foto superior con forma de arco (reemplaza src por la URL directa de Pixabay) -->
-      <div class="relative z-10 ml-auto w-64 overflow-hidden rounded-t-full border-2 border-easton-blue-500 bg-vellum-sheet shadow-[6px_6px_0_0_rgba(12,25,44,0.12)] sm:w-72">
+      <!-- Foto superior con forma de arco pegada a la derecha -->
+      <div class="relative z-10 ml-[104px] sm:ml-28 w-64 sm:w-72 overflow-hidden rounded-t-full">
         <img
           src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849824_1280.jpg"
           alt="Cuaderno y notas de estudio sobre escritorio"
-          class="h-64 w-full object-cover sm:h-72"
+          class="h-64 sm:h-72 w-full object-cover"
           loading="lazy"
         />
       </div>
 
-      <!-- Círculo amarillo superpuesto entre ambas fotos -->
-      <div
-        class="pointer-events-none relative z-30 -mt-12 ml-auto mr-20 flex justify-end sm:mr-24"
+      <!-- Círculo amarillo flotante -->
+      <span
+        class="pointer-events-none absolute top-56 sm:top-[240px] right-32 sm:right-[190px] z-30 h-20 w-20 sm:h-28 sm:w-28 rounded-full bg-lunar-yellow-500"
         aria-hidden="true"
-      >
-        <span class="h-24 w-24 rounded-full border-2 border-easton-blue-500/20 bg-lunar-yellow-500 sm:h-28 sm:w-28" />
-      </div>
+      />
 
-      <!-- Foto inferior con esquinas redondeadas (reemplaza src por la URL directa de Pixabay) -->
-      <div class="relative z-20 -mt-14 w-64 overflow-hidden rounded-3xl border border-easton-blue-500 bg-[#11151c] shadow-[6px_6px_0_0_var(--color-wand-brown-500)] sm:w-72">
+      <!-- Foto inferior manteniendo su posición -->
+      <div class="relative z-20 -left-10 sm:-left-[3.75rem] mt-0 w-72 overflow-hidden rounded-3xl">
         <img
           src="https://m.media-amazon.com/images/I/81r6Ia6foWL.jpg"
           alt="Entorno de desarrollo con código en pantalla"
-          class="h-56 w-full object-cover sm:h-64"
+          class="h-56 sm:h-64 w-full object-cover"
           loading="lazy"
         />
       </div>
