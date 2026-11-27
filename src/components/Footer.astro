@@ -45,7 +45,7 @@ const socials: readonly FooterLink[] = [
 
 <footer class="relative overflow-hidden bg-mashle-red-500 text-vellum-sheet">
   <!-- Corte superior diagonal con vértice / punta central hacia abajo -->
-  <div class="relative w-full" aria-hidden="true">
+  <div class="relative -mt-px w-full" aria-hidden="true">
     <svg
       class="block h-20 w-full sm:h-28 lg:h-32"
       viewBox="0 0 1440 160"
@@ -53,10 +53,10 @@ const socials: readonly FooterLink[] = [
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <!-- Fondo superior de transición (papel o sección anterior) con punta hacia abajo en el centro -->
+      <!-- Ajusta el fill al color exacto de la sección superior -->
       <polygon
         points="0,0 1440,0 1440,28 765,112 720,152 675,112 0,28"
-        class="fill-vellum-sheet"
+        class="fill-chalk-paper"
       />
 
       <!-- Línea decorativa siguiendo el ángulo -->
@@ -111,7 +111,7 @@ const socials: readonly FooterLink[] = [
         JAVA DEVELOPER
       </EastonChip>
     </div>
-    
+
     <!-- Zona inferior: enlaces y redes -->
     <div class="mt-14 flex justify-center border-t border-vellum-sheet/20 py-14">
       <!-- Columnas de navegación -->
