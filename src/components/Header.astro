@@ -80,17 +80,18 @@ const v = variants[variant];
 <header data-header class={`top-0 z-40 border-b ${v.header}`}>
   <div class="container-sections flex h-20 items-center justify-between gap-4">
     <!-- Marca / Nombre -->
-    <a
-      href="#"
-      class="flex items-center gap-2"
-    >
-      <img
-        src={avatar.src}
-        alt="Logo Argie Rincón"
-        class="h-8 w-8 rounded-full object-cover sm:h-10 sm:w-10 [image-orientation:from-image]"
-      />
-      <span class={`font-display text-lg font-bold tracking-wider transition-colors sm:text-xl ${v.brand}`}>
-        ARGIE RINCON
+    <a href="#" class="flex items-center gap-2">
+      <div class="relative overflow-visible rounded-full after:pointer-events-none after:absolute after:-inset-1 after:rounded-full after:border after:border-wand-brown-500/80">
+        <img
+          src={avatar.src}
+          alt="Logo Argie Rincón"
+          class="h-8 w-8 rounded-full border border-wand-brown-500/60 object-cover sm:h-10 sm:w-10 [image-orientation:from-image]"
+        />
+      </div>
+      <span
+        class={`font-display ml-1 .5text-lg font-bold tracking-wider transition-colors sm:text-xl ${v.brand}`}
+      >
+        AR
       </span>
     </a>
 
