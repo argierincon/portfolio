@@ -4,13 +4,11 @@ import Chip from "../Chip.astro";
 import ActionButton from "../ActionButton.astro";
 
 type AccentColor = "lunar-yellow" | "mashle-red" | "easton-blue" | "wand-brown";
-type MilestoneIcon = "microservices" | "api" | "transition" | "clipboard";
 
 interface TimelineEntry {
   side: "left" | "right";
   year: string;
   milestone: string;
-  icon: MilestoneIcon;
   period: string;
   role: string;
   company: string;
@@ -25,7 +23,6 @@ const timeline: readonly TimelineEntry[] = [
     side: "left",
     year: "2025",
     milestone: "8 Secciones · Auth0 & Simulador de Compra",
-    icon: "microservices",
     period: "FEBRERO 2025 — MARZO 2025",
     role: "Fullstack Developer",
     company: "Rumbo",
@@ -39,7 +36,6 @@ const timeline: readonly TimelineEntry[] = [
     side: "right",
     year: "2024",
     milestone: "Migración Vue 2 → Vue 3 · 5 Meses",
-    icon: "api",
     period: "DICIEMBRE 2023 — ABRIL 2024",
     role: "Frontend Developer",
     company: "Securitec",
@@ -53,7 +49,6 @@ const timeline: readonly TimelineEntry[] = [
     side: "left",
     year: "2023",
     milestone: "+47 Componentes · 7 Landings · 9 Módulos Pinia",
-    icon: "transition",
     period: "DICIEMBRE 2022 — JUNIO 2023",
     role: "Frontend Developer",
     company: "Lúcuma Labs",
@@ -74,7 +69,6 @@ const timeline: readonly TimelineEntry[] = [
     side: "right",
     year: "2021 — 2022",
     milestone: "SaaS Multi-Tenant · 1 Año 7 Meses",
-    icon: "clipboard",
     period: "MARZO 2021 — SEPTIEMBRE 2022",
     role: "Frontend Developer",
     company: "Blooz",
@@ -205,89 +199,10 @@ const timeline: readonly TimelineEntry[] = [
                     />
                   </div>
 
-                  <!-- En desktop: año + icono + chip -->
-                  <div
-                    class={`hidden lg:flex items-center gap-3 ${item.icon === "transition" ? "flex-col items-end" : "flex-row-reverse"}`}
-                  >
-                    <span class="font-display text-5xl font-bold tracking-tight text-easton-blue-500">
-                      {item.year}
-                    </span>
-
-                    {item.icon === "api" && (
-                      <svg
-                        class="h-14 w-14 text-easton-blue-500"
-                        viewBox="0 0 64 64"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        aria-hidden="true"
-                      >
-                        <rect
-                          x="20"
-                          y="6"
-                          width="24"
-                          height="12"
-                          rx="2"
-                          class="fill-vellum-sheet"
-                        />
-                        <path
-                          d="M32 18v8M20 32h24v12H20z"
-                          class="fill-vellum-sheet"
-                        />
-                        <text
-                          x="32"
-                          y="41"
-                          text-anchor="middle"
-                          class="fill-easton-blue-500 stroke-none font-mono text-[9px] font-bold"
-                        >
-                          API
-                        </text>
-                        <path d="M12 36v14h8M44 38h8v12" />
-                        <ellipse
-                          cx="12"
-                          cy="54"
-                          rx="7"
-                          ry="3.5"
-                          class="fill-vellum-sheet"
-                        />
-                        <path d="M5 54v6c0 2 3.1 3.5 7 3.5s7-1.5 7-3.5v-6" />
-                        <path d="M46 50h12v10H46z" class="fill-vellum-sheet" />
-                      </svg>
-                    )}
-
-                    {item.icon === "clipboard" && (
-                      <svg
-                        class="h-12 w-12 text-easton-blue-500"
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        aria-hidden="true"
-                      >
-                        <rect
-                          x="10"
-                          y="8"
-                          width="22"
-                          height="30"
-                          rx="2"
-                          class="fill-vellum-sheet"
-                        />
-                        <path d="M16 15h10M16 21h10M16 27h6" />
-                        <circle
-                          cx="34"
-                          cy="33"
-                          r="6"
-                          class="fill-vellum-sheet stroke-wand-brown-500"
-                        />
-                        <circle
-                          cx="34"
-                          cy="33"
-                          r="2"
-                          class="stroke-wand-brown-500"
-                        />
-                      </svg>
-                    )}
-                  </div>
+                  <!-- En desktop: año + chip -->
+                  <span class="hidden font-display text-5xl font-bold tracking-tight text-easton-blue-500 lg:block">
+                    {item.year}
+                  </span>
 
                   <div class="hidden lg:block">
                     <Chip
@@ -335,79 +250,9 @@ const timeline: readonly TimelineEntry[] = [
             >
               {isLeft ? (
                 <>
-                  <div class="flex flex-wrap items-center gap-4">
-                    <span class="font-display text-5xl font-bold tracking-tight text-easton-blue-500">
-                      {item.year}
-                    </span>
-
-                    {item.icon === "microservices" && (
-                      <svg
-                        class="h-12 w-14 text-easton-blue-500"
-                        viewBox="0 0 64 48"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        aria-hidden="true"
-                      >
-                        <path d="M6 24h10M12 19l4 5-4 5" />
-                        <rect
-                          x="22"
-                          y="8"
-                          width="22"
-                          height="8"
-                          rx="1.5"
-                          class="fill-vellum-sheet"
-                        />
-                        <rect
-                          x="22"
-                          y="20"
-                          width="22"
-                          height="8"
-                          rx="1.5"
-                          class="fill-vellum-sheet"
-                        />
-                        <rect
-                          x="22"
-                          y="32"
-                          width="22"
-                          height="8"
-                          rx="1.5"
-                          class="fill-vellum-sheet"
-                        />
-                        <path d="M44 12h6v24h-6M50 24h8" />
-                      </svg>
-                    )}
-
-                    {item.icon === "transition" && (
-                      <div class="flex flex-col items-center gap-1">
-                        <div class="flex items-center gap-2">
-                          <svg
-                            class="h-10 w-10 text-easton-blue-500"
-                            viewBox="0 0 40 40"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M6 32V18l8 5v-5l8 5v9H6z"
-                              class="fill-vellum-sheet"
-                            />
-                            <path d="M18 14V7h4v10" />
-                          </svg>
-                          <span class="font-mono text-sm font-bold text-wand-brown-500">
-                            →
-                          </span>
-                          <div class="flex h-10 w-12 flex-col items-center justify-center rounded border border-easton-blue-500 bg-vellum-sheet font-mono text-[10px] font-bold text-easton-blue-500">
-                            <span>&lt;/&gt;</span>
-                          </div>
-                        </div>
-                        <span class="font-mono text-[10px] leading-tight text-easton-blue-500/80">
-                          JSON-Driven · Design System
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                  <span class="font-display text-5xl font-bold tracking-tight text-easton-blue-500">
+                    {item.year}
+                  </span>
 
                   <Chip
                     size="sm"
