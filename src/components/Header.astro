@@ -16,6 +16,8 @@ interface Props {
 
 const { variant = "vellum-sheet", id = "mobile-nav" } = Astro.props;
 
+import avatar from "../assets/argie-mashle-avatar.png";
+
 const navItems: readonly NavItem[] = [
   { label: "SOBRE MÍ", href: "#sobre-mi" },
   { label: "EXPERIENCIAS", href: "#experiencias" },
@@ -80,9 +82,16 @@ const v = variants[variant];
     <!-- Marca / Nombre -->
     <a
       href="#"
-      class={`font-display text-lg font-bold tracking-wider transition-colors sm:text-xl ${v.brand}`}
+      class="flex items-center gap-2"
     >
-      ARGIE RINCON
+      <img
+        src={avatar}
+        alt="Logo Argie Rincón"
+        class="h-8 w-8 rounded-full object-cover sm:h-10 sm:w-10 [image-orientation:from-image]"
+      />
+      <span class={`font-display text-lg font-bold tracking-wider transition-colors sm:text-xl ${v.brand}`}>
+        ARGIE RINCON
+      </span>
     </a>
 
     <!-- Navegación en escritorio -->
@@ -116,7 +125,7 @@ const v = variants[variant];
         aria-expanded="false"
         aria-controls={id}
         aria-label="Abrir menú de navegación"
-        class={`inline-flex h-10 w-10 items-center justify-center rounded-xl border lg:hidden ${v.toggle}`}
+        class={`inline-flex h-10 w-10 items-center justify-center rounded-md border lg:hidden ${v.toggle}`}
       >
         <svg
           class="h-5 w-5"
