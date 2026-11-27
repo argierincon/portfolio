@@ -149,11 +149,11 @@ const styles = {
 const sizeClasses = {
   md: {
     text: "mono-body-2",
-    pad: "px-3.5 py-1.5",
+    pad: "px-3.5 py-3",
   },
   sm: {
     text: "mono-caption",
-    pad: "px-3 py-1",
+    pad: "px-3 py-2.5",
   },
 } as const;
 
@@ -210,36 +210,43 @@ const currentSize = sizeClasses[size];
   }
 
   /* Completa las 4 esquinas diagonales del marco interior de 1px sin rebabas */
- .easton-chip__inner::before {
+  .easton-chip__inner::before {
     clip-path: var(--chip-clip);
     background:
       linear-gradient(
           to bottom right,
-          transparent calc(50% - 0.69px), /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
+          transparent calc(50% - 0.69px),
+          /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
           var(--bevel-color) calc(50% - 0.69px),
           var(--bevel-color) calc(50% + 0.69px),
           transparent calc(50% + 0.69px)
         )
-        top left / 9px 9px no-repeat, /* AJUSTE: tamaño de esquina 9px (antes 10px) */
+        top left / 9px 9px no-repeat,
+      /* AJUSTE: tamaño de esquina 9px (antes 10px) */
       linear-gradient(
           to bottom left,
-          transparent calc(50% - 0.69px), /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
+          transparent calc(50% - 0.69px),
+          /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
           var(--bevel-color) calc(50% - 0.69px),
           var(--bevel-color) calc(50% + 0.69px),
           transparent calc(50% + 0.69px)
         )
-        top right / 9px 9px no-repeat, /* AJUSTE: tamaño de esquina 9px (antes 10px) */
+        top right / 9px 9px no-repeat,
+      /* AJUSTE: tamaño de esquina 9px (antes 10px) */
       linear-gradient(
           to top right,
-          transparent calc(50% - 0.69px), /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
+          transparent calc(50% - 0.69px),
+          /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
           var(--bevel-color) calc(50% - 0.69px),
           var(--bevel-color) calc(50% + 0.69px),
           transparent calc(50% + 0.69px)
         )
-        bottom left / 9px 9px no-repeat, /* AJUSTE: tamaño de esquina 9px (antes 10px) */
+        bottom left / 9px 9px no-repeat,
+      /* AJUSTE: tamaño de esquina 9px (antes 10px) */
       linear-gradient(
           to top left,
-          transparent calc(50% - 0.69px), /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
+          transparent calc(50% - 0.69px),
+          /* AJUSTE: grosor de banda ±0.69px (antes ±0.75px) */
           var(--bevel-color) calc(50% - 0.69px),
           var(--bevel-color) calc(50% + 0.69px),
           transparent calc(50% + 0.69px)
