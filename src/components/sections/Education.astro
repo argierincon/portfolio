@@ -75,14 +75,12 @@ const items: readonly EducationItem[] = [
     <!-- Columna izquierda: editorial + composición geométrica -->
     <div class="flex flex-col justify-between border-b border-easton-blue-500 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
       <div class="space-y-6">
-        <span class="mono-caption text-wand-brown-500">
-          05
-        </span>
+        <span class="mono-caption text-wand-brown-500">05</span>
 
-        <h3 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-easton-blue-500 sm:text-5xl">
+        <h3 class="font-display text-2xl font-bold text-easton-blue-500 sm:text-3xl">
           Siempre
           <br />
-          aprendiendo<span class="text-mashle-red-500">.</span>
+          aprendiendo.
         </h3>
 
         <p class="body-1 max-w-md text-easton-blue-500/85">
@@ -177,7 +175,14 @@ const items: readonly EducationItem[] = [
                 </div>
               </div>
 
-              <Chip size="sm" variant="solid" style="filled" color="lunar-yellow" weight="medium" case="normal">
+              <Chip
+                size="sm"
+                variant="solid"
+                style="filled"
+                color="lunar-yellow"
+                weight="medium"
+                case="normal"
+              >
                 {item.badge}
               </Chip>
             </div>
