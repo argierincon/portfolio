@@ -144,41 +144,50 @@ const items: readonly EducationItem[] = [
     </div>
 
     <!-- Columna derecha: listado de certificaciones y formación -->
-    <div class="flex flex-col justify-between bg-chalk-paper/60">
+    <div class="flex flex-col justify-between bg-chalk-paper/60 lg:max-h-[650px] lg:overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
       <ul class="divide-y divide-easton-blue-500/20">
         {items.map((item) => (
-          <li class="group transition-colors duration-150 hover:bg-easton-blue-500">
-            <div class="flex flex-col justify-between gap-3 px-6 py-5 sm:flex-row sm:items-center sm:gap-6 sm:px-8">
+          <li
+            class:list={[
+              "group relative overflow-hidden",
+              "before:content-[''] before:pointer-events-none before:absolute before:inset-0 before:z-0 before:bg-easton-blue-500",
+              "before:origin-left before:scale-x-0 before:transition-transform before:duration-300 before:ease-out",
+              "hover:before:scale-x-100",
+            ]}
+          >
+            <div class="relative z-10 flex flex-col justify-between gap-3 px-6 py-5 sm:flex-row sm:items-center sm:gap-6 sm:px-8">
               <div class="flex flex-col items-start gap-1">
-                <span class="mono-subtitle-3 text-wand-brown-500 transition-colors group-hover:text-lunar-yellow-500">
+                <span class="mono-subtitle-3 text-wand-brown-500 transition-colors duration-300 group-hover:text-lunar-yellow-500">
                   {item.period}
                 </span>
 
                 <div class="space-y-0.5">
-                  <h4 class="subtitle-main text-easton-blue-500 transition-colors group-hover:text-chalk-paper">
+                  <h4 class="subtitle-main text-easton-blue-500 transition-colors duration-300 group-hover:text-chalk-paper">
                     {item.title}
                   </h4>
-                  <p class="body-2 text-easton-blue-500 transition-colors group-hover:text-lunar-yellow-500">
+                  <p class="body-2 text-easton-blue-500 font-semibold transition-colors duration-300 group-hover:text-lunar-yellow-500">
                     {item.subtitle}
                   </p>
                   {item.description && (
-                    <p class="caption pt-1 text-easton-blue-500/90 transition-colors group-hover:text-lunar-yellow-500">
+                    <p class="caption pt-1 text-easton-blue-500/90 transition-colors duration-300 group-hover:text-lunar-yellow-500">
                       {item.description}
                     </p>
                   )}
                 </div>
               </div>
 
-              <Chip
-                size="sm"
-                variant="solid"
-                style="filled"
-                color="lunar-yellow"
-                weight="medium"
-                case="normal"
-              >
-                {item.badge}
-              </Chip>
+              {item.badge && (
+                <Chip
+                  size="sm"
+                  variant="solid"
+                  style="filled"
+                  color="lunar-yellow"
+                  weight="medium"
+                  case="normal"
+                >
+                  {item.badge}
+                </Chip>
+              )}
             </div>
           </li>
         ))}
