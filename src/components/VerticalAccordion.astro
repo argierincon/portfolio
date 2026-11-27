@@ -40,7 +40,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
 <div
   data-vertical-accordion
   class:list={[
-    "flex flex-col gap-4 lg:flex-row lg:items-stretch lg:gap-4",
+    "flex flex-col gap-4 md:min-h-[700px] lg:flex-row lg:items-stretch lg:gap-4",
     className,
   ]}
 >
@@ -68,8 +68,8 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
           class:list={[
             "grid transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]",
             isExpanded
-              ? "grid-rows-[1fr] opacity-100 delay-100"
-              : "pointer-events-none grid-rows-[0fr] opacity-0 lg:h-0",
+              ? "grid-rows-[1fr] opacity-100 delay-100 lg:h-full"
+              : "pointer-events-none grid-rows-[0fr] opacity-0",
           ]}
         >
           <div class="min-h-0 overflow-hidden">
@@ -251,7 +251,12 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
             "opacity-0",
             "lg:h-0",
           );
-          content?.classList.add("grid-rows-[1fr]", "opacity-100", "delay-100");
+          content?.classList.add(
+            "grid-rows-[1fr]",
+            "opacity-100",
+            "delay-100",
+            "lg:h-full",
+          );
 
           trigger?.classList.remove("relative", "opacity-100", "delay-150");
           trigger?.classList.add(
@@ -279,6 +284,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
             "grid-rows-[1fr]",
             "opacity-100",
             "delay-100",
+            "lg:h-full",
           );
           content?.classList.add(
             "pointer-events-none",
@@ -297,7 +303,6 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
         }
       });
     }
-
     panels.forEach((panel) => {
       const trigger = panel.querySelector<HTMLButtonElement>(
         "[data-accordion-trigger]",
