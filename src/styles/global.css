@@ -6,6 +6,16 @@
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
+  /* TAMAÑOS DE FUENTE (fuente única de la verdad) */
+  --text-size-subtitle-main: 1.125rem;
+  --text-size-subtitle-1: 1rem;
+  --text-size-subtitle-2: 1rem;
+  --text-size-subtitle-3: 0.875rem;
+  --text-size-body-1: 1rem;
+  --text-size-body-2: 0.875rem;
+  --text-size-caption: 0.75rem;
+  --text-size-overline: 0.75rem;
+
   /* PALETA DE COLORES Y VARIANTES */
   --color-chalk-paper: #f8f9fa; /* Papel tiza suave para superficies base */
   --color-vellum-sheet: #fffdfe; /* Hoja de vitela blanca nítida del borde del logo de Mashle */
@@ -308,43 +318,50 @@
   @apply text-mashle-red-500;
 }
 
+@utility subtitle-main {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-size-subtitle-main);
+  line-height: 1.5;
+}
+
 @utility subtitle-1 {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1rem; /* 16px mobile */
+  font-size: var(--text-size-subtitle-1);
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1.125; /* 18px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1.125;
+  } */
 }
 
 @utility subtitle-2 {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 1rem;  /* 16px mobile */
+  font-size: var(--text-size-subtitle-2);  /* 16px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1.125rem;  /* 18px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1.125rem; 
+  } */
 }
 
 @utility subtitle-3 {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: var(--text-size-subtitle-3); /* 14px mobile */
   line-height: 1.5;
 
-  @media (width >=48rem) {
-    font-size: 1rem; /* 16px desktop */
-  }
+  /* @media (width >=48rem) {
+    font-size: 1rem; 
+  } */
 }
 
 @utility body-1 {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 1rem; /* 16px mobile */
+  font-size: var(--text-size-body-1); /* 16px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -355,7 +372,7 @@
 @utility body-2 {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: var(--text-size-body-2); /* 14px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -366,14 +383,14 @@
 @utility text-button {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 1rem; /* 16px desktop */
+  font-size: var(--text-size-body-1); /* 16px desktop */
   line-height: 1.5;
 }
 
 @utility caption {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: var(--text-size-caption); /* 12px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -384,16 +401,27 @@
 @utility overline {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.75rem; /* 12px mobile & desktop */
+  font-size: var(--text-size-overline); /* 12px mobile & desktop */
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
+@utility mono-subtitle-main {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--text-size-subtitle-main); /* 18px mobile */
+  line-height: 1.5;
+
+  /* @media (width >=48rem) {
+    font-size: 1.125rem;
+  } */
+}
+
 @utility mono-subtitle-1 {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 1rem; /* 16px mobile */
+  font-size: var(--text-size-subtitle-1); /* 16px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -404,7 +432,7 @@
 @utility mono-subtitle-2 {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 1rem; /* 16px mobile */
+  font-size: var(--text-size-subtitle-2); /* 16px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -415,7 +443,7 @@
 @utility mono-subtitle-3 {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: var(--text-size-subtitle-3); /* 14px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -426,7 +454,7 @@
 @utility mono-body-1 {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 1rem; /* 16px mobile */
+  font-size: var(--text-size-body-1); /* 16px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -437,7 +465,7 @@
 @utility mono-body-2 {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 0.875rem; /* 14px mobile */
+  font-size: var(--text-size-body-2); /* 14px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -448,14 +476,14 @@
 @utility mono-text-button {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 1rem; 
+  font-size: var(--text-size-body-1); 
   line-height: 1.5;
 }
 
 @utility mono-caption {
   font-family: var(--font-mono);
   font-weight: 400;
-  font-size: 0.75rem; /* 12px mobile */
+  font-size: var(--text-size-caption); /* 12px mobile */
   line-height: 1.5;
 
   /* @media (width >=48rem) {
@@ -466,7 +494,7 @@
 @utility mono-overline {
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 0.75rem; /* 12px mobile & desktop */
+  font-size: var(--text-size-overline); /* 12px mobile & desktop */
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.08em;
