@@ -55,7 +55,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
         data-accordion-panel
         data-expanded={isExpanded ? "true" : "false"}
         class:list={[
-          "group relative overflow-hidden rounded-xl border border-easton-blue-500 bg-vellum-sheet shadow-[4px_4px_0_0_var(--color-wand-brown-500)]",
+          "group relative overflow-hidden rounded-xl border border-easton-blue-500/80 bg-vellum-sheet shadow-[4px_4px_0_0_var(--color-wand-brown-500)]",
           "transition-[flex,padding] duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]",
           isExpanded
             ? "p-6 sm:p-8 lg:flex-[1_1_0%] lg:p-10"
@@ -90,9 +90,9 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
                 <p class="body-1 text-easton-blue-500/85">{item.description}</p>
 
                 {item.highlights && item.highlights.length > 0 && (
-                  <ul class="space-y-2.5">
+                  <ul class="space-y-2.5 body-2">
                     {item.highlights.map((point) => (
-                      <li class="flex items-start gap-2.5 font-sans text-sm text-easton-blue-500">
+                      <li class="flex items-start gap-2.5 text-easton-blue-500/85">
                         <span
                           class="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-wand-brown-500 text-chalk-paper"
                           aria-hidden="true"
@@ -160,7 +160,7 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
                         <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-lunar-yellow-500" />
                         <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-[#27c93f]" />
                       </div>
-                      <div class="grid grid-cols-1 gap-2 md:grid-cols-3 font-mono text-[10px] text-easton-blue-500">
+                      <div class="grid grid-cols-1 gap-2 md:grid-cols-3 xl:grid-cols-1 font-mono text-[10px] text-easton-blue-500">
                         <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
                           FLUJO ACTIVO
                         </div>
