@@ -1,62 +1,37 @@
 ---
 interface EducationItem {
-  number: string;
+  period: string;
   title: string;
   subtitle: string;
   badge: string;
-  credentialNote?: string;
 }
 
 import Chip from "../Chip.astro";
 
 const items: readonly EducationItem[] = [
   {
-    number: "01",
-    title: "Bootcamp Java Full Stack",
-    subtitle: "InnoLab · 800+ horas de formación intensiva",
+    period: "Sep 2026 – Dic 2026",
+    title: "Programa de Desarrollador Full Stack Java",
+    subtitle: "Generation Colombia, Lima, Perú",
     badge: "Java · Spring Boot",
-    credentialNote:
-      "Formación intensiva en desarrollo backend, APIs REST y frontend.",
   },
   {
-    number: "02",
-    title: "Oracle Java SE Certified Associate",
-    subtitle: "Oracle Academy · Certificación oficial",
-    badge: "Java 25",
-    credentialNote:
-      "Fundamentos del lenguaje, POO, colecciones y manejo de excepciones.",
+    period: "Jul 2026 – Ene 2027",
+    title: "Programa de Desarrollo web Full Stack con Java",
+    subtitle: "CodiGo Tecsup, Lima, Perú",
+    badge: "Java · Spring Boot",
   },
   {
-    number: "03",
-    title: "Spring Framework & Microservices Specialist",
-    subtitle: "Spring Academy · Arquitectura y patrones",
-    badge: "Spring Boot",
-    credentialNote:
-      "Diseño de servicios desacoplados, configuración y buenas prácticas.",
+    period: "Feb 2020 – Sep 2020",
+    title: "Especialización en Desarrollo Web Frontend",
+    subtitle: "Laboratoria, Lima, Perú",
+    badge: "Java · Spring Boot",
   },
   {
-    number: "04",
-    title: "AWS Cloud Practitioner",
-    subtitle: "Amazon Web Services · Cloud Architecture",
-    badge: "AWS Cloud",
-    credentialNote:
-      "Arquitectura cloud, seguridad, redes y modelos de despliegue.",
-  },
-  {
-    number: "05",
-    title: "Administración Industrial",
-    subtitle: "Instituto Tecnológico · Gestión de procesos y flujos",
-    badge: "Procesos · Kaizen",
-    credentialNote:
-      "Optimización operativa, mejora continua y análisis de flujos.",
-  },
-  {
-    number: "06",
-    title: "SQL & Modelado de Bases de Datos",
-    subtitle: "PostgreSQL & MySQL Advanced",
-    badge: "Relacional",
-    credentialNote:
-      "Modelado relacional, normalización, índices y consultas eficientes.",
+    period: "Feb 2012 – Sep 2015",
+    title: "Técnico Superior Universitario en Administración Industrial",
+    subtitle: "IUTIRLA, Maturín, Venezuela",
+    badge: "Java · Spring Boot",
   },
 ];
 ---
@@ -71,12 +46,10 @@ const items: readonly EducationItem[] = [
   </div>
 
   <!-- Panel principal dividido en 2 columnas -->
-  <div class="grid grid-cols-1 overflow-hidden rounded-xl border border-easton-blue-500 bg-vellum-sheet shadow-[6px_6px_0_0_var(--color-wand-brown-500)] lg:grid-cols-[0.95fr_1.35fr]">
+  <div class="grid grid-cols-1 overflow-hidden rounded-xl border border-easton-blue-500/80 bg-vellum-sheet shadow-[6px_6px_0_0_var(--color-wand-brown-500)] lg:grid-cols-[0.95fr_1.35fr]">
     <!-- Columna izquierda: editorial + composición geométrica -->
-    <div class="flex flex-col justify-between border-b border-easton-blue-500 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
+    <div class="flex flex-col justify-between border-b border-easton-blue-500/80 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
       <div class="space-y-6">
-        <span class="mono-caption text-wand-brown-500">05</span>
-
         <h3 class="font-display text-2xl font-bold text-easton-blue-500 sm:text-3xl">
           Siempre
           <br />
@@ -155,23 +128,18 @@ const items: readonly EducationItem[] = [
         {items.map((item) => (
           <li class="group transition-colors duration-150 hover:bg-easton-blue-500">
             <div class="flex flex-col justify-between gap-3 px-6 py-5 sm:flex-row sm:items-center sm:gap-6 sm:px-8">
-              <div class="flex items-start gap-5 sm:items-center">
-                <span class="mono-caption text-wand-brown-500 transition-colors group-hover:text-lunar-yellow-500">
-                  {item.number}
+              <div class="flex flex-col items-start gap-1">
+                <span class="mono-subtitle-3 text-wand-brown-500 transition-colors group-hover:text-lunar-yellow-500">
+                  {item.period}
                 </span>
 
                 <div class="space-y-0.5">
-                  <h4 class="subtitle-1 text-easton-blue-500 transition-colors group-hover:text-chalk-paper">
+                  <h4 class="subtitle-main text-easton-blue-500 transition-colors group-hover:text-chalk-paper">
                     {item.title}
                   </h4>
-                  <p class="subtitle-2 text-easton-blue-500/75 transition-colors group-hover:text-lunar-yellow-500">
+                  <p class="body-2 text-easton-blue-500/75 transition-colors group-hover:text-lunar-yellow-500">
                     {item.subtitle}
                   </p>
-                  {item.credentialNote && (
-                    <p class="caption hidden pt-1 text-chalk-paper/85 group-hover:block">
-                      {item.credentialNote}
-                    </p>
-                  )}
                 </div>
               </div>
 
@@ -189,10 +157,6 @@ const items: readonly EducationItem[] = [
           </li>
         ))}
       </ul>
-
-      <p class="border-t border-easton-blue-500/20 px-6 py-4 font-sans text-xs text-wand-brown-500 sm:px-8">
-        Pasa el cursor sobre cada certificación para ver credenciales y detalles
-      </p>
     </div>
   </div>
 </section>
