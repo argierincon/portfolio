@@ -1,5 +1,6 @@
 ---
 import ActionButton from "./ActionButton.astro";
+import Chip from "./Chip.astro";
 
 export interface AccordionHighlight {
   text: string;
@@ -119,9 +120,14 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
                 {item.tags && item.tags.length > 0 && (
                   <div class="flex flex-wrap gap-2">
                     {item.tags.map((tag) => (
-                      <span class="rounded-full bg-lunar-yellow-500/45 px-3.5 py-1 font-mono text-xs font-medium text-easton-blue-500">
+                      <Chip
+                        variant="soft"
+                        style="filled"
+                        size="sm"
+                        color="lunar-yellow"
+                      >
                         {tag}
-                      </span>
+                      </Chip>
                     ))}
                   </div>
                 )}
@@ -145,16 +151,16 @@ const { items, defaultOpenIndex = 0, class: className = "" } = Astro.props;
               </div>
 
               <!-- Slot opcional para ilustración personalizada -->
-              <div class="flex min-h-72 flex-col justify-between rounded-2xl border border-wand-brown-300/50 bg-lunar-yellow-500/15 p-5 sm:p-6">
+              <div class="flex min-h-72 flex-col justify-between rounded-2xl border border-wand-brown-300/50 bg-lunar-yellow-100 p-5 sm:p-6">
                 <div class="flex flex-1 items-center justify-center">
                   <slot name={`illustration-${idx}`}>
                     <div class="w-full max-w-md rounded-xl border border-easton-blue-500 bg-chalk-paper p-4 shadow-[4px_4px_0_0_var(--color-easton-blue-500)]">
                       <div class="mb-3 flex items-center gap-1.5 border-b border-wand-brown-300/40 pb-2">
-                        <span class="h-2.5 w-2.5 rounded-full bg-mashle-red-500" />
-                        <span class="h-2.5 w-2.5 rounded-full bg-lunar-yellow-500" />
-                        <span class="h-2.5 w-2.5 rounded-full bg-easton-blue-500/40" />
+                        <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-mashle-red-500" />
+                        <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-lunar-yellow-500" />
+                        <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-[#27c93f]" />
                       </div>
-                      <div class="grid grid-cols-3 gap-2 font-mono text-[10px] text-easton-blue-500">
+                      <div class="grid grid-cols-1 gap-2 md:grid-cols-3 font-mono text-[10px] text-easton-blue-500">
                         <div class="rounded border border-wand-brown-300/40 bg-vellum-sheet p-2">
                           FLUJO ACTIVO
                         </div>
