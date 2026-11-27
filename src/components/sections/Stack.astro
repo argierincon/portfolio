@@ -109,19 +109,10 @@ const rightColumnGroups: readonly CategoryGroup[] = [
         <!-- Contenido de la columna por encima de la cuadrícula -->
         <div class="relative z-10 space-y-8">
           {leftColumnGroups.map((group) => (
-            <div class="space-y-4">
+            <div class="space-y-8">
               <div class="flex flex-wrap items-center gap-2">
                 {group.labels.map((label) => (
-                  <Chip
-                    size="md"
-                    variant="soft"
-                    style="outlined"
-                    color="wand-brown"
-                    case="normal"
-                    weight="regular"
-                  >
-                    {label}
-                  </Chip>
+                  <span class="subtitle-1">{label}</span>
                 ))}
               </div>
 
@@ -193,19 +184,10 @@ const rightColumnGroups: readonly CategoryGroup[] = [
         </div>
 
         <!-- Contenido de la columna por encima de la cuadrícula -->
-        <div class="relative z-10 space-y-4">
+        <div class="relative z-10 space-y-6">
           <div class="flex flex-wrap items-center gap-2">
             {frontendGroup.labels.map((label) => (
-              <Chip
-                size="md"
-                variant="soft"
-                style="outlined"
-                color="wand-brown"
-                case="normal"
-                weight="regular"
-              >
-                {label}
-              </Chip>
+              <span class="subtitle-1">{label}</span>
             ))}
           </div>
 
@@ -268,20 +250,10 @@ const rightColumnGroups: readonly CategoryGroup[] = [
         <!-- Contenido de la columna por encima de la cuadrícula -->
         <div class="relative z-10 space-y-8">
           {rightColumnGroups.map((group) => (
-            <div class="space-y-4">
+            <div class="space-y-6">
               <div class="flex flex-wrap items-center gap-2">
                 {group.labels.map((label) => (
-                  <Chip
-                    size="md"
-                    variant="soft"
-                    style="outlined"
-                    color="wand-brown"
-                    case="normal"
-                    weight="regular"
-                    class="bg-vellum-sheet"
-                  >
-                    {label}
-                  </Chip>
+                  <span class="subtitle-1">{label}</span>
                 ))}
               </div>
 
