@@ -147,21 +147,23 @@ const v = variants[variant];
     id={id}
     data-mobile-menu
     aria-label="Navegación móvil"
-    class={`hidden border-t lg:hidden ${v.mobileMenu}`}
+    class="pointer-events-none grid grid-rows-[0fr] opacity-0 transition-[grid-template-rows,opacity] duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] lg:hidden"
   >
-    <ul class="container-sections flex flex-col gap-3 py-4">
-      {navItems.map((item) => (
-        <li>
-          <a
-            href={item.href}
-            data-mobile-link
-            class={`block py-1.5 font-mono text-xs font-semibold tracking-widest transition-colors ${v.mobileLink}`}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <div class={`min-h-0 overflow-hidden border-t ${v.mobileMenu}`}>
+      <ul class="container-sections flex flex-col gap-3 py-4">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              data-mobile-link
+              class={`block py-1.5 font-mono text-xs font-semibold tracking-widest transition-colors ${v.mobileLink}`}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </nav>
 </header>
 
@@ -173,16 +175,33 @@ const v = variants[variant];
     const mobileLinks =
       header.querySelectorAll<HTMLAnchorElement>("[data-mobile-link]");
 
+    const setOpen = (open: boolean) => {
+      toggleBtn?.setAttribute("aria-expanded", String(open));
+      if (open) {
+        mobileMenu?.classList.remove(
+          "pointer-events-none",
+          "grid-rows-[0fr]",
+          "opacity-0",
+        );
+        mobileMenu?.classList.add("grid-rows-[1fr]", "opacity-100");
+      } else {
+        mobileMenu?.classList.remove("grid-rows-[1fr]", "opacity-100");
+        mobileMenu?.classList.add(
+          "pointer-events-none",
+          "grid-rows-[0fr]",
+          "opacity-0",
+        );
+      }
+    };
+
     toggleBtn?.addEventListener("click", () => {
       const isOpen = toggleBtn.getAttribute("aria-expanded") === "true";
-      toggleBtn.setAttribute("aria-expanded", String(!isOpen));
-      mobileMenu?.classList.toggle("hidden", isOpen);
+      setOpen(!isOpen);
     });
 
     mobileLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        toggleBtn?.setAttribute("aria-expanded", "false");
-        mobileMenu?.classList.add("hidden");
+        setOpen(false);
       });
     });
   });
